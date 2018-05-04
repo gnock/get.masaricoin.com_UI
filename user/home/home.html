@@ -1,0 +1,195 @@
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+<style>
+.rwd-break {
+	display:none;
+	
+}
+.logo2 {
+	position:relative;
+	left:60%;
+}
+	
+@media only screen and (max-width: 700px) {
+    .rwd-break {
+		display:block;
+    }
+	.logo2 { 
+	display:none;
+	}
+		
+}
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<ng-include src="'user/dashboard/poolstats.html'"></ng-include>
+<div layout="column" layout-gt-sm="row" flex>
+	<md-card flex>
+		<md-card-title>
+			<span class="md-headline">Pool Hashrate</span>
+		</md-card-title>
+		<md-card-content layout="column">
+			<div class="chartcontainer-pool" flex>
+				<linechart data="poolHashrateChart.datasets" options="poolHashrateChart.options"></linechart>
+			</div>
+		</md-card-content>
+	</md-card>
+    
+    <md-card flex>
+		<md-card-title>
+			<span class="md-headline">Calculate Hashrate</span><span class="logo2"><img width="30px" height="30px" src="../../assets/calc2.jpg"/></span> 
+		</md-card-title>
+		<md-card-content layout="column"  style="position:relative; bottom:25px;">
+	<form class="pure-form pure-form-stacked">
+    <fieldset>
+        <legend>Estimated Profitability &nbsp;=&nbsp;&nbsp;<br class="rwd-break" /><span>USD: $</span> <span id="btcusdspan" style="font-weight:600;">0.00</span> <span style="padding-left:5%;">EURO: €</span> <span id="btceurspan" style="font-weight:600;">0.00</span></legend>
+
+            <div class="pure-g">
+            <div class="pure-u-1-4">
+                <label for="hash_count">Your <br class="rwd-break" />Hashrate</label>
+                <input id="hash_count" class="pure-u-21-24" type="text" value="1" onkeydown="updateInput(this.value)">
+            </div>
+
+           <div class="pure-u-1-4">
+                <label for="hash_power">Hash <br class="rwd-break" />Power</label>
+                <select id="hash_power" class="pure-u-21-24" onchange="updateInput(this.value)">
+                    <option value="1">H/s</option>
+                    <option value="1000">KH/s</option>
+                    <option value="100000">MH/s</option>
+                </select>
+            </div>
+             <div class="pure-u-1-4">
+                <label for="time_frame">Time <br class="rwd-break" />Frame</label>
+                <select id="time_frame" class="pure-u-21-24" onchange="updateInput(this.value)">
+                    <option value="1">Hour</option>
+                    <option value="24">Day</option>
+                    <option value="168">Week</option>
+                    
+                </select>
+            </div>
+            <div class="pure-u-1-4">
+            <label for="MSR">Estimated MSR</label>
+            <span id="profit" style="font-weight:600; position:relative; top:6px;"> {{((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*1)/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995).toFixed(4)}}</span>
+         	</div>
+            </div>
+		</fieldset>
+	</form>
+			
+		</md-card-content>
+	</md-card>
+
+	<md-card flex>
+		<md-card-title>
+			<span class="md-headline">Block Effort (last 25 blocks) | Round Effort {{(100 * poolStats.global.roundHashes / network.difficulty).toFixed(1) | number}} %</span>
+		</md-card-title>
+		<md-card-content layout="column">
+			<div class="chartcontainer-pool" flex>
+				<linechart data="poolEffortChart.datasets" options="poolEffortChart.options"></linechart>
+			</div>
+		</md-card-content>
+	</md-card>
+</div>
+<div layout="column" layout-gt-md="row" flex>
+	<md-card flex ng-include="'welcome.html'">
+	</md-card>
+	<div flex flex-gt-md="30">
+		<md-card flex>
+			<md-card-title>
+				<span class="md-headline">Pool Config</span>
+                
+			</md-card-title>
+            <md-divider md-inset></md-divider>
+			<md-card-content>
+				<md-list>
+					<!-- <md-list-item>
+						<p>PPS Fee</p>
+						<span class="text-right">
+							{{config.pps_fee}}%
+							<md-tooltip>
+								Core Devs Donation: {{config.dev_donation/100*config.pps_fee | number:3  }}% | 
+								Pool Devs Donation:{{config.pool_dev_donation/100*config.pps_fee | number:3 }}%
+							</md-tooltip>
+						</span>
+					</md-list-item> -->
+                    <md-list-item>
+						<p>Dev Donation</p>
+						<p class="text-right">{{config.dev_donation}}%</p>
+					</md-list-item>
+					<md-list-item>
+						<p>PPLNS Fee</p>
+						<span class="text-right">
+							{{config.pplns_fee}}%
+						<!--	<md-tooltip>
+								Core Devs Donation: {{config.dev_donation/100*config.pplns_fee | number:3 }}% | 
+								Pool Devs Donation:{{config.pool_dev_donation/100*config.pplns_fee | number:3 }}%
+							
+                            </md-tooltip>
+						-->
+                        </span>
+					</md-list-item>
+					<!--<md-list-item>
+						<p>Solo Fee</p>
+						<p class="text-right">
+							{{config.solo_fee}}%
+							<md-tooltip>
+								Core Devs Donation: {{config.dev_donation/100*config.solo_fee | number:3}}% | 
+								Pool Devs Donation:{{config.pool_dev_donation/100*config.solo_fee | number:3}}%
+							</md-tooltip>
+						</p>
+					</md-list-item>
+					<md-list-item>
+						<p>BTC Fee</p>
+						<p class="text-right">{{config.btc_fee}}%</p>
+					</md-list-item>-->
+                    	
+					<md-list-item>
+						<p>Minimum payout (Wallet)</p>
+						<p class="text-right">{{config.min_wallet_payout | toXMR}} MSR</p>
+					</md-list-item>
+                    
+					<!--<md-list-item>
+						<p>Minimum payout (BTC)</p>
+						<p class="text-right">{{config.min_btc_payout | toXMR}} XMR</p>
+					</md-list-item>-->
+					<md-list-item>
+						<p>Minimum payout (Exchange)</p>
+						<p class="text-right">{{config.min_exchange_payout | toXMR}} MSR</p>
+					</md-list-item>
+					<md-list-item>
+						<p>Block Maturity Depth</p>
+						<p class="text-right">{{config.maturity_depth}}</p>
+					</md-list-item>
+					<md-list-item>
+						<p>Minimum Denomination</p>
+						<p class="text-right">{{config.min_denom | toXMR}}</p>
+					</md-list-item>
+				</md-list>
+                <div style="height:25px;"></div>
+			</md-card-content>
+		</md-card></div>
+	</div>
+    <!-- Hidden Spans -->
+<span id="OneHash" style="display:none;"> {{((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*1)/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995)}}  </span>
+<span id="btceur" style="display:none;">{{btceur}}</span>
+<span id="btcusd" style="display:none;">{{btcusd}}</span>
+<span id="msrbtc" style="display:none;">{{msrbtc}}</span>
+<script>
+
+
+var profit_calc = {};
+function updateInput(){
+	
+	var TheField = document.getElementById("hash_count").value;
+	var OneHash = document.getElementById("OneHash").innerHTML
+	var Hashes = document.getElementById("hash_power").value
+	var TheTime = document.getElementById("time_frame").value
+	var TotalCalc = OneHash * TheField * Hashes * TheTime
+	document.getElementById("profit").innerHTML = TotalCalc.toFixed(4);
+	
+	document.getElementById("btcusdspan").innerHTML = (document.getElementById("profit").innerHTML * document.getElementById("msrbtc").innerHTML * document.getElementById("btcusd").innerHTML).toFixed(2);
+	document.getElementById("btceurspan").innerHTML = (document.getElementById("profit").innerHTML * document.getElementById("msrbtc").innerHTML * document.getElementById("btceur").innerHTML).toFixed(2);
+	
+	//document.getElementById("btceurspan").innerHTML = 
+}
+
+</script>
