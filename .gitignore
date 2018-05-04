@@ -1,4 +1,3 @@
-/.idea
 *.iml
 /vendor
 app/google*
@@ -14,5 +13,4 @@ tmp
 package-lock.json
 app/vendor/
 build/
-app/globals.js
 app/user/help/what_should_be_in_faq

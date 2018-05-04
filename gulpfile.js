@@ -8,6 +8,12 @@ gulp.task('html', function(){
     .pipe(gulp.dest('build/'))
 });
 
+gulp.task('php', function(){
+	return gulp.src(['app/**/*.php', '!app/vendor/**/*'])
+		.pipe(connect.reload())
+		.pipe(gulp.dest('build/'))
+});
+
 gulp.task('css', function(){
   return gulp.src(['app/**/*.css', '!app/vendor/**/*'])
     .pipe(connect.reload())
@@ -21,7 +27,7 @@ gulp.task('js', function(){
 });
 
 gulp.task('assets', function(){
-  return gulp.src('app/assets/*')
+  return gulp.src(['app/assets/*','app/assets/**/*'])
     .pipe(connect.reload())
     .pipe(gulp.dest('build/assets'))
 });
@@ -76,7 +82,8 @@ gulp.task('watch', function () {
   gulp.watch(['./app/**/*.html'], ['html', 'manifest']);
   gulp.watch(['./app/**/*.css'], ['css', 'manifest']);
   gulp.watch(['./app/**/*.js'], ['js', 'manifest']);
-  gulp.watch(['./assets/*.*'], ['assets', 'manifest']);
+  gulp.watch(['./assets/*'], ['assets', 'manifest']);
+  gulp.watch(['./assets/**/*'], ['assets', 'manifest']);
 });
 
 gulp.task('manifest', function(){
@@ -94,5 +101,5 @@ gulp.task('manifest', function(){
     .pipe(gulp.dest('build'));
 });
 
-gulp.task('build', [ 'html', 'css', 'js', 'assets', 'vendor', 'manifest' ]);
+gulp.task('build', [ 'html', 'php', 'css', 'js', 'assets', 'vendor', 'manifest' ]);
 gulp.task('default', [ 'build', 'connect', 'watch' ]);
