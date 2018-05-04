@@ -28,7 +28,7 @@ a {
   color: rgb(101, 132, 186); 
 }
 
-a:link { text-decoration: none; },
+a:link { text-decoration: none; }
 a:visited { color: rgb(132, 186, 101); } 
 a:hover   { color: rgb(132, 186, 101); }
 a:active  {

@@ -5,6 +5,29 @@
 <!--[if gt IE 8]><!--> <html lang="en" ng-app="poolui" class="no-js" manifest="app.manifest"> <!--<![endif]-->
 <head>
   <title>Masari Mining Pool - Masaricoin.com</title>
+	
+	<?php
+	$url = "https://get.masaricoin.com/api/pool/stats";
+	$json = file_get_contents($url);
+	$json_data = json_decode($json, true);
+	$stats = $json_data["pool_statistics"];
+	$TotalMiners = $stats["miners"];
+	$LastBlock = date('m/d/Y', $stats["lastBlockFoundTime"]);
+	$TotalMinersPaid = $stats["totalMinersPaid"];
+	$HashRate = $stats["hashRate"];
+	if($HashRate >= 1000000) {
+		$CurrentH = $HashRate / 1000000;
+		$CurrentHashrate = number_format($CurrentH,2).' MH/s';
+	} else {
+		$CurrentH = $HashRate / 1000;
+		$CurrentHashrate = number_format($CurrentH,2).' KH/s';
+	}
+	
+	$description = 'Masari Mining Pool - Our pool has '.$TotalMiners.' miners connected with a hashrate of '.$CurrentHashrate.'.  Our last block was found on '.$LastBlock.' and we have paid over '.$TotalMinersPaid. ' miners!  We offer worker email alerts, web notifications, per worker charting, PPLNS payment system, GeoDNS with entry points based in North America, Europe, and Asia, Discord Support, Payment Calculations and many more.';
+	
+	echo '<meta name="description" content="'.$description.'">';
+	?>
+	
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -220,8 +243,8 @@ ist-item>-->
           </md-toolbar>
           <div id="content" ng-view flex></div>
 		<div class="footer">
-		powered by <strong><a href="https://github.com/Snipa22/nodejs-pool" style="color:white;"><i class="fa fa-github"></i> nodejs-pool</a></strong> &amp; <strong><a href="https://github.com/mesh0000/poolui" style="color:white;"><i class="fa fa-github"></i> poolui</a></strong></br> <span style="font-size: 90%">(mod by <b>miziel</b>)</span>
-		</div>
+            © 2018 get.masaricoin.com
+        </div>
         </md-content>
       </div>
       <span id="blockreward" style="display:none;">Block Reward: <b>{{LastBlockData | toXMR | number:10}} MSR</b> <br />Block Height: <b>{{poolStats.global.lastBlockFound}}</b> -- Block Effort: <b>{{((LastBlockShares / LastBlockDiff)*100).toFixed(0) | number}}%</b></span>
