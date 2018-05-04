@@ -28,7 +28,7 @@
 						<div class="md-subhead">
 							<span>Blocks Found</span>
 							<md-divider md-inset></md-divider>
-						        <a href="#/blocks"><span am-time-ago="poolStats.global.lastBlockFoundTime*1000"></span>
+						        <a href="#!/blocks"><span am-time-ago="poolStats.global.lastBlockFoundTime*1000"></span>
 							<md-tooltip md-direction="bottom">
 						    	{{poolStats.global.lastBlockFoundTime*1000 | date:'HH:mm:ss dd/MM/yy'}}
 						        </md-tooltip>
@@ -40,7 +40,7 @@
 						<div class="md-subhead">
 							<span>Time Per Block (days)</span>
 							<md-divider md-inset></md-divider>
-							<span class="md-subhead"><a href="#/home">Current effort {{((poolStats.global.roundHashes / network.difficulty)*100).toFixed(1) | number}} %</a></span>
+							<span class="md-subhead"><a href="#!/home">Current effort {{((poolStats.global.roundHashes / network.difficulty)*100).toFixed(1) | number}} %</a></span>
 						</div>
 					</md-card-title-text>
 				</md-card-title>
@@ -60,11 +60,11 @@
 						<span class="md-headline">{{poolStats.global.miners}}</span>
 						<span class="md-subhead">Miners Connected</span>
 						<md-divider md-inset></md-divider>
-						<span class="md-subhead"><a href="#/ports">{{WorkersTotal | number}} Connections Total</a></span>
+						<span class="md-subhead"><a href="#!/ports">{{WorkersTotal | number}} Connections Total</a></span>
 					</md-card-title-text>
 					<md-card-title-text>
 						<span class="md-headline">{{poolStats.global.totalMinersPaid}}</span>
-						<span class="md-subhead">Miners Paid <a href="#/payments"><md-divider md-inset></md-divider>{{poolStats.global.totalPayments}} Payments</a></span>
+						<span class="md-subhead">Miners Paid <a href="#!/payments"><md-divider md-inset></md-divider>{{poolStats.global.totalPayments}} Payments</a></span>
 					</md-card-title-text>
 				</md-card-title>
 			</md-card>
@@ -83,7 +83,7 @@
 							<span>TradeOgre</span>
 							<md-divider md-inset></md-divider>
 							<span class="md-subhead">MSR to EUR: €{{(btceur * tomsr).toFixed(4)}}</span>
-<!--                            <span class="md-subhead"><a href="#/home">Average effort {{overallEffort | number:2 }} %</a></span> -->
+<!--                            <span class="md-subhead"><a href="#!/home">Average effort {{overallEffort | number:2 }} %</a></span> -->
                             
 						</div>						
 					</md-card-title-text>

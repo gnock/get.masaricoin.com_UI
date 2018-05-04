@@ -77,31 +77,31 @@ body {
           </md-toolbar>
           <md-list>
             <md-list-item>
-              <md-button href="#/home" ng-class="isActivePage('home')">
+              <md-button href="#!/home" ng-class="isActivePage('home')">
                 <md-icon md-font-set="material-icons" class="menu-item">home</md-icon>
                 Home
               </md-button>
             </md-list-item>
             <md-list-item>
-              <md-button href="#/dashboard" ng-class="isActivePage('dashboard')">
+              <md-button href="#!/dashboard" ng-class="isActivePage('dashboard')">
                 <md-icon md-font-set="material-icons" class="menu-item">dashboard</md-icon> 
                 Dashboard
               </md-button>
             </md-list-item>
             <md-list-item>
-              <md-button href="#/blocks" ng-class="isActivePage('blocks')">
+              <md-button href="#!/blocks" ng-class="isActivePage('blocks')">
                 <md-icon md-font-set="material-icons" class="menu-item">reorder</md-icon>
                 Blocks
               </md-button>
             </md-list-item>
             <md-list-item>
-              <md-button href="#/payments" ng-class="isActivePage('payments')">
+              <md-button href="#!/payments" ng-class="isActivePage('payments')">
                 <md-icon md-font-set="material-icons" class="menu-item">payments</md-icon>
                 Payments
               </md-button>
             </md-list-item>
             <md-list-item>
-              <md-button href="#/ports" ng-class="isActivePage('ports')">
+              <md-button href="#!/ports" ng-class="isActivePage('ports')">
                 <md-icon md-font-set="material-icons" class="menu-item">import_export</md-icon>
                 Port List
               </md-button>
@@ -113,19 +113,19 @@ body {
               </md-button>
             </md-list-item> 
             <md-list-item>
-              <md-button href="#/help/chat" ng-class="isActivePage('support')">
+              <md-button href="#!/help/chat" ng-class="isActivePage('support')">
                 <md-icon md-font-set="material-icons" class="menu-item">group</md-icon>
                 Global Support
               </md-button>
             </md-list-item>-->
             <md-list-item>
-              <md-button href="#/help/getting_started" ng-class="isActivePage('help/getting_started')">
+              <md-button href="#!/help/getting_started" ng-class="isActivePage('help/getting_started')">
                 <md-icon md-font-set="material-icons" class="menu-item">launch</md-icon>
                 Getting Started
               </md-button>
             </md-list-item>
 	    <md-list-item>
-		<md-button href="#/help/config_generator" ng-class="isActivePage('help/config_generator')">
+		<md-button href="#!/help/config_generator" ng-class="isActivePage('help/config_generator')">
                 <md-icon md-font-set="material-icons" class="menu-item">brush</md-icon>
                 Config generator
               </md-button>
@@ -155,7 +155,7 @@ body {
                     </md-button>
                 </md-list-item>	  
     <!--    <md-list-item>
-              <md-button href="#/help/faq" ng-class="isActivePage('help/faq')">
+              <md-button href="#!/help/faq" ng-class="isActivePage('help/faq')">
                 <md-icon md-font-set="material-icons" class="menu-item">help_outline</md-icon>
                 FAQ
               </md-button>
@@ -206,7 +206,7 @@ ist-item>-->
               </md-button>
               <span class="flex text-center wrap">Network: <b class="nowrap">{{network.difficulty | difficultyToHashRate | toHashRate}}</b></a></span>
               <span class="flex text-center wrap">Pool: <b class="nowrap">{{poolStats.global.hashRate | toHashRate}}</b></a></span>
-              <span class="flex text-center wrap" style="color:#FFE67E;"><a href="#/dashboard">You: <b class="nowrap">{{yourTotalHashRate | toHashRate}}</b></a></span>
+              <span class="flex text-center wrap" style="color:#FFE67E;"><a href="#!/dashboard">You: <b class="nowrap">{{yourTotalHashRate | toHashRate}}</b></a></span>
               <div>
                 <md-button class="md-raised md-accent" aria-label="Miner Login" ng-click="minerLogin($event)" ng-if="!isLoggedIn()">
                   <md-icon class="login">settings</md-icon>

@@ -11,7 +11,7 @@ app.controller('AdminLoginCtrl', function($scope, $location, $route, dataService
 			if (data.success){
 				data.remember  = $scope.remember;
 				dataService.setAuthToken(data);
-				$location.path('#/dashboard');
+				$location.path('#!/dashboard');
 			} else {
 				// $mdDialog.hide(false);
 			}

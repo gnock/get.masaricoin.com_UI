@@ -37,7 +37,7 @@ app.controller('FAQCtrl', function($scope, $location, $anchorScroll, $sce, dataS
         },
         {
             title: "How do I start mining?",
-            answer: $sce.trustAsHtml("You can start mining today if you have a computer that sits idle. Monero can be mined on CPUs, GPU's or even a raspberry PI. To start mining you need to find the right mining software for your hardware and get going.<br/><br/>Read <a hred='#/help/getting_started'>Getting Started</a> for more details.")
+            answer: $sce.trustAsHtml("You can start mining today if you have a computer that sits idle. Monero can be mined on CPUs, GPU's or even a raspberry PI. To start mining you need to find the right mining software for your hardware and get going.<br/><br/>Read <a hred='#!/help/getting_started'>Getting Started</a> for more details.")
         },
         {
             title: "What is pool mining?",
@@ -67,7 +67,7 @@ app.controller('FAQCtrl', function($scope, $location, $anchorScroll, $sce, dataS
         },
         {
             title: "Getting paid in BTC",
-            answer: $sce.trustAsHtml("nodejs-pool supports direct payments to btc. This is done by using the shapeshift API to convert your XMR and send them to a BTC wallet.<br/><br/>To configure BTC payments please have a look at <a href='#/help/getting_started'>Getting Started</a> command line samples.")
+            answer: $sce.trustAsHtml("nodejs-pool supports direct payments to btc. This is done by using the shapeshift API to convert your XMR and send them to a BTC wallet.<br/><br/>To configure BTC payments please have a look at <a href='#!/help/getting_started'>Getting Started</a> command line samples.")
         },
         {
             title: "Payments to exchanges/markets?",
@@ -93,7 +93,7 @@ app.controller('FAQCtrl', function($scope, $location, $anchorScroll, $sce, dataS
         },
         {
             title: "Software?",
-            answer: $sce.trustAsHtml("Read -- <a href='#/help/getting_started'>Getting Started</a>.")
+            answer: $sce.trustAsHtml("Read -- <a href='#!/help/getting_started'>Getting Started</a>.")
         }
         ],
         "Support":[
