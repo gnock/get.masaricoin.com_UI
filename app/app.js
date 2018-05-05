@@ -219,22 +219,22 @@ var app = angular.module('poolui', [
 				}
 				$scope.overallEffort = (totalLuck / blockCount)*100;
             		});
-				
-			    $.getJSON("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=USD", function(data) {
-				$scope.btcusd = (data[0].price_usd * 1).toFixed(3);
+				$.getJSON("https://api.coinmarketcap.com/v1/ticker/masari/?convert=EUR", function(data) {
+				$scope.msrusd = (data[0].price_usd * 1).toFixed(4);
+				$scope.msreur = (data[0].price_eur * 1).toFixed(4);
+				$scope.msrbtc = (data[0].price_btc * 1).toFixed(8);
+				});
+				$.getJSON("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=EUR", function(data) {
+				$scope.btcusd = (data[0].price_usd * 1).toFixed(4);
+				$scope.btceur = (data[0].price_eur * 1).toFixed(4);
 				});
 				$.getJSON("https://www.southxchange.com/api/price/msr/btc", function(data) {
-				$scope.msrbtc = (data["Last"] * 1).toFixed(8);
+				$scope.msrbtcse = (data["Last"] * 1).toFixed(8);
 				});
-				$.getJSON("https://www.southxchange.com/api/price/msr/usd", function(data) {
-				$scope.aeonusd = (data["Last"] * 1).toFixed(4);
+				$.getJSON("https://tradeogre.com/api/v1/ticker/BTC-MSR", function(data) {
+				$scope.msrbtcto = (data["price"] * 1).toFixed(8);
 				});
-				 $.getJSON("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=EUR", function(data) {
-				$scope.btceur = (data[0].price_eur * 1).toFixed(3);
-				});
-				 $.getJSON("https://tradeogre.com/api/v1/ticker/BTC-MSR", function(data) {
-				$scope.tomsr = (data["price"] * 1).toFixed(8);
-				});
+				
 			
 					
 	        						// CRYPTONATOR XMR/USD RATE
@@ -278,20 +278,20 @@ var app = angular.module('poolui', [
 		
 		$interval(function(){ // Start price timer 
 	            
-				$.getJSON("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=USD", function(data) {
-				$scope.btcusd = (data[0].price_usd * 1).toFixed(3);
+				$.getJSON("https://api.coinmarketcap.com/v1/ticker/masari/?convert=EUR", function(data) {
+				$scope.msrusd = (data[0].price_usd * 1).toFixed(4);
+				$scope.msreur = (data[0].price_eur * 1).toFixed(4);
+				$scope.msrbtc = (data[0].price_btc * 1).toFixed(8);
+				});
+				$.getJSON("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=EUR", function(data) {
+				$scope.btcusd = (data[0].price_usd * 1).toFixed(4);
+				$scope.btceur = (data[0].price_eur * 1).toFixed(4);
 				});
 				$.getJSON("https://www.southxchange.com/api/price/msr/btc", function(data) {
-				$scope.msrbtc = (data["Last"] * 1).toFixed(8);
-				});
-				$.getJSON("https://www.southxchange.com/api/price/msr/usd", function(data) {
-				$scope.aeonusd = (data["Last"] * 1).toFixed(4);
-				});
-				 $.getJSON("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=EUR", function(data) {
-				$scope.btceur = (data[0].price_eur * 1).toFixed(3);
+				$scope.msrbtcse = (data["Last"] * 1).toFixed(8);
 				});
 				$.getJSON("https://tradeogre.com/api/v1/ticker/BTC-MSR", function(data) {
-				$scope.tomsr = (data["price"] * 1).toFixed(8);
+				$scope.msrbtcto = (data["price"] * 1).toFixed(8);
 				});
 				
 
