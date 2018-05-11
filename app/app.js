@@ -76,7 +76,7 @@ var app = angular.module('poolui', [
                         activetab: 'help'
                 });
 
-		$routeProvider.otherwise({redirectTo: '/dashboard'});
+		$routeProvider.otherwise({redirectTo: '/home'});
 
 	}]);
 
