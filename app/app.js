@@ -222,15 +222,11 @@ var app = angular.module('poolui', [
 				$scope.overallEffort = (totalLuck / blockCount)*100;
             		});
 				
-<<<<<<< HEAD
 				
 				$.getJSON("https://www.southxchange.com/api/price/msr/usd", function(data) {
 				$scope.aeonusd = (data["Last"] * 1).toFixed(4);
 				});
 				 $.getJSON("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=EUR", function(data) {
-=======
-				$.getJSON("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=EUR", function(data) {
->>>>>>> e8d83847c98c4065315e79d1acc80765d807173d
 				$scope.btceur = (data[0].price_eur * 1).toFixed(3);
 				$scope.btcusd = (data[0].price_usd * 1).toFixed(3);
 				});
@@ -242,7 +238,6 @@ var app = angular.module('poolui', [
 				});
 				$.getJSON("https://tradeogre.com/api/v1/ticker/BTC-MSR", function(data) {
 				$scope.msrbtcto = (data["price"] * 1).toFixed(8);
-<<<<<<< HEAD
 				});
 				$.getJSON("https://www.southxchange.com/api/price/msr/btc", function(data) {
 				$scope.msrbtcse = (data["Last"] * 1).toFixed(8);
@@ -257,12 +252,6 @@ var app = angular.module('poolui', [
 				//$scope.etnusd = (data[0].price_usd * 1).toFixed(3);						// CRYPTONATOR XMR/USD RATE
 				//$scope.etnweekrev = (1000/$scope.network.difficulty)*86400*7*$scope.network.value*$scope.etnusd;
 			//});				
-=======
-				});
-				$.getJSON("https://www.southxchange.com/api/price/msr/btc", function(data) {
-				$scope.msrbtcse = (data["Last"] * 1).toFixed(8);
-				});			
->>>>>>> e8d83847c98c4065315e79d1acc80765d807173d
 		}
 
 		var loadOnce = function () {
@@ -297,15 +286,11 @@ var app = angular.module('poolui', [
 		
 		$interval(function(){ // Start price timer 
 	            
-<<<<<<< HEAD
 				
 				$.getJSON("https://www.southxchange.com/api/price/msr/usd", function(data) {
 				$scope.aeonusd = (data["Last"] * 1).toFixed(4);
 				});
 				 $.getJSON("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=EUR", function(data) {
-=======
-				$.getJSON("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=EUR", function(data) {
->>>>>>> e8d83847c98c4065315e79d1acc80765d807173d
 				$scope.btceur = (data[0].price_eur * 1).toFixed(3);
 				$scope.btcusd = (data[0].price_usd * 1).toFixed(3);
 				});
@@ -317,18 +302,17 @@ var app = angular.module('poolui', [
 				});
 				$.getJSON("https://tradeogre.com/api/v1/ticker/BTC-MSR", function(data) {
 				$scope.msrbtcto = (data["price"] * 1).toFixed(8);
-<<<<<<< HEAD
-				});
-				$.getJSON("https://www.southxchange.com/api/price/msr/btc", function(data) {
-				$scope.msrbtcse = (data["Last"] * 1).toFixed(8);
-=======
->>>>>>> e8d83847c98c4065315e79d1acc80765d807173d
 				});
 				$.getJSON("https://www.southxchange.com/api/price/msr/btc", function(data) {
 				$scope.msrbtcse = (data["Last"] * 1).toFixed(8);
 				});
-				// CRYPTONATOR XMR/USD RATE
-				//$scope.aeonweekrev = (1000/$scope.network.difficulty)*86400*7*$scope.network.value*$scope.aeonusd;	
+				
+
+			
+				
+						// CRYPTONATOR XMR/USD RATE
+				//$scope.aeonweekrev = (1000/$scope.network.difficulty)*86400*7*$scope.network.value*$scope.aeonusd;
+			
 		}, 60000);
 		
 		// Start address tracking servuce after starting timer, only one callback supported at a time
