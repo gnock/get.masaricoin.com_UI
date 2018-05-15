@@ -28,9 +28,9 @@ a {
   color: rgb(101, 132, 186); 
 }
 
-a:link { text-decoration: none; }
-a:visited { color: rgb(132, 186, 101); } 
-a:hover   { color: rgb(132, 186, 101); }
+a:link { text-decoration: none; },
+a:visited { color: #5F858C; } 
+a:hover   { color: #5F858C; }
 a:active  {
   transition: color .3s;
   color: rgb(204, 122, 0);
@@ -83,7 +83,7 @@ md-toolbar {
 }
 
 #main {
-  background: #5F848B;
+  background: #5F858C;
 }
 
 .maintoolbar {
