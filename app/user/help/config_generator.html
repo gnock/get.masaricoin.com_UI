@@ -62,14 +62,14 @@
                         [</br>
                         {"pool_address": "{{ example_config['pool_address'] }}",</br>
 						"wallet_address": "{{ example_config['username'] }}",</br>
-                        "rig_id" : "", </br>
+                        "rig_id" : "{{ example_config['worker'] }}", </br>
 						"pool_password": "{{ example_config['password'] }}",</br>
                         "use_nicehash" : false,</br>
                         "use_tls" : false,</br>
                         "tls_fingerprint" : "",</br>
                         "pool_weight" : 1 },</br>
                         ],</br>
-                        "currency" : "cryptonight_v7",
+                        "currency" : "masari",
 					</code>
 			</div>
 			<h3>Example configuration for <a href="https://github.com/xmrig/xmrig/releases" target="_blank">XMRIG</a>, <a href="https://github.com/xmrig/xmrig-nvidia/releases" target="_blank">XMRIG-NVIDIA</a>:</h3>
@@ -96,8 +96,8 @@
 						"user": "{{ example_config['username'] }}",</br>
 						"pass": "{{ example_config['password'] }}",</br>
             			"keepalive": true,</br>
-            			"nicehash": false</br>
-                        "variant": 1</br>
+            			"nicehash": false,</br>
+                        "variant": "msr"</br>
                         }</br>
                         ],</br>
                         }

@@ -1,3 +1,93 @@
+<script src="js/modernizr.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		var masaricoin_api = 'https://get.masaricoin.com';
+		
+		 $(function(){
+			//nodejs-pool(s)
+			$.getJSON(masaricoin_api+ '/api/network/stats', function(data){
+					renderNetwork(data);
+				});	
+			var finalcountdown;
+			function renderNetwork(stats){
+				currentHeight = parseFloat(stats.height);
+				forkHeight = 204000;
+				blocks2go = forkHeight - currentHeight;											
+				lastBlockTimestamp = parseFloat(stats.ts)*1000;
+				console.log("Last Block:" + currentHeight);
+				blockseconds = blocks2go * 2 * 60 * 1000;
+				console.log("Blocks left until fork:" + blocks2go);
+				var forkdeadline = lastBlockTimestamp + blockseconds;
+				console.log("forkdeadline:" + forkdeadline);
+				finalcountdown = forkdeadline - Date.parse(new Date());
+				console.log("finalcountdown:" + finalcountdown);
+				
+				var deadline = new Date(Date.parse(new Date())+ parseInt(finalcountdown));
+				console.log("Fork Date:"+deadline);
+				console.log("Fork Date2:"+ new Date(forkdeadline));
+				initializeClock('counter', deadline);
+			}
+
+			function getTimeRemaining(endtime) {
+			  var t = Date.parse(endtime) - Date.parse(new Date());
+			  var seconds = Math.floor((t / 1000) % 60);
+			  var minutes = Math.floor((t / 1000 / 60) % 60);
+			  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+			  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+			  if(t < 0){
+				days = 0;
+				hours = 0;
+				minutes = 0;
+				seconds = 0;
+			  }
+			  
+			  return {
+				'total': t,
+				'days': days,
+				'hours': hours,
+				'minutes': minutes,
+				'seconds': seconds
+			  };
+			}
+			function initializeClock(id, endtime) {
+			  var clock = document.getElementById(id);
+			  var daysSpan = clock.querySelector('#days');
+			  var hoursSpan = clock.querySelector('#hours');
+			  var minutesSpan = clock.querySelector('#minutes');
+			  var secondsSpan = clock.querySelector('#seconds');
+
+			 function updateClock() {
+			  var t = getTimeRemaining(endtime);
+
+			  daysSpan.innerHTML = t.days;
+			  hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+			  minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+			  secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+			  if (t.total <= 0) {				
+			    clearInterval(timeinterval);
+				}
+			 }
+
+			  updateClock();
+			  var timeinterval = setInterval(updateClock, 1000);
+			}
+			/*
+			var deadline = new Date(Date.parse(new Date())+ parseInt(finalcountdown));
+			console.log(deadline);
+			initializeClock('counter', deadline);*/
+});
+	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics
+    ================================================= -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118118621-1%22%3E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-118118621-1');
+    </script>
 <md-card-content>
 	<div>
 		<div class="md-headline nowrap"><strong>Welcome to Masaricoin..!!</strong>
@@ -7,11 +97,18 @@
 	</div>
 	<div class="welcome">
 		<h3>Pool Maintenance And Upgrade News</h3>
-			<ul>
-            	<li>06/05/2018: We are ready for the fork at block 204,000 (apx. 06/18/2018)</li>
+        
+		   		<ul>
+            	<li id="counter">Masari fork in: <span><span id="days"></span> days</span> 
+		 						<span><span id="hours"></span> hrs</span>
+								<span><span id="minutes"></span> mins</span>
+		 						<span><span id="seconds"></span> secs</span></li>
+                <li>06/05/2018: We are ready for the fork at block 204,000 (apx. 06/18/2018)</li>
+
+		   			
 				<li>05/25/2018: Added Sub-Address Support</li>
             	<li>05/24/2018: Added Web Socket Mining </li>
-            	<li>05/01/2018: We've Merged!  Falcron and TheOtherGuys have merged into Masaricoin.com</li>
+            	
             	
             	
 			</ul>
@@ -29,3 +126,6 @@
 	</div>
 </md-card-content>
 
+  <script src="js/jquery-2.1.3.min.js"></script>
+   <script src="js/plugins.js"></script>
+   <script src="js/main.js"></script>

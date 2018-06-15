@@ -36,7 +36,9 @@ app.controller('ConfigGeneratorCtrl', function($scope) {
 
         
 		if (attr['with_worker_id'])
-			conf['password'] = attr['with_custom_worker'];
+			conf['password'] = attr['with_custom_worker'],
+			conf['worker'] = attr['with_custom_worker'];
+			
 		else
 			conf['password'] = 'x:';
 
