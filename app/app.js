@@ -70,6 +70,11 @@ var app = angular.module('poolui', [
 			controller: 'FAQCtrl',
 			activetab: 'help'
 		})
+		.when('/superpools', {
+			templateUrl: 'superpools.html',
+			//controller: 'FAQCtrl',
+			//activetab: 'help'
+		})
 		.when('/help/config_generator', {
                         templateUrl: 'user/help/config_generator.html',
                         controller: 'ConfigGeneratorCtrl',
