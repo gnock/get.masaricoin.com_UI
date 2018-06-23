@@ -1,6 +1,6 @@
 
 <script>
-window.location.href = 'https://testnet.masaricoing.com/#!/exchanges';
+window.location.href = 'https://testnet.masaricoin.com/#!/exchanges';
 </script>
 <?php
 /*
