@@ -286,7 +286,7 @@ ist-item>-->
       <script src="user/home/console.js"></script>
       <script src="user/dashboard/minerpayments.js"></script>
       <script src="user/dashboard/dashboard.js"></script>
-      <script src="user/dashboard/exchanges.js"></script>
+      <!-- <script src="user/dashboard/exchanges.js"></script> -->
       <script src="user/blocks/blocks.js"></script>
       <script src="user/payments/payments.js"></script>
       <script src="user/network/network.js"></script>
@@ -297,7 +297,7 @@ ist-item>-->
       <script src="user/help/config_generator.js"></script>
       <script src="user/help/faq.js"></script>
       <script src="notify/bootstrap-notify.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+      <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script> -->
       <script src="https://crate.widgetbot.io/v2" defer async data-cfasync="false">new Crate({"server":"411195170642460672","channel":"411195170642460674"})</script>
      
       <!--
