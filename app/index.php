@@ -111,14 +111,14 @@ body {
                 Dashboard
               </md-button>
             </md-list-item>
-             
+             <!--
               <md-list-item>
               <md-button href="#!/exchanges" ng-class="isActivePage('exchanges')">
                 <md-icon md-font-set="material-icons" class="menu-item">attach_money</md-icon> 
                 Exchanges
               </md-button>
             </md-list-item>
-            
+            -->
             <md-list-item>
               <md-button href="#!/blocks" ng-class="isActivePage('blocks')">
                 <md-icon md-font-set="material-icons" class="menu-item">reorder</md-icon>
@@ -153,6 +153,12 @@ body {
               <md-button href="#!/help/getting_started" ng-class="isActivePage('help/getting_started')">
                 <md-icon md-font-set="material-icons" class="menu-item">launch</md-icon>
                 Getting Started
+              </md-button>
+            </md-list-item>
+            <md-list-item>
+              <md-button href="#!/help/api" ng-class="isActivePage('help/api')">
+                <md-icon md-font-set="material-icons" class="menu-item">memory</md-icon>
+                API Info
               </md-button>
             </md-list-item>
 	    <md-list-item>
@@ -286,7 +292,8 @@ ist-item>-->
       <script src="user/home/console.js"></script>
       <script src="user/dashboard/minerpayments.js"></script>
       <script src="user/dashboard/dashboard.js"></script>
-      <script src="user/dashboard/exchanges.js"></script> -->
+      <!-- <script src="user/dashboard/exchanges.js"></script> -->
+      <script src="user/help/api.js"></script>
       <script src="user/blocks/blocks.js"></script>
       <script src="user/payments/payments.js"></script>
       <script src="user/network/network.js"></script>

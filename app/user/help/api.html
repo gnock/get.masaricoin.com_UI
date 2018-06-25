@@ -1,0 +1,102 @@
+<script>
+    //window.location.href = 'https://get.masaricoin.com/#!/api';
+</script>
+
+<div layout="row" flex>
+    <div layout="column" flex>
+        <md-card>
+            <md-toolbar class="md-table-toolbar md-default">
+                <div class="md-toolbar-tools">
+                    <span class="md-title">API - Pool Information</span></div>
+            </md-toolbar>
+            <md-card-content>
+                <p>
+                    Pool configuration values such as pool fees, minimum payouts, maturity depth, and more.<br />
+                    <a href="https://get.masaricoin.com/api/config" target="_blank">https://get.masaricoin.com/api/config</a>
+
+                    <md-divider md-inset></md-divider>
+                </p>
+                <p>General pool statistics such as current hashrate, round effort, and more.<br />
+                    <a href="https://get.masaricoin.com/api/pool/stats" target="_blank">https://get.masaricoin.com/api/pool/stats</a>
+                    <md-divider md-inset></md-divider>
+                </p>
+                <p>A list of available ports across all available pool nodes.<br />
+                    <a href="https://get.masaricoin.com/api/pool/ports" target="_blank">https://get.masaricoin.com/api/pool/ports</a>
+
+                    <md-divider md-inset></md-divider>
+                </p>
+                <p>The last 25 blocks mined by the pool and information about them. Query parameters 'page' and 'limit' are accepted to page through prior results.<br />
+                    <a href="https://get.masaricoin.com/api/pool/blocks" target="_blank">https://get.masaricoin.com/api/pool/blocks</a>
+
+                    <md-divider md-inset></md-divider>
+                </p>
+                <p>The last 10 payments transacted by the pool and information about them. Query parameters 'page' and 'limit' are accepted to page through prior results.<br />
+                    <a href="https://get.masaricoin.com/api/pool/payments" target="_blank">https://get.masaricoin.com/api/pool/payments</a>
+
+                    <md-divider md-inset></md-divider>
+                </p>
+                <p>Current information about the network, such as block height, difficulty, and more.<br />
+                    <a href="https://get.masaricoin.com/api/network/stats" target="_blank">https://get.masaricoin.com/api/network/stats</a>
+
+                    <md-divider md-inset></md-divider>
+                </p>
+            </md-card-content>
+        </md-card>
+    </div>
+
+
+</div>
+<div layout="column" flex>
+    <md-card>
+        <md-toolbar class="md-table-toolbar md-default">
+            <div class="md-toolbar-tools">
+                <span class="md-title">API - Miner Information</span></div>
+        </md-toolbar>
+        <md-card-content>
+            <md-input-container class="md-icon-float md-block">
+                <label>Wallet Address</label>
+                <md-icon class="material-icons">account_balance_wallet</md-icon>
+                <input ng-model="example_attr['with_custom_wallet']" ng-change="updateExample()" type="text" required="">
+            </md-input-container>
+            <div layout="row" flex>
+                <div flex="initial">
+                    <md-switch ng-model="example_attr['with_worker_id']" ng-change="updateExample()" aria-label="Worker">
+                    </md-switch>
+                </div>
+                <div flex="100">
+                    <md-input-container class="md-icon-float md-block">
+                        <label>Worker Name</label>
+                        <md-icon class="material-icons">add_box</md-icon>
+                        <input ng-model="example_attr['with_custom_worker']" ng-disabled="!example_attr['with_worker_id']" ng-change="updateExample()" type="text">
+                    </md-input-container>
+                </div>
+            </div>
+
+            <p>A list of active workers for this wallet address.<br />
+                <a href="https://get.masaricoin.com/api/miner/{{ example_config['username'] }}/identifiers" target="_blank">https://get.masaricoin.com/api/miner/{{ example_config['tuser']}}/identifiers</a>
+
+                <md-divider md-inset></md-divider>
+            </p>
+            <p>The last 25 payments transacted by the pool to this wallet address. Query parameters 'page' and 'limit' are accepted to page through prior results.<br />
+                <a href="https://get.masaricoin.com/api/miner/{{ example_config['username'] }}/payments" target="_blank">https://get.masaricoin.com/api/miner/{{ example_config['tuser']}}/payments</a>
+
+                <md-divider md-inset></md-divider>
+            </p>
+            <p>Hashrate statistics for all workers for this wallet address.<br />
+                <a href="https://get.masaricoin.com/api/miner/{{ example_config['username'] }}/stats/allWorkers" target="_blank">https://get.masaricoin.com/api/miner/{{ example_config['tuser']}}/stats/allWorkers</a>
+
+                <md-divider md-inset></md-divider>
+            </p>
+            <p>Total due, total paid, hashrate, and other overall statistics for this wallet address.<br />
+                <a href="https://get.masaricoin.com/api/miner/{{ example_config['username'] }}/stats" target="_blank">https://get.masaricoin.com/api/miner/{{ example_config['tuser']}}/stats</a>
+
+                <md-divider md-inset></md-divider>
+            </p>Total due, total paid, hashrate, and other overall statistics for this wallet address.<br />
+            <a href="https://get.masaricoin.com/api/miner/{{ example_config['username'] }}/stats/WORKERNAME" target="_blank">https://get.masaricoin.com/api/miner/{{ example_config['tuser']}}/stats/{{ example_config['worker'] }}</a>
+
+            <md-divider md-inset></md-divider>
+            </p>
+
+        </md-card-content>
+    </md-card>
+</div>
