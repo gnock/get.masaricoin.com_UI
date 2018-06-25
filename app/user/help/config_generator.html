@@ -53,6 +53,19 @@
 			        </md-input-container>        
 			        </div>
 			        </div>
+                     <div layout="row" flex>
+			        <div flex="initial">  
+			        <md-switch ng-model="example_attr['Static_Diff']" ng-change="updateExample()" aria-label="Email">
+			        </md-switch>
+			        </div>
+			        <div flex="100">
+			        <md-input-container class="md-icon-float md-block">
+			          <label>Static Difficulty</label>
+			          <md-icon class="material-icons">add_box</md-icon>
+			          <input type="text" minlength="4" maxlength="100"  ng-model="example_attr['StaticDiff']" ng-disabled="!example_attr['Static_Diff']" ng-change="updateExample()">
+			        </md-input-container>        
+			        </div>
+			        </div>
 			</div>
 			
 			<h3>Example configuration for <a href="https://github.com/masari-project/masari-xmr-stak/releases/tag/2.4.4" target="_blank">MSR-STAK (Use Version 2.4.4)</a>, <a href="https://github.com/fireice-uk/xmr-stak-cpu/releases" target="_blank">XMR-STAK-CPU</a>, <a href="https://github.com/fireice-uk/xmr-stak-amd/releases" target="_blank">XMR-STAK-AMD</a>, <a href="https://github.com/fireice-uk/xmr-stak-nvidia/releases" target="_blank">XMR-STAK-NVIDIA <b>(Use Version 2.4.5)</b> </a>:</h3>
@@ -61,7 +74,7 @@
                     	"pool_list" : </br>
                         [</br>
                         {"pool_address": "{{ example_config['pool_address'] }}",</br>
-						"wallet_address": "{{ example_config['username'] }}",</br>
+						"wallet_address": "{{ example_config['username'] }}{{example_config['static']}}",</br>
                         "rig_id" : "{{ example_config['worker'] }}", </br>
 						"pool_password": "{{ example_config['password'] }}",</br>
                         "use_nicehash" : false,</br>
@@ -93,7 +106,7 @@
                         "pools": [</br>
                         {</br>
 						"url": "{{ example_config['pool_address'] }}",</br>
-						"user": "{{ example_config['username'] }}",</br>
+						"user": "{{ example_config['username'] }}{{example_config['static']}}",</br>
 						"pass": "{{ example_config['password'] }}",</br>
             			"keepalive": true,</br>
             			"nicehash": false,</br>

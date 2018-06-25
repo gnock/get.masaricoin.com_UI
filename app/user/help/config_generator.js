@@ -11,17 +11,20 @@ app.controller('ConfigGeneratorCtrl', function($scope) {
 		'pool_address': '',
 		'username': '',
 		'password': '',
+		'static': '',
 	};
 
 
 	$scope.example_attr = {
 		'with_mail': false,
 		'with_worker_id': false,
+		'Static_Diff':false,
     'with_pool_address' : 'pool.masaricoin.com',
     'with_custom_wallet': '5p5F4crnMAJeiWyyCQd5YN8oW4schxacoCtzKUc77YSF9cygESXzybpJxrSYzH41pgGGHXEmWv2UwGin9LArx8uCGoaJkj5',
     'with_custom_worker': 'MyWorker',
     'with_custom_email': 'me@amawesome.com',
-    'with_custom_port': '5555',    
+    'with_custom_port': '5555', 
+	'StaticDiff': 'Auto',   
 	}
 
 
@@ -41,6 +44,9 @@ app.controller('ConfigGeneratorCtrl', function($scope) {
 			
 		else
 			conf['password'] = 'x:';
+			
+		if (attr['Static_Diff'])
+			conf['static'] = '+'+attr['StaticDiff'];
 
 		if (attr['with_mail'] && attr['with_worker_id'])
 			conf['password'] += ':';
