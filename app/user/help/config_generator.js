@@ -35,7 +35,7 @@ app.controller('ConfigGeneratorCtrl', function($scope) {
     
 		conf['username'] = attr['with_custom_wallet'];
     
-    conf['pool_address'] = attr['with_pool_address'] + ':' + attr['with_custom_port']; 
+    	conf['pool_address'] = attr['with_pool_address'] + ':' + attr['with_custom_port']; 
 
         
 		if (attr['with_worker_id'])
@@ -57,7 +57,13 @@ app.controller('ConfigGeneratorCtrl', function($scope) {
 		if (!attr['with_mail'] && !attr['with_worker_id']) {
 			conf['password'] = 'x';
 		}
+		if (!attr['Static_Diff'])
+			conf['static'] = '';
+		if (!attr['with_worker_id'])
+			conf['worker'] = '';
+	
 	}
+	
 		
   $scope.updateExample();
 });
