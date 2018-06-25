@@ -24,7 +24,7 @@ app.controller('ConfigGeneratorCtrl', function($scope) {
     'with_custom_worker': 'MyWorker',
     'with_custom_email': 'me@amawesome.com',
     'with_custom_port': '5555', 
-	'StaticDiff': 'Auto',   
+	'StaticDiff': '10000',   
 	}
 
 
