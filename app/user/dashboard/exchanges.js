@@ -401,6 +401,9 @@ function tickerALT(points) {
     $scope.$on("$routeChangeStart", function () {
         timerService.remove("SouthEx");
 		timerService.remove("StocksEx");
+		timerService.remove("TradeOgre");
+		timerService.remove("Altex");
+		
     });
 
 });
