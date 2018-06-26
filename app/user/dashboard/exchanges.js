@@ -101,6 +101,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
     }
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
     		ctx.canvas.height = 250;
+			ctx.canvas.width = 400;
 		}
 		var chart = new Chart(ctx, {
     // The type of chart we want to create
@@ -175,6 +176,7 @@ function tickerSTE(points) {
     }
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
     		ctx.canvas.height = 250;
+			ctx.canvas.width = 400;
 		}
 		var chart = new Chart(ctx, {
     // The type of chart we want to create
@@ -249,6 +251,7 @@ function tickerTO(points) {
     }
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
     		ctx.canvas.height = 250;
+			ctx.canvas.width = 400;
 		}
 		var chart = new Chart(ctx, {
     // The type of chart we want to create
@@ -320,6 +323,7 @@ function tickerALT(points) {
     }
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
     		ctx.canvas.height = 250;
+			ctx.canvas.width = 400;
 		}
 		var chart = new Chart(ctx, {
     // The type of chart we want to create
