@@ -99,7 +99,9 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 		
 		iLabels.push(tempdate.toTimeString());
     }
-		
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+    		ctx.canvas.height = 250;
+		}
 		var chart = new Chart(ctx, {
     // The type of chart we want to create
     	type: 'line',
@@ -171,7 +173,9 @@ function tickerSTE(points) {
 		
 		iLabels.push(tempdate.toTimeString());
     }
-		
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+    		ctx.canvas.height = 250;
+		}
 		var chart = new Chart(ctx, {
     // The type of chart we want to create
     	type: 'line',
@@ -244,9 +248,8 @@ function tickerTO(points) {
 		
     }
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-    ctx.canvas.width = 400;
-	ctx.canvas.height = 250;
-}
+    		ctx.canvas.height = 250;
+		}
 		var chart = new Chart(ctx, {
     // The type of chart we want to create
     	type: 'line',
@@ -315,7 +318,9 @@ function tickerALT(points) {
 		var tempdate = new Date(points[iPoint].time);
 		iLabels.push(tempdate.toTimeString());
     }
-		
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+    		ctx.canvas.height = 250;
+		}
 		var chart = new Chart(ctx, {
     // The type of chart we want to create
     	type: 'line',
