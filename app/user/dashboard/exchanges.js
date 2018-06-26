@@ -24,7 +24,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
         });
 		
 		$.ajax({
-    	url:'https://api.altex.exchange/v1//marketHistory/market/BTC_MSR'
+    	url:'https://api.altex.exchange/v1/marketHistory/market/BTC_MSR'
 		}).done(function(data){
     	tickerALT(data["data"]);
 		});	
@@ -103,6 +103,8 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 		var chart = new Chart(ctx, {
     // The type of chart we want to create
     	type: 'line',
+		
+		
 
     // The data for our dataset
     data: {
@@ -231,13 +233,20 @@ function tickerTO(points) {
 		var iLabels = [];
 		
 		for (var iPoint in points){
+		
+		
         data.push(parseFloat(points[iPoint].price));
 		SEType.push(points[iPoint].type.toUpperCase());
         SEqty.push(points[iPoint].quantity);
 		var tempdate = new Date(points[iPoint].date);
 		iLabels.push(tempdate.toTimeString());
-    }
 		
+		
+    }
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+    ctx.canvas.width = 400;
+	ctx.canvas.height = 250;
+}
 		var chart = new Chart(ctx, {
     // The type of chart we want to create
     	type: 'line',
