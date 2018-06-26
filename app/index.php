@@ -111,14 +111,14 @@ body {
                 Dashboard
               </md-button>
             </md-list-item>
-             <!--
+             
               <md-list-item>
               <md-button href="#!/exchanges" ng-class="isActivePage('exchanges')">
                 <md-icon md-font-set="material-icons" class="menu-item">attach_money</md-icon> 
                 Exchanges
               </md-button>
             </md-list-item>
-            -->
+            
             <md-list-item>
               <md-button href="#!/blocks" ng-class="isActivePage('blocks')">
                 <md-icon md-font-set="material-icons" class="menu-item">reorder</md-icon>

@@ -66,11 +66,11 @@ var app = angular.module('poolui', [
 			activetab: 'api'
 		})
 		
-		//.when('/exchanges', {
-			//templateUrl: 'user/dashboard/exchanges.php',
-			//controller: 'ExchangeCtrl',
-			//activetab: 'exchanges'
-		//})
+		.when('/exchanges', {
+			templateUrl: 'user/dashboard/exchanges.php',
+			controller: 'ExchangeCtrl',
+			activetab: 'exchanges'
+		})
 		
 		.when('/help/getting_started', {
 			templateUrl: 'user/help/getting_started.html',
