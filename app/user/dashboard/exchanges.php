@@ -14,10 +14,14 @@
 	left:60%;
 }
 .Charts {
-	width:400;
-	height:90;
+	position:relative;
+	height:450px;
+	width:400px;
+	margin:auto;
 	
 }
+
+	
 
 	
 @media only screen and (max-width: 700px) {
@@ -51,7 +55,7 @@
 				</div>
 			</md-toolbar>
 			<md-card-content>
-            <canvas id="TradeOgre" width="400" height="125"></canvas>
+            <canvas id="TradeOgre" width="400" height="150"></canvas>
 
 <table style="width:90%; margin-left:auto; margin-right:auto;">
 <tr style="text-align:center;">
@@ -81,7 +85,7 @@
 				</div>
 			</md-toolbar>
 			<md-card-content>
-            <canvas id="SouthEx" width="400" height="125"></canvas>
+            <canvas id="SouthEx" width="400" height="150"></canvas>
 
 <table style="width:90%; margin-left:auto; margin-right:auto;">
 <tr style="text-align:center;">
@@ -126,7 +130,7 @@
 				</div>
 			</md-toolbar>
 			<md-card-content>
-            <canvas id="Altex" width="400" height="125"></canvas>
+            <canvas id="Altex" width="400" height="150"></canvas>
 
 <table style="width:90%; margin-left:auto; margin-right:auto;">
 <tr style="text-align:center;">
@@ -156,7 +160,7 @@
 				</div>
 			</md-toolbar>
 			<md-card-content>
-            <canvas id="StocksEx" width="400" height="125"></canvas>
+            <canvas id="StocksEx" width="400" height="150"></canvas>
 
 <table style="width:90%; margin-left:auto; margin-right:auto;">
 <tr style="text-align:center;">
