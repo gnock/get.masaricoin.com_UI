@@ -81,7 +81,7 @@
 		<md-card flex>
 			<md-toolbar class="md-table-toolbar md-default">
 				<div class="md-toolbar-tools" style="background-image:url(../../assets/exchange.fw.png)">
-					<span class="md-title">SouthXchange <span class="RemPhone">-</span><br class="rwd-break" /> Trades and Current Stats</span>
+					<span class="md-title">SouthXchange <span class="RemPhone">-</span><br class="rwd-break" />Last Trades and Current Stats</span>
 				</div>
 			</md-toolbar>
 			<md-card-content>
