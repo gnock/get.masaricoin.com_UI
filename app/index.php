@@ -292,7 +292,7 @@ ist-item>-->
       <script src="user/home/console.js"></script>
       <script src="user/dashboard/minerpayments.js"></script>
       <script src="user/dashboard/dashboard.js"></script>
-      <!-- <script src="user/dashboard/exchanges.js"></script> -->
+       <script src="user/dashboard/exchanges.js"></script>
       <script src="user/help/api.js"></script>
       <script src="user/blocks/blocks.js"></script>
       <script src="user/payments/payments.js"></script>
