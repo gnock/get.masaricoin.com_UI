@@ -44,6 +44,36 @@
 
 
 	<div layout="column" layout-gt-sm="row">
+    <md-card flex>
+			<md-toolbar class="md-table-toolbar md-default">
+				<div class="md-toolbar-tools" style="background-image:url(../../assets/exchangepurp.fw.png)" >
+					<span class="md-title">TradeOgre - Last Trades and Current Stats</span>
+				</div>
+			</md-toolbar>
+			<md-card-content>
+            <canvas id="TradeOgre" width="400" height="125"></canvas>
+
+<table style="width:90%; margin-left:auto; margin-right:auto;">
+<tr style="text-align:center;">
+<th>Current Price</th>
+<th class="RemPhone">24 Hour Volume</th>
+<th class="RemPhone">Open Price</th>
+<th class="RemPhone">High / Low</th>
+<th>Current Bid</th>
+<th>Current Ask</th>
+</tr>
+<tr style="text-align:center;">
+<td>{{TOPrice}}</td>
+<td class="RemPhone">{{TOVol}} BTC</td>
+<td class="RemPhone">{{TOPrev}}</td>
+<td class="RemPhone">{{TOHigh}} / {{TOLow}}</td>
+<td>{{TOBid}}</td>
+<td>{{TOAsk}}</td>
+</tr>
+</table>
+
+		</md-card-content>
+	</md-card>
 		<md-card flex>
 			<md-toolbar class="md-table-toolbar md-default">
 				<div class="md-toolbar-tools" style="background-image:url(../../assets/exchange.fw.png)">
@@ -78,66 +108,11 @@
 <!-- Stocks.Exchange Information -->
 
 
-		<md-card flex>
-			<md-toolbar class="md-table-toolbar md-default">
-				<div class="md-toolbar-tools" style="background-image:url(../../assets/exchangepurp.fw.png)">
-					<span class="md-title">Stocks.Exchange - Last Trades and Current Stats</span>
-				</div>
-			</md-toolbar>
-			<md-card-content>
-            <canvas id="StocksEx" width="400" height="125"></canvas>
-
-<table style="width:90%; margin-left:auto; margin-right:auto;">
-<tr style="text-align:center;">
-<th>Current Price</th>
-<th class="RemPhone">24 Hour Volume</th>
-<th class="RemPhone">Open Price</th>
-<th>Current Bid</th>
-<th>Current Ask</th>
-</tr>
-<tr style="text-align:center;">
-<td>{{STEPrice}}</td>
-<td class="RemPhone">{{STEVol}} MSR</td>
-<td class="RemPhone">{{STEPrev}}</td>
-<td>{{STEBid}}</td>
-<td>{{STEAsk}}</td>
-</tr>
-</table>
-		</md-card-content>
-	</md-card>
+		
 </div>
 
 <div layout="column" layout-gt-sm="row" flex>
-		<md-card flex>
-			<md-toolbar class="md-table-toolbar md-default">
-				<div class="md-toolbar-tools" style="background-image:url(../../assets/exchangepurp.fw.png)" >
-					<span class="md-title">TradeOgre - Last Trades and Current Stats</span>
-				</div>
-			</md-toolbar>
-			<md-card-content>
-            <canvas id="TradeOgre" width="400" height="125"></canvas>
-
-<table style="width:90%; margin-left:auto; margin-right:auto;">
-<tr style="text-align:center;">
-<th>Current Price</th>
-<th class="RemPhone">24 Hour Volume</th>
-<th class="RemPhone">Open Price</th>
-<th class="RemPhone">High / Low</th>
-<th>Current Bid</th>
-<th>Current Ask</th>
-</tr>
-<tr style="text-align:center;">
-<td>{{TOPrice}}</td>
-<td class="RemPhone">{{TOVol}} BTC</td>
-<td class="RemPhone">{{TOPrev}}</td>
-<td class="RemPhone">{{TOHigh}} / {{TOLow}}</td>
-<td>{{TOBid}}</td>
-<td>{{TOAsk}}</td>
-</tr>
-</table>
-
-		</md-card-content>
-	</md-card>
+		
 
 
 
@@ -169,6 +144,34 @@
 <td class="RemPhone">{{ALTVar}}</td>
 <td>{{ALTBid}}</td>
 <td>{{ALTAsk}}</td>
+</tr>
+</table>
+		</md-card-content>
+	</md-card>
+    
+    <md-card flex>
+			<md-toolbar class="md-table-toolbar md-default">
+				<div class="md-toolbar-tools" style="background-image:url(../../assets/exchangepurp.fw.png)">
+					<span class="md-title">Stocks.Exchange - Last Trades and Current Stats</span>
+				</div>
+			</md-toolbar>
+			<md-card-content>
+            <canvas id="StocksEx" width="400" height="125"></canvas>
+
+<table style="width:90%; margin-left:auto; margin-right:auto;">
+<tr style="text-align:center;">
+<th>Current Price</th>
+<th class="RemPhone">24 Hour Volume</th>
+<th class="RemPhone">Open Price</th>
+<th>Current Bid</th>
+<th>Current Ask</th>
+</tr>
+<tr style="text-align:center;">
+<td>{{STEPrice}}</td>
+<td class="RemPhone">{{STEVol}} MSR</td>
+<td class="RemPhone">{{STEPrev}}</td>
+<td>{{STEBid}}</td>
+<td>{{STEAsk}}</td>
 </tr>
 </table>
 		</md-card-content>
