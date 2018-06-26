@@ -47,7 +47,7 @@
     <md-card flex>
 			<md-toolbar class="md-table-toolbar md-default">
 				<div class="md-toolbar-tools" style="background-image:url(../../assets/exchangepurp.fw.png)" >
-					<span class="md-title">TradeOgre - Last Trades and Current Stats</span>
+					<span class="md-title">TradeOgre <span class="RemPhone">-</span><br class="rwd-break" /> Last Trades and Current Stats</span>
 				</div>
 			</md-toolbar>
 			<md-card-content>
@@ -77,7 +77,7 @@
 		<md-card flex>
 			<md-toolbar class="md-table-toolbar md-default">
 				<div class="md-toolbar-tools" style="background-image:url(../../assets/exchange.fw.png)">
-					<span class="md-title">SouthXchange - Trades and Current Stats</span>
+					<span class="md-title">SouthXchange <span class="RemPhone">-</span><br class="rwd-break" /> Trades and Current Stats</span>
 				</div>
 			</md-toolbar>
 			<md-card-content>
@@ -122,7 +122,7 @@
 		<md-card flex>
 			<md-toolbar class="md-table-toolbar md-default">
 				<div class="md-toolbar-tools" style="background-image:url(../../assets/exchange.fw.png)">
-					<span class="md-title">Altex - Last Trades and Current Stats</span>
+					<span class="md-title">Altex <span class="RemPhone">-</span><br class="rwd-break" /> Last Trades and Current Stats</span>
 				</div>
 			</md-toolbar>
 			<md-card-content>
@@ -152,7 +152,7 @@
     <md-card flex>
 			<md-toolbar class="md-table-toolbar md-default">
 				<div class="md-toolbar-tools" style="background-image:url(../../assets/exchangepurp.fw.png)">
-					<span class="md-title">Stocks.Exchange - Last Trades and Current Stats</span>
+					<span class="md-title">Stocks.Exchange <span class="RemPhone">-</span><br class="rwd-break" /> Last Trades and Current Stats</span>
 				</div>
 			</md-toolbar>
 			<md-card-content>
