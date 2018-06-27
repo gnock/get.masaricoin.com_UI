@@ -24,7 +24,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
         });
 		
 		$.ajax({
-    	url:'https://api.crex24.com/v2/public/recentTrades?instrument=LTC-BTC&limit=25'
+    	url:'https://testnet.masaricoin.com/proxy.php?url='+encodeURIComponent('https://api.crex24.com/v2/public/recentTrades?instrument=LTC-BTC&limit=25')
 		}).done(function(data){
     	tickerCREX(data);
 		});	
@@ -57,7 +57,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 		$.getJSON("https://api.altex.exchange/v1/ticker", function(data) {
 			
 		
-			console.log(data["data"].BTC_MSR.last);
+			
 				$scope.ALTPrice = data["data"].BTC_MSR.last
 				$scope.ALTBid = data["data"].BTC_MSR.bid;
 				$scope.ALTAsk = data["data"].BTC_MSR.ask;
@@ -316,6 +316,7 @@ function tickerCREX(points) {
 		
 		for (var iPoint in points){
         data.push(parseFloat(points[iPoint].price));
+		console.log(points[iPoint].price);
 		SEType.push(points[iPoint].side.toUpperCase());
         SEqty.push(points[iPoint].volume);
 		var tempdate = new Date(points[iPoint].time);
