@@ -50,7 +50,7 @@
 	<div layout="column" layout-gt-sm="row">
     <md-card flex>
 			<md-toolbar class="md-table-toolbar md-default">
-				<div class="md-toolbar-tools" style="background-image:url(assets/To_Back.fw.png)" >
+				<div class="md-toolbar-tools" style="background-image:url(assets/TO_Back.fw.png)" >
 					
 				</div>
 			</md-toolbar>
@@ -80,7 +80,7 @@
 	</md-card>
 		<md-card flex>
 			<md-toolbar class="md-table-toolbar md-default">
-				<div class="md-toolbar-tools" style="background-image:url(assets/Sx_Back.fw.png)" >
+				<div class="md-toolbar-tools" style="background-image:url(assets/SX_Back.fw.png)" >
 					
 				</div>
 			</md-toolbar>
