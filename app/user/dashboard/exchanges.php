@@ -50,12 +50,12 @@
 	<div layout="column" layout-gt-sm="row">
     <md-card flex>
 			<md-toolbar class="md-table-toolbar md-default">
-				<div class="md-toolbar-tools" style="background-image:url(../../assets/exchangepurp.fw.png)" >
-					<span class="md-title">TradeOgre <span class="RemPhone">-</span><br class="rwd-break" /> Last Trades and Current Stats</span>
+				<div class="md-toolbar-tools" style="background-image:url(assets/To_Back.fw.png)" >
+					
 				</div>
 			</md-toolbar>
 			<md-card-content>
-            <canvas id="TradeOgre" width="400" height="125"></canvas>
+            <canvas id="TradeOgre" width="400" height="90"></canvas>
 
 <table style="width:90%; margin-left:auto; margin-right:auto;">
 <tr style="text-align:center;">
@@ -80,12 +80,12 @@
 	</md-card>
 		<md-card flex>
 			<md-toolbar class="md-table-toolbar md-default">
-				<div class="md-toolbar-tools" style="background-image:url(../../assets/exchange.fw.png)">
-					<span class="md-title">SouthXchange <span class="RemPhone">-</span><br class="rwd-break" />Last Trades and Current Stats</span>
+				<div class="md-toolbar-tools" style="background-image:url(assets/Sx_Back.fw.png)" >
+					
 				</div>
 			</md-toolbar>
 			<md-card-content>
-            <canvas id="SouthEx" width="400" height="125"></canvas>
+            <canvas id="SouthEx" width="400" height="90"></canvas>
 
 <table style="width:90%; margin-left:auto; margin-right:auto;">
 <tr style="text-align:center;">
@@ -125,12 +125,12 @@
 
 		<md-card flex>
 			<md-toolbar class="md-table-toolbar md-default">
-				<div class="md-toolbar-tools" style="background-image:url(../../assets/exchange.fw.png)">
-					<span class="md-title">Altex <span class="RemPhone">-</span><br class="rwd-break" /> Last Trades and Current Stats</span>
+				<div class="md-toolbar-tools" style="background-image:url(assets/CREX_Back.fw.png)" >
+				
 				</div>
 			</md-toolbar>
 			<md-card-content>
-            <canvas id="Altex" width="400" height="125"></canvas>
+            <canvas id="Crex" width="400" height="90"></canvas>
 
 <table style="width:90%; margin-left:auto; margin-right:auto;">
 <tr style="text-align:center;">
@@ -155,12 +155,12 @@
     
     <md-card flex>
 			<md-toolbar class="md-table-toolbar md-default">
-				<div class="md-toolbar-tools" style="background-image:url(../../assets/exchangepurp.fw.png)">
-					<span class="md-title">Stocks.Exchange <span class="RemPhone">-</span><br class="rwd-break" /> Last Trades and Current Stats</span>
+				<div class="md-toolbar-tools" style="background-image:url(assets/STX_Back.fw.png)" >
+					
 				</div>
 			</md-toolbar>
 			<md-card-content>
-            <canvas id="StocksEx" width="400" height="125"></canvas>
+            <canvas id="StocksEx" width="400" height="90"></canvas>
 
 <table style="width:90%; margin-left:auto; margin-right:auto;">
 <tr style="text-align:center;">

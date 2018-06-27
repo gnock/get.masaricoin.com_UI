@@ -24,9 +24,9 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
         });
 		
 		$.ajax({
-    	url:'https://api.altex.exchange/v1/marketHistory/market/BTC_MSR'
+    	url:'https://api.crex24.com/v2/public/recentTrades?instrument=LTC-BTC&limit=25'
 		}).done(function(data){
-    	tickerALT(data["data"]);
+    	tickerCREX(data);
 		});	
 	
 	
@@ -119,7 +119,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 
                 fill: false,
                 lineTension: 0,
-                borderColor: 'rgb(70, 185, 100)',
+                borderColor: 'rgb(63, 138, 205)',
                 data: data.reverse(),
 
         }]
@@ -192,7 +192,7 @@ function tickerSTE(points) {
 
                 fill: false,
                 lineTension: 0,
-                borderColor: 'rgb(95, 132, 139)',
+                borderColor: 'rgb(45, 49, 122)',
                 data: data.reverse(),
 
         }]
@@ -267,7 +267,7 @@ function tickerTO(points) {
 
                 fill: false,
                 lineTension: 0,
-                borderColor: 'rgb(95, 132, 139)',
+                borderColor: 'rgb(226, 227, 160)',
                 data: data,
 
         }]
@@ -306,9 +306,9 @@ function tickerTO(points) {
 });
 }
 
-function tickerALT(points) {
+function tickerCREX(points) {
 		
-		var ctx = document.getElementById('Altex').getContext('2d');
+		var ctx = document.getElementById('Crex').getContext('2d');
 		var data = [];
     	var SEType = [];
     	var SEqty = [];
@@ -316,10 +316,10 @@ function tickerALT(points) {
 		
 		for (var iPoint in points){
         data.push(parseFloat(points[iPoint].price));
-		SEType.push(points[iPoint].type.toUpperCase());
-        SEqty.push(points[iPoint].amount);
+		SEType.push(points[iPoint].side.toUpperCase());
+        SEqty.push(points[iPoint].volume);
 		var tempdate = new Date(points[iPoint].time);
-		iLabels.push(tempdate.toTimeString());
+		iLabels.push(points[iPoint].timestamp);
     }
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
     		ctx.canvas.height = 250;
@@ -339,7 +339,7 @@ function tickerALT(points) {
 
                 fill: false,
                 lineTension: 0,
-                borderColor: 'rgb(70, 185, 100)',
+                borderColor: 'rgb(76, 160, 160)',
                 data: data.reverse(),
 
         }]
@@ -392,8 +392,8 @@ function tickerALT(points) {
     tickerSTE();
 	timerService.register(tickerTO, 'TradeOgre');
     tickerTO();
-	timerService.register(tickerALT, 'Altex');
-    tickerALT();
+	timerService.register(tickerCREX, 'Crex');
+    tickerCREX();
 	
 	
 	
@@ -402,7 +402,7 @@ function tickerALT(points) {
         timerService.remove("SouthEx");
 		timerService.remove("StocksEx");
 		timerService.remove("TradeOgre");
-		timerService.remove("Altex");
+		timerService.remove("Crex");
 		
     });
 
