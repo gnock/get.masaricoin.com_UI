@@ -31,7 +31,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 	
 	
   $.getJSON('https://testnet.masaricoin.com/proxy.php?url='+encodeURIComponent('https://api.crex24.com/v2/public/tickers?instrument=MSR-BTC'), function(data) {
-                $scope.CREXPrice = (data["last"] * 1).toFixed(8);
+                $scope.CREXPrice = (data[0].last * 1).toFixed(8);
                 $scope.CREXBid = (data["bid"] * 1).toFixed(8);
                 $scope.CREXAsk = (data["ask"] * 1).toFixed(8);
                 $scope.CREXVar = (data["percentChange"] * 1).toFixed(2);
