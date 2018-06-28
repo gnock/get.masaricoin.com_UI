@@ -24,11 +24,21 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
         });
 		
 		$.ajax({
-    	url:'https://testnet.masaricoin.com/proxy.php?url='+encodeURIComponent('https://api.crex24.com/v2/public/recentTrades?instrument=LTC-BTC&limit=25')
+    	url:'https://testnet.masaricoin.com/proxy.php?url='+encodeURIComponent('https://api.crex24.com/v2/public/recentTrades?instrument=MSR-BTC&limit=25')
 		}).done(function(data){
     	tickerCREX(data);
 		});	
 	
+	
+	$.getJSON("https://testnet.masaricoin.com/proxy.php?url='+encodeURIComponent('https://api.crex24.com/v2/public/tickers?instrument=MSR-BTC", function(data) {
+				$scope.CREXPrice = (data["last"] * 1).toFixed(8);
+				$scope.CREXBid = (data["bid"] * 1).toFixed(8);
+				$scope.CREXAsk = (data["ask"] * 1).toFixed(8);
+				$scope.CREXVar = (data["percentChange"] * 1).toFixed(2);
+				$scope.CREXVol = (data["volumeInBtc"] * 1).toFixed(4);
+				$scope.CREXHigh = (data["high"] * 1).toFixed(8);
+				$scope.CREXLow = (data["low"] * 1).toFixed(8);
+				});
 	
 	$.getJSON("https://www.southxchange.com/api/price/msr/btc", function(data) {
 				$scope.SEPrice = (data["Last"] * 1).toFixed(8);
@@ -48,16 +58,11 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 				$scope.STEAsk = parseFloat(data[stedata].ask).toFixed(8);
 				$scope.STEPrev = parseFloat(data[stedata].lastDayAgo).toFixed(8);
 				$scope.STEVol = parseFloat(data[stedata].vol).toFixed(4);
-				
-				
 				}
 			}
 		}, 'json');
 		
 		$.getJSON("https://api.altex.exchange/v1/ticker", function(data) {
-			
-		
-			
 				$scope.ALTPrice = data["data"].BTC_MSR.last
 				$scope.ALTBid = data["data"].BTC_MSR.bid;
 				$scope.ALTAsk = data["data"].BTC_MSR.ask;
@@ -65,11 +70,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 				$scope.ALTLow = data["data"].BTC_MSR.low24;
 				$scope.ALTVol = data["data"].BTC_MSR.volume
 				$scope.ALTVar = data["data"].BTC_MSR.change;
-				
-				
-				
-			
-		}, 'json');
+			}, 'json');
 		
 		$.getJSON("https://tradeogre.com/api/v1/ticker/BTC-MSR", function(data) {
 				$scope.TOPrice = (data["price"] * 1).toFixed(8);
@@ -92,7 +93,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 		var iLabels = [];
 		
 		for( var iPoint in points){
-        data.push(parseFloat(points[iPoint].Price));
+        data.push((parseFloat(points[iPoint].Price).toFixed(8)));
         SEType.push(points[iPoint].Type.toUpperCase());
         SEqty.push(points[iPoint].Amount);
 		var tempdate = new Date(points[iPoint].At);
@@ -167,7 +168,7 @@ function tickerSTE(points) {
 		var iLabels = [];
 		
 		for( var iPoint in points){
-        data.push(parseFloat(points[iPoint].price));
+        data.push((parseFloat(points[iPoint].price).toFixed(8)));
         SEType.push(points[iPoint].type);
         SEqty.push(points[iPoint].quantity);
 		var tempdate = new Date(points[iPoint].timestamp);
@@ -241,7 +242,7 @@ function tickerTO(points) {
 		for (var iPoint in points){
 		
 		
-        data.push(parseFloat(points[iPoint].price));
+        data.push((parseFloat(points[iPoint].price).toFixed(8)));
 		SEType.push(points[iPoint].type.toUpperCase());
         SEqty.push(points[iPoint].quantity);
 		var tempdate = new Date(points[iPoint].date);
@@ -315,7 +316,7 @@ function tickerCREX(points) {
 		var iLabels = [];
 		
 		for (var iPoint in points){
-        data.push(parseFloat(points[iPoint].price));
+        data.push((parseFloat(points[iPoint].price).toFixed(8)));
 		console.log(points[iPoint].price);
 		SEType.push(points[iPoint].side.toUpperCase());
         SEqty.push(points[iPoint].volume);

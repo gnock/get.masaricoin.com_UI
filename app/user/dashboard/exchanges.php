@@ -142,12 +142,12 @@
 <th>Current Ask</th>
 </tr>
 <tr style="text-align:center;">
-<td>{{ALTPrice}}</td>
-<td class="RemPhone">{{ALTVol}}</td>
-<td class="RemPhone">{{ALTHigh}} / {{ALTLow}}</td>
-<td class="RemPhone">{{ALTVar}}</td>
-<td>{{ALTBid}}</td>
-<td>{{ALTAsk}}</td>
+<td>{{CREXPrice}}</td>
+<td class="RemPhone">{{CREXVol}}</td>
+<td class="RemPhone">{{CREXHigh}} / {{CREXLow}}</td>
+<td class="RemPhone">{{CREXVar}}</td>
+<td>{{CREXBid}}</td>
+<td>{{CREXAsk}}</td>
 </tr>
 </table>
 		</md-card-content>
