@@ -106,19 +106,11 @@
 
 		</md-card-content>
 	</md-card>
-
-
-
 <!-- Stocks.Exchange Information -->
-
-
-		
 </div>
 
 <div layout="column" layout-gt-sm="row" flex>
 		
-
-
 
 <!-- Stocks.Exchange Information -->
 
@@ -176,6 +168,73 @@
 <td class="RemPhone">{{STEPrev}}</td>
 <td>{{STEBid}}</td>
 <td>{{STEAsk}}</td>
+</tr>
+</table>
+		</md-card-content>
+	</md-card>
+</div>
+
+<div layout="column" layout-gt-sm="row" flex>
+		
+
+<!-- MapleChange and Altex -->
+
+
+		<md-card flex>
+			<md-toolbar class="md-table-toolbar md-default">
+				<div class="md-toolbar-tools" style="background-image:url(assets/ALT_Back.fw.png)" >
+				
+				</div>
+			</md-toolbar>
+			<md-card-content>
+            <canvas id="Altex" width="400" height="90"></canvas>
+
+<table style="width:90%; margin-left:auto; margin-right:auto;">
+<tr style="text-align:center;">
+<th>Current Price</th>
+<th class="RemPhone">24 Hour Volume</th>
+<th class="RemPhone">High / Low</th>
+<th class="RemPhone">Change</th>
+<th>Current Bid</th>
+<th>Current Ask</th>
+</tr>
+<tr style="text-align:center;">
+<td>{{ALTPrice}}</td>
+<td class="RemPhone">{{ALTVol}}</td>
+<td class="RemPhone">{{ALTHigh}} / {{ALTLow}}</td>
+<td class="RemPhone">{{ALTVar}}</td>
+<td>{{ALTBid}}</td>
+<td>{{ALTAsk}}</td>
+</tr>
+</table>
+		</md-card-content>
+	</md-card>
+    
+    <md-card flex>
+			<md-toolbar class="md-table-toolbar md-default">
+				<div class="md-toolbar-tools" style="background-image:url(assets/MAPLE_Back.fw.png)" >
+					
+				</div>
+			</md-toolbar>
+			<md-card-content>
+            <canvas id="Maple" width="400" height="90"></canvas>
+
+<table style="width:90%; margin-left:auto; margin-right:auto;">
+<tr style="text-align:center;">
+<th>Current Price</th>
+<th class="RemPhone">24 Hour Volume</th>
+<th class="RemPhone">High / Low</th>
+<th class="RemPhone">Change</th>
+<th>Current Bid</th>
+<th>Current Ask</th>
+</tr>
+<tr style="text-align:center;">
+<td>{{MPPrice}}</td>
+<td class="RemPhone">{{MPVol}}</td>
+<td class="RemPhone">{{MPHigh}} / {{MPLow}}</td>
+<td class="RemPhone">{{MPVar}}</td>
+<td>{{MPBid}}</td>
+<td>{{MPAsk}}</td>
 </tr>
 </table>
 		</md-card-content>
