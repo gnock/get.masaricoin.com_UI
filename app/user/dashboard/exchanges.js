@@ -30,15 +30,15 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 		});	
 	
 	
-	$.getJSON("https://testnet.masaricoin.com/proxy.php?url='+encodeURIComponent('https://api.crex24.com/v2/public/tickers?instrument=MSR-BTC", function(data) {
-				$scope.CREXPrice = (data["last"] * 1).toFixed(8);
-				$scope.CREXBid = (data["bid"] * 1).toFixed(8);
-				$scope.CREXAsk = (data["ask"] * 1).toFixed(8);
-				$scope.CREXVar = (data["percentChange"] * 1).toFixed(2);
-				$scope.CREXVol = (data["volumeInBtc"] * 1).toFixed(4);
-				$scope.CREXHigh = (data["high"] * 1).toFixed(8);
-				$scope.CREXLow = (data["low"] * 1).toFixed(8);
-				});
+  $.getJSON('https://testnet.masaricoin.com/proxy.php?url='+encodeURIComponent('https://api.crex24.com/v2/public/tickers?instrument=MSR-BTC'), function(data) {
+                $scope.CREXPrice = (data["last"] * 1).toFixed(8);
+                $scope.CREXBid = (data["bid"] * 1).toFixed(8);
+                $scope.CREXAsk = (data["ask"] * 1).toFixed(8);
+                $scope.CREXVar = (data["percentChange"] * 1).toFixed(2);
+                $scope.CREXVol = (data["volumeInBtc"] * 1).toFixed(4);
+                $scope.CREXHigh = (data["high"] * 1).toFixed(8);
+                $scope.CREXLow = (data["low"] * 1).toFixed(8);
+                });
 	
 	$.getJSON("https://www.southxchange.com/api/price/msr/btc", function(data) {
 				$scope.SEPrice = (data["Last"] * 1).toFixed(8);
