@@ -173,7 +173,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
                             var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
                             var SEtypedis = data.datasets[tooltipItem.datasetIndex].SEtype[tooltipItem.index];
                             var SEqtydis = data.datasets[tooltipItem.datasetIndex].SEqty[tooltipItem.index];
-                            return [label + ': ' + value + '', 'Quantity: ' + SEqtydis + '', 'Type: ' + SEtypedis];
+                            return [label + ': ' + value + ' - Quantity: ' + SEqtydis + '', 'Type: ' + SEtypedis];
                         }
                     }
                 }
@@ -248,7 +248,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
                             var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
                             var SEtypedis = data.datasets[tooltipItem.datasetIndex].SEtype[tooltipItem.index];
                             var SEqtydis = data.datasets[tooltipItem.datasetIndex].SEqty[tooltipItem.index];
-                            return [label + ': ' + value + '', 'Quantity: ' + SEqtydis + '', 'Type: ' + SEtypedis];
+                            return [label + ': ' + value + ' - Quantity: ' + SEqtydis + '', 'Type: ' + SEtypedis];
                         }
                     }
                 }
@@ -321,7 +321,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
                             var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
                             var SEtypedis = data.datasets[tooltipItem.datasetIndex].SEtype[tooltipItem.index];
                             var SEqtydis = data.datasets[tooltipItem.datasetIndex].SEqty[tooltipItem.index];
-                            return [label + ': ' + value + '', 'Quantity: ' + SEqtydis + '', 'Type: ' + SEtypedis];
+                            return [label + ': ' + value + ' - Quantity: ' + SEqtydis + '', 'Type: ' + SEtypedis];
                         }
                     }
                 }
@@ -397,7 +397,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
                             var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
                             var SEtypedis = data.datasets[tooltipItem.datasetIndex].SEtype[tooltipItem.index];
                             var SEqtydis = data.datasets[tooltipItem.datasetIndex].SEqty[tooltipItem.index];
-                            return [label + ': ' + value + '', 'Quantity: ' + SEqtydis + '', 'Type: ' + SEtypedis];
+                            return [label + ': ' + value + ' - Quantity: ' + SEqtydis + '', 'Type: ' + SEtypedis];
                         }
                     }
                 }
@@ -470,7 +470,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
                             var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
 
                             var SEqtydis = data.datasets[tooltipItem.datasetIndex].SEqty[tooltipItem.index];
-                            return [label + ': ' + value + '', 'Quantity: ' + SEqtydis + ''];
+                            return [label + ': ' + value + ' - Quantity: ' + SEqtydis + '', 'Type: ' + SEtypedis];
                         }
                     }
                 }
@@ -543,7 +543,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
                             var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
                             var SEtypedis = data.datasets[tooltipItem.datasetIndex].SEtype[tooltipItem.index];
                             var SEqtydis = data.datasets[tooltipItem.datasetIndex].SEqty[tooltipItem.index];
-                            return [label + ': ' + value + '', 'Quantity: ' + SEqtydis + '', 'Type: ' + SEtypedis];
+                            return [label + ': ' + value + ' - Quantity: ' + SEqtydis + '', 'Type: ' + SEtypedis];
                         }
                     }
                 }

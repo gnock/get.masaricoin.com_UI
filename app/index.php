@@ -312,11 +312,7 @@ ist-item>-->
   });
 
   crate.notify('Hey there! Come Chat with us');
-  crate.on('signIn', function(data){
-    console.log('Guest signed in as ${data.name}');
-    crate.emit('sendMessage', 'Hello world');
-  });
-</script>
+ </script>
       
      
       <!--
