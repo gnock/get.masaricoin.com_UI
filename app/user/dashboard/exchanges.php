@@ -50,7 +50,7 @@
 
             <table style="width:90%; margin-left:auto; margin-right:auto;">
                 <tr style="text-align:center;">
-                    <th>Current Price</th>
+                    <th>Last Price</th>
                     <th class="RemPhone">24 Hour Volume</th>
                     <th class="RemPhone">Open Price</th>
                     <th class="RemPhone">High / Low</th>
@@ -117,7 +117,7 @@
 
             <table style="width:90%; margin-left:auto; margin-right:auto;">
                 <tr style="text-align:center;">
-                    <th>Current Price</th>
+                    <th>Last Price</th>
                     <th class="RemPhone">24 Hour Volume</th>
                     <th class="RemPhone">High / Low</th>
                     <th class="RemPhone">Change</th>
@@ -126,7 +126,7 @@
                 </tr>
                 <tr style="text-align:center;">
                     <td>{{CREXPrice}}</td>
-                    <td class="RemPhone">{{CREXVol}}</td>
+                    <td class="RemPhone">{{CREXVol}} BTC</td>
                     <td class="RemPhone">{{CREXHigh}} / {{CREXLow}}</td>
                     <td class="RemPhone">{{CREXVar}}</td>
                     <td>{{CREXBid}}</td>
@@ -148,7 +148,7 @@
 
             <table style="width:90%; margin-left:auto; margin-right:auto;">
                 <tr style="text-align:center;">
-                    <th>Current Price</th>
+                    <th>Last Price</th>
                     <th class="RemPhone">24 Hour Volume</th>
                     <th class="RemPhone">Open Price</th>
                     <th>Current Bid</th>
@@ -182,7 +182,7 @@
 
             <table style="width:90%; margin-left:auto; margin-right:auto;">
                 <tr style="text-align:center;">
-                    <th>Current Price</th>
+                    <th>Last Price</th>
                     <th class="RemPhone">24 Hour Volume</th>
                     <th class="RemPhone">High / Low</th>
                     <th class="RemPhone">Change</th>
@@ -191,7 +191,7 @@
                 </tr>
                 <tr style="text-align:center;">
                     <td>{{ALTPrice}}</td>
-                    <td class="RemPhone">{{ALTVol}}</td>
+                    <td class="RemPhone">{{ALTVol}} BTC</td>
                     <td class="RemPhone">{{ALTHigh}} / {{ALTLow}}</td>
                     <td class="RemPhone">{{ALTVar}}</td>
                     <td>{{ALTBid}}</td>
@@ -212,7 +212,7 @@
 
             <table style="width:90%; margin-left:auto; margin-right:auto;">
                 <tr style="text-align:center;">
-                    <th>Current Price</th>
+                    <th>Last Price</th>
                     <th class="RemPhone">24 Hour Volume</th>
                     <th class="RemPhone">High / Low</th>
                     <th class="RemPhone">Change</th>
@@ -221,7 +221,7 @@
                 </tr>
                 <tr style="text-align:center;">
                     <td>{{MPPrice}}</td>
-                    <td class="RemPhone">{{MPVol}}</td>
+                    <td class="RemPhone">{{MPVol}} BTC</td>
                     <td class="RemPhone">{{MPHigh}} / {{MPLow}}</td>
                     <td class="RemPhone">{{MPVar}}</td>
                     <td>{{MPBid}}</td>
