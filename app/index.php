@@ -308,7 +308,7 @@ ist-item>-->
 <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async>
  var crate = new Crate({
     server: '411195170642460672',
-    channel: '11195170642460674'
+    channel: '411195170642460674'
   });
 
   crate.notify('Hey there! Come Chat with us');
