@@ -36,13 +36,13 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
         });
 		
 		$.ajax({
-    	url:'https://testnet.masaricoin.com/proxy.php?url='+encodeURIComponent('https://api.crex24.com/v2/public/recentTrades?instrument=MSR-BTC&limit=25')
+    	url:'https://get.masaricoin.com/proxy.php?url='+encodeURIComponent('https://api.crex24.com/v2/public/recentTrades?instrument=MSR-BTC&limit=25')
 		}).done(function(data){
     	tickerCREX(data);
 		});	
 	
 	
-  $.getJSON('https://testnet.masaricoin.com/proxy.php?url='+encodeURIComponent('https://api.crex24.com/v2/public/tickers?instrument=MSR-BTC'), function(data) {
+  $.getJSON('https://get.masaricoin.com/proxy.php?url='+encodeURIComponent('https://api.crex24.com/v2/public/tickers?instrument=MSR-BTC'), function(data) {
                 $scope.CREXPrice = (data[0].last * 1).toFixed(8);
                 $scope.CREXBid = (data[0].bid * 1).toFixed(8);
                 $scope.CREXAsk = (data[0].ask * 1).toFixed(8);
