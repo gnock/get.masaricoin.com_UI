@@ -30,9 +30,15 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
         });
 
         $.ajax({
-            url: 'https://tradeogre.com/api/v1/history/BTC-MSR'
-        }).done(function(data) {
-            tickerTO(JSON.parse(data));
+        url:'https://tradeogre.com/api/v1/history/BTC-MSR'
+        }).done(function(data){
+        var rawData = JSON.parse(data);
+        var last25 = [];
+        var i = 0;
+        for (i = rawData.length-1;i >= rawData.length-25;i--){
+            last25[i] = rawData[i];
+        }
+        tickerTO(last25);
         });
 
         $.ajax({
@@ -118,9 +124,9 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             data.push((parseFloat(points[iPoint].Price).toFixed(8)));
             SEType.push(points[iPoint].Type.toUpperCase());
             SEqty.push(points[iPoint].Amount);
-            var tempdate = new Date(points[iPoint].At);
+            var tempdate = new Date(points[iPoint].At * 1000);
 
-            iLabels.push(tempdate.toTimeString());
+            iLabels.push(tempdate);
         }
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
             ctx.canvas.height = 250;
@@ -343,8 +349,8 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             data.push((parseFloat(points[iPoint].price).toFixed(8)));
             SEType.push(points[iPoint].type.toUpperCase());
             SEqty.push(points[iPoint].quantity);
-            var tempdate = new Date(points[iPoint].date);
-            iLabels.push(tempdate.toTimeString());
+            var tempdate = new Date(points[iPoint].date * 1000);
+            iLabels.push(tempdate);
 
 
         }
