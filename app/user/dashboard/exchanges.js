@@ -24,7 +24,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
         });
 
         $.ajax({
-            url: 'https://testnet.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://app.stocks.exchange/api2/trades?pair=MSR_BTC')
+            url: 'https://get.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://app.stocks.exchange/api2/trades?pair=MSR_BTC')
         }).done(function(data) {
             tickerSTE(data["result"]);
         });
@@ -76,7 +76,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             $scope.MPLow = (data["ticker"].low * 1).toFixed(8);
         });
 
-        $.getJSON('https://testnet.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://stocks.exchange/api2/ticker'), function(data) {
+        $.getJSON('https://get.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://stocks.exchange/api2/ticker'), function(data) {
 
             for (var stedata in data) {
                 var name = data[stedata].market_name;
