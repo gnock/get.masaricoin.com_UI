@@ -24,7 +24,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
         });
 
         $.ajax({
-            url: 'https://stocks.exchange/api2/trades?pair=MSR_BTC'
+            url: 'https://app.stocks.exchange/api2/trades?pair=MSR_BTC'
         }).done(function(data) {
             tickerSTE(data["result"]);
         });
@@ -126,7 +126,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             SEqty.push(points[iPoint].Amount);
             var tempdate = new Date(points[iPoint].At * 1000);
 
-            iLabels.push(tempdate);
+            iLabels.push(tempdate.toGMTString());
         }
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
             ctx.canvas.height = 250;
@@ -274,9 +274,9 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             data.push((parseFloat(points[iPoint].price).toFixed(8)));
             SEType.push(points[iPoint].type);
             SEqty.push(points[iPoint].quantity);
-            var tempdate = new Date(points[iPoint].timestamp);
+            var tempdate = new Date(points[iPoint].timestamp * 1000);
 
-            iLabels.push(tempdate.toTimeString());
+            iLabels.push(tempdate.toGMTString());
         }
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
             ctx.canvas.height = 250;
@@ -350,7 +350,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             SEType.push(points[iPoint].type.toUpperCase());
             SEqty.push(points[iPoint].quantity);
             var tempdate = new Date(points[iPoint].date * 1000);
-            iLabels.push(tempdate);
+            iLabels.push(tempdate.toGMTString());
 
 
         }
