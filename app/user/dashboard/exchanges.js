@@ -76,7 +76,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             $scope.MPLow = (data["ticker"].low * 1).toFixed(8);
         });
 
-        $.getJSON('https://get.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://stocks.exchange/api2/ticker'), function(data) {
+        $.getJSON('https://get.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://app.stocks.exchange/api2/ticker'), function(data) {
 
             for (var stedata in data) {
                 var name = data[stedata].market_name;
