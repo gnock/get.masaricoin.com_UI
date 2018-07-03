@@ -476,7 +476,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
                             var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
 
                             var SEqtydis = data.datasets[tooltipItem.datasetIndex].SEqty[tooltipItem.index];
-                            return [label + ': ' + value + ' - Quantity: ' + SEqtydis + '', 'Type: ' + SEtypedis];
+                            return [label + ': ' + value + ' - Quantity: ' + SEqtydis];
                         }
                     }
                 }
