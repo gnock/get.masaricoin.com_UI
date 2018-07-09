@@ -253,6 +253,9 @@ var app = angular.module('poolui', [
 				$scope.msreur = (data[0].price_eur * 1).toFixed(4);
 				$scope.msrbtc = (data[0].price_btc * 1).toFixed(8);
 				});
+				$.getJSON("https://api.coinmarketcap.com/v1/ticker/masari/?convert=GBP", function(data) {
+				$scope.msrgbp = (data[0].price_gbp * 1).toFixed(4);
+				});
 				$.getJSON("https://tradeogre.com/api/v1/ticker/BTC-MSR", function(data) {
 				$scope.msrbtcto = (data["price"] * 1).toFixed(8);
 				});
@@ -316,6 +319,9 @@ var app = angular.module('poolui', [
 				$scope.msrusd = (data[0].price_usd * 1).toFixed(4);
 				$scope.msreur = (data[0].price_eur * 1).toFixed(4);
 				$scope.msrbtc = (data[0].price_btc * 1).toFixed(8);
+				});
+				$.getJSON("https://api.coinmarketcap.com/v1/ticker/masari/?convert=GBP", function(data) {
+				$scope.msrgbp = (data[0].price_gbp * 1).toFixed(4);
 				});
 				$.getJSON("https://tradeogre.com/api/v1/ticker/BTC-MSR", function(data) {
 				$scope.msrbtcto = (data["price"] * 1).toFixed(8);
