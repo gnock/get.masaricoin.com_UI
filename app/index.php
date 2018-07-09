@@ -330,13 +330,20 @@ ist-item>-->
 function alerting(reward) {
 	
 $.notify({
+	
 	icon: 'assets/notifylogo.fw.png',
 	title: 'Block Found!!',
 	message: reward,
 	
+	
 },{
 	type: 'minimalist',
-	delay: 60000,
+	animate: {
+		enter: 'animated zoomInDown',
+		exit: 'animated zoomOutUp'
+	},
+	
+	delay: 30000,
 	icon_type: 'image',
 	template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert" style="text-align:center;">' +
 		'<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
