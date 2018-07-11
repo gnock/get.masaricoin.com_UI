@@ -67,6 +67,26 @@ angular.module('utils.services', [])
         if (addr.name === undefined) {
           addr.name = key;
         }
+		
+			
+        	addr.daypay = 0;
+            var dayaddress = addr.name;
+            var ts = Math.round(Date.now()/ 1000);
+            var tsYesterday = ts - (24 * 3600);
+            console.log(dayaddress);
+            dataService.getData("/miner/"+dayaddress+"/payments", function(data){
+            
+			var i;
+            for (i = 0; i < data.length; i++) { 
+                    if (data[i].ts >= tsYesterday) {
+                     addr.daypay += data[i].amount;
+                }
+            }
+            
+            });
+        
+    
+		
         
         // update
         storage.addrStats = addrStats;

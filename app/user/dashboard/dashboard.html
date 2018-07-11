@@ -54,7 +54,7 @@
 								<md-list flex>
 									<md-list-item>
 										<p> Hash Rate </p>
-										<p class="text-right">{{ poolStats[pooltype].pool_statistics.hashRate | toHashRate }}</p>
+										<p class="text-right">{{poolStats[pooltype].pool_statistics.hashRate | toHashRate }}</p>
 									</md-list-item>
 									<md-list-item>
 										<p> Height </p>
@@ -136,9 +136,10 @@
 					<label style="color:#fff;">Name your Miner Group</label>
 					<!-- below is the material icons -->
 					<md-icon style="color:rgb(132,186,101);" class="material-icons">account_balance</md-icon>
-					<input style="color:rgb(101, 132, 186);" type="text" ng-model="miner.name">
+					<input style="color:rgb(101, 132, 186);" type="text" ng-model="miner.name"  data-ng-init="DayPay(miner.name)">
 					<md-tooltip>
 						{{addr}}
+                        
 					</md-tooltip>
 				</md-input-container>
 				<span class="md-caption" style="color:rgb(132,186,101)">
@@ -176,7 +177,8 @@
 					</div>
                     <div flex>
                     <md-card class="metric">
-						<h4> Total Paid<br /><br />{{miner.amtPaid | toXMR | number:5}} MSR</h4>
+						<h4> Total Paid (24 Hour)<br /><br />
+						{{miner.amtPaid | toXMR | number:5}} MSR ({{miner.daypay | toXMR | number:3}})</h4>
                     </md-card>    
 					</div>
                     </div></div>
@@ -279,6 +281,7 @@
 </div>
 <script>
 var profit_calc = {};
+
 function updateInput(){
 	
 	var TheField = document.getElementById("hash_count").value;
@@ -286,8 +289,7 @@ function updateInput(){
 	var Hashes = document.getElementById("hash_power").value
 	var TheTime = document.getElementById("time_frame").value
 	var TotalCalc = OneHash * TheField * Hashes * TheTime
-	document.getElementById("profit").innerHTML = TotalCalc.toFixed(4) + " MSR ";
-	
-	
+	document.getElementById("profit").innerHTML = TotalCalc.toFixed(4) + " MSR ";	
 }
+
 </script>

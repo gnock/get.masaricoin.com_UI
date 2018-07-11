@@ -2,32 +2,14 @@
 
 app.controller('DashboardCtrl', function($scope , $route, $mdDialog, $pageVisibility, dataService, timerService, addressService, minerService) {
 	$scope.minerStats = {};
-
-	        	//var MSR = 0;
-				/*
-				var MSR = {};
-    					$.ajax({
-        				url: "https://www.southxchange.com/api/price/msr/usd",
-        				async: false,
-        				dataType: 'json',
-        				success: function(data) {
-            				MSR = data.Last;
-        				}
-    				});
-					*/
-				//$scope.aeonusd = (MSR * 1).toFixed(4);	
-				
-								// CRYPTONATOR XMR/USD RATE
-				//$scope.aeonweekrev = (1000/$scope.network.difficulty)*86400*7*$scope.network.value*$scope.aeonusd;
-				//https://api.coinmarketcap.com/v1/ticker/aeon/?convert=USD
-			
-	//$.getJSON("https://api.coinmarketcap.com/v1/ticker/electroneum/?convert=USD", function(data) {
-		//		$scope.etnusd = (data[0].price_usd * 1).toFixed(3);						// CRYPTONATOR XMR/USD RATE
-				//$scope.etnweekrev = (1000/$scope.network.difficulty)*86400*7*$scope.network.value*$scope.etnusd;
-			//});
+	
 	$scope.updateCharts = function (){
-		minerService.updateStats($scope.addrStats, function(minerStats){
+			
+			minerService.updateStats($scope.addrStats, function(minerStats){
 			$scope.minerStats = minerStats;
+			
+			
+			
 		});
 	}
 
@@ -42,7 +24,7 @@ app.controller('DashboardCtrl', function($scope , $route, $mdDialog, $pageVisibi
 			$scope.paymentAddress = "";
 		}
 	};
-
+	
 	$scope.deleteAddress = function (key, ev){
 		var confirm = $mdDialog.confirm()
 		.title('Hide live stats?')
@@ -62,8 +44,11 @@ app.controller('DashboardCtrl', function($scope , $route, $mdDialog, $pageVisibi
 	$scope.setAlarm = function(addr, bool){
 		addressService.setAlarm(addr, bool);
 	};
+	
+	
 
 	$scope.viewPayments = function(ev, miner, addr){
+		
 		$mdDialog.show({
 			locals: {
 				miner: miner,
@@ -82,6 +67,8 @@ app.controller('DashboardCtrl', function($scope , $route, $mdDialog, $pageVisibi
 			$scope.status = 'You cancelled the dialog.';
 		});
 	}
+	
+	
 
 	// Recurring API calls and timer
 	var loadData = function () {
@@ -89,6 +76,7 @@ app.controller('DashboardCtrl', function($scope , $route, $mdDialog, $pageVisibi
 			dataService.getData("/pool/stats/"+pool_type, function(data){
 				$scope.poolStats[pool_type] = data;
 			});
+			
 
 			dataService.getData("/pool/blocks/"+pool_type, function(data){
 				if (data.length > 0){
@@ -108,6 +96,7 @@ app.controller('DashboardCtrl', function($scope , $route, $mdDialog, $pageVisibi
 				}
 			});
 		});
+		
 
 		// Call minerservice update
 		$scope.updateCharts();
@@ -123,8 +112,11 @@ app.controller('DashboardCtrl', function($scope , $route, $mdDialog, $pageVisibi
 	});
 
 	// Register call with timer 
-	timerService.register(loadData, $route.current.controller);
+	timerService.register(loadData, $route.current.controller); 
 	loadData();
+	
+	
+	
 	
 	$scope.$on("$routeChangeStart", function () {
 		timerService.remove($route.current.controller);
