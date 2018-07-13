@@ -2,6 +2,22 @@
 <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
 <ng-include src="'user/dashboard/poolstats.html'"></ng-include>
+<style>
+.rwd-break {
+	display:none;
+	
+}
+
+	
+@media only screen and (max-width: 700px) {
+    .rwd-break {
+		display:block;
+    }
+	
+		
+}
+
+</style>
 
 <div layout="column" layout-lg="row" layout-gt-lg="row" flex>
 	<div layout="column" flex-lg="30" flex-gt-lg="30">
@@ -110,7 +126,43 @@
 		</md-card>
 	</div>
 </div>
-
+<div layout="column" flex="" class="layout-column flex">
+        <md-card class="_md">
+            <md-toolbar class="md-table-toolbar md-default _md _md-toolbar-transitions">
+                <div class="md-toolbar-tools">
+                    <span class="md-title">Profit calculator</span>
+                </div>
+            </md-toolbar>
+            <md-card-content>
+                <form layout="" layout-align="center" class="xx-payment-form ng-pristine ng-valid layout-align-center-stretch layout-row">
+                    <div layout="row" flex="" style="flex-direction: row;" class="layout-row flex">
+                        <md-input-container flex="" class="md-icon-float md-block md-title xx-payment-form__row flex"><label ng-click="delegateClick()" tabindex="-1" class="ng-scope" role="button" for="input_4">Hashrate</label>
+                            <input class="xx-payment-form__input ng-pristine ng-valid md-input ng-empty ng-touched" type="text" ng-model="profit['hashrate']" ng-change="Update()" id="input_4" aria-invalid="false" style=""><div class="md-errors-spacer"></div>
+                        </md-input-container>
+                        <div>
+                    <md-input-container>
+			          <label>Select Speed</label>
+			         
+			          	<md-select name="type" ng-model="profit['hashes']" ng-change="Update()">
+			      		<md-option value="1">H/s</md-option>
+			            <md-option value="1000">KH/s</md-option>
+			            <md-option value="100000">MH/s</md-option>
+			          </md-select>
+			        </md-input-container>
+                        </div>
+                        
+                        </div>
+                   
+                </form>
+                <div>
+                <table style="width:100%">
+                <tr>
+                <td>
+                Estimated<br class="rwd-break" /> Hourly (Daily):</td><td> <span>MSR: </span><br class="rwd-break" /> <span id="msrhour">0.00</span><span id="msrday">(0.00)</span></td><td> <span>USD: <br class="rwd-break" />$</span> <span id="usdhour" style="font-weight:600;">0.00 </span><span id="usdday"> (0.00)</span></td><td> <span style="padding-left:5%;">EURO: <br class="rwd-break" />€</span> <span id="eurhour">0.00 </span><span id="eurday"> (0.00)</span></td><td> <span style="padding-left:5%;">GBP: <br class="rwd-break" />£</span> <span id="gbphour">0.00 </span><span id="gbpday"> (0.00)</span></td></tr></table></div>
+                <!-- ngIf: profit['hashrate'] -->
+            </md-card-content>
+        </md-card>
+    </div>
 <form layout layout-align="center" layout-padding>
 	<div layout="row" flex>
 		<md-input-container flex class="md-icon-float md-block md-title">
@@ -279,17 +331,7 @@
 	</md-card-actions>
 
 </div>
-<script>
-var profit_calc = {};
-
-function updateInput(){
-	
-	var TheField = document.getElementById("hash_count").value;
-	var OneHash = document.getElementById("profitNum").innerHTML
-	var Hashes = document.getElementById("hash_power").value
-	var TheTime = document.getElementById("time_frame").value
-	var TotalCalc = OneHash * TheField * Hashes * TheTime
-	document.getElementById("profit").innerHTML = TotalCalc.toFixed(4) + " MSR ";	
-}
-
-</script>
+<span id="OneHash" style="display:none;"> {{((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*1)/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995)}}  </span>
+<span id="msrusd" style="display:none;">{{msrusd}}</span>
+<span id="msreur" style="display:none;">{{msreur}}</span>
+<span id="msrgbp" style="display:none;">{{msrgbp}}</span>

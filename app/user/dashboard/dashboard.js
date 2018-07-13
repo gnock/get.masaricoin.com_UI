@@ -1,6 +1,42 @@
 'use strict';
 
 app.controller('DashboardCtrl', function($scope , $route, $mdDialog, $pageVisibility, dataService, timerService, addressService, minerService) {
+	
+	$scope.profit = {
+		'hashrate': '',
+		'hashes': '',
+		'effort':'',
+		'current_effort':'',
+   }
+   
+	$scope.Update = function() {
+		
+		var attr = $scope.profit;
+		var OneHash = document.getElementById("OneHash").innerHTML
+		var msrtousd = document.getElementById("msrusd").innerHTML
+		var msrtoeur = document.getElementById("msreur").innerHTML
+		var msrtogbp = document.getElementById("msrgbp").innerHTML
+		
+		var msrhour = OneHash * attr['hashrate'] * attr['hashes'];
+		var msrday = OneHash * attr['hashrate'] * attr['hashes'] * 24;
+		var usdhour = OneHash * attr['hashrate'] * attr['hashes'] * msrtousd;
+		var usdday = OneHash * attr['hashrate'] * attr['hashes'] * 24 * msrtousd;
+		var eurhour = OneHash * attr['hashrate'] * attr['hashes'] * msrtoeur;
+		var eurday = OneHash * attr['hashrate'] * attr['hashes'] * 24 * msrtoeur;
+		var gbphour = OneHash * attr['hashrate'] * attr['hashes'] * msrtogbp;
+		var gbpday = OneHash * attr['hashrate'] * attr['hashes'] * 24 * msrtogbp;
+		
+		
+		document.getElementById("msrhour").innerHTML = msrhour.toFixed(5);
+		document.getElementById("msrday").innerHTML = " (" + msrday.toFixed(5) + ")";
+		document.getElementById("usdhour").innerHTML = usdhour.toFixed(2);
+		document.getElementById("usdday").innerHTML = " (" + usdday.toFixed(2) + ")";
+		document.getElementById("eurhour").innerHTML = eurhour.toFixed(2);
+		document.getElementById("eurday").innerHTML = " (" + eurday.toFixed(2) + ")";
+		document.getElementById("gbphour").innerHTML = gbphour.toFixed(2);
+		document.getElementById("gbpday").innerHTML = " (" + gbpday.toFixed(2) + ")";
+	}
+
 	$scope.minerStats = {};
 	
 	$scope.updateCharts = function (){
