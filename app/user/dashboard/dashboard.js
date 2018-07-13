@@ -27,8 +27,8 @@ app.controller('DashboardCtrl', function($scope , $route, $mdDialog, $pageVisibi
 		var gbpday = OneHash * attr['hashrate'] * attr['hashes'] * 24 * msrtogbp;
 		
 		
-		document.getElementById("msrhour").innerHTML = msrhour.toFixed(8);
-		document.getElementById("msrday").innerHTML = " (" + msrday.toFixed(8) + ")";
+		document.getElementById("msrhour").innerHTML = msrhour.toFixed(6);
+		document.getElementById("msrday").innerHTML = " (" + msrday.toFixed(6) + ")";
 		document.getElementById("usdhour").innerHTML = usdhour.toFixed(2);
 		document.getElementById("usdday").innerHTML = " (" + usdday.toFixed(2) + ")";
 		document.getElementById("eurhour").innerHTML = eurhour.toFixed(2);
