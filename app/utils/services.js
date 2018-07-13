@@ -73,7 +73,6 @@ angular.module('utils.services', [])
             var dayaddress = addr.name;
             var ts = Math.round(Date.now()/ 1000);
             var tsYesterday = ts - (24 * 3600);
-            console.log(dayaddress);
             dataService.getData("/miner/"+dayaddress+"/payments", function(data){
             
 			var i;
