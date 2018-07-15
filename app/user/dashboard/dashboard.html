@@ -184,6 +184,25 @@
 </form>
 
 <div layout-md="column" layout-sm="column" layout-xs="column" layout="row" flex ng-repeat="(addr,miner) in addrStats">
+ <div layout="row" layout-xs="column" flex>
+                    <md-card-title-text layout-align="center center">
+                        <span class="md-headline">{{miner.pplnsShares | number}}</span>
+                        <span class="md-subhead">PPLNS Shares</span>
+                        <md-tooltip md-direction="bottom">How many shares are yours in the current PPLNS depth</md-tooltip>
+                    </md-card-title-text>
+                    <md-card-title-text layout-align="center center">
+                        <span class="md-headline">{{network.difficulty * config.pplns_multiplier | number}}</span>
+                        <span class="md-subhead">Current Block PPLNS Depth</span>
+                        <md-tooltip md-direction="bottom">The amount of recent shares submit across all miners that will earn rewards ({{config.pplns_multiplier}} * CurrentBlockDifficulty)</md-tooltip>
+                    </md-card-title-text>
+                     </div>
+                     <div flex-xs="33" flex>
+                    <md-card-title-text layout-align="center center">
+                        <span class="md-headline nowrap">{{(miner.pplnsShares / (network.difficulty * config.pplns_multiplier) * network.value)  * ((100 - config.pplns_fee) / 100) | toXMR | number:8}} ITNS ({{(miner.pplnsShares / (network.difficulty * config.pplns_multiplier)) * 100 | number:2}}%)</span>
+                        <span class="md-subhead">Estimated Block Reward</span>
+                        <md-tooltip md-direction="bottom">If the current block is mined by the pool, you are estimated to receive this reward</md-tooltip>
+                    </md-card-title-text>
+                     </div>
 	<md-card flex>
 		<md-toolbar class="md-accent">
 			<div class="md-toolbar-tools">
