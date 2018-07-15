@@ -4,13 +4,59 @@ app.controller('HomeCtrl', function($scope, $route, dataService, timerService) {
 
     function ticker() {
         dataService.getData("/pool/chart/hashrate/pplns", function(data){
-		
-            data = _.forEach(data, function(element) {
+		data = _.forEach(data, function(element) {
                 element.ts = new Date(element.ts);
-		element.hs = element.hs/1000;
-            });
+				element.hs = element.hs/1000;
+            		});
 
             $scope.poolHashrateChart = {
+                datasets: { global: data },
+                options: {
+/*				    scales: {
+						yAxes: [{
+							ticks: {
+								suggestedMin: 50,
+								suggestedMax: 10000000
+							}
+						}]
+					},
+					tooltips: {
+						enabled: true,
+						mode: 'single',
+						callbacks: {
+							label: function(tooltipItems, data) { 
+							return tooltipItems.yLabel + ' €';
+							}
+						}
+					},*/
+                    series: [
+                        {"axis":"y",
+						 "id":"global",
+						 "dataset":"global",
+						 "label":"Total Pool Hashrate",
+						 "key":"hs",
+						 "color":"green",
+						 "type":["line","area"]}
+                    ],
+                    allSeries: [],
+                    axes: {
+                        x: {
+                            key: "ts",
+                            type: "date"
+                        }
+                    }
+                }
+            }
+        });
+		
+		
+		        dataService.getData("/pool/chart/hashrate/pplns", function(data){
+				data = _.forEach(data, function(element) {
+                element.ts = new Date(element.ts);
+				element.hs = (element.diffficulty / 120) / 1000;
+            		});
+
+            $scope.NetworkHashrateChart = {
                 datasets: { global: data },
                 options: {
 /*				    scales: {

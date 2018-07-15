@@ -26,15 +26,27 @@
 <div layout="column" layout-gt-sm="row" flex>
 	<md-card flex>
 		<md-card-title>
-			<span class="md-headline">Pool Hashrate</span>
-		</md-card-title>
-		<md-card-content layout="column">
+			<span class="md-headline">Network Hashrate History</span>
+            </md-card-title>
+            <md-card-content layout="column">
 			<div class="chartcontainer-pool" flex>
 				<linechart data="poolHashrateChart.datasets" options="poolHashrateChart.options"></linechart>
 			</div>
 		</md-card-content>
 	</md-card>
-    
+            
+<div layout="column" layout-gt-sm="row" flex>
+	<md-card flex>
+		<md-card-title>
+			<span class="md-headline">Pool Hashrate</span>
+		</md-card-title>
+		<md-card-content layout="column">
+			<div class="chartcontainer-pool" flex>
+				<linechart data="NetworkHashrateChart.datasets" options="NetworkHashrateChart.options"></linechart>
+			</div>
+		</md-card-content>
+	</md-card>
+    </div>
     
 
 	<md-card flex>
