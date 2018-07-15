@@ -53,7 +53,7 @@ app.controller('HomeCtrl', function($scope, $route, dataService, timerService) {
 		
 		        dataService.getData("/pool/chart/networkHashrate", function(data){
 				data = _.forEach(data, function(element) {
-                element.ts = new Date(element.ts);
+                element.ts = new Date(element.ts) * 1000;
 				element.hs = element.difficulty / 120;
 				element.hs = element.difficulty / 1000;
             		});
