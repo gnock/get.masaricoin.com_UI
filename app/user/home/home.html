@@ -26,18 +26,6 @@
 <div layout="column" layout-gt-sm="row" flex>
 	<md-card flex>
 		<md-card-title>
-			<span class="md-headline">Pool Hashrate History</span>
-            </md-card-title>
-            <md-card-content layout="column">
-			<div class="chartcontainer-pool" flex>
-				<linechart data="poolHashrateChart.datasets" options="poolHashrateChart.options"></linechart>
-			</div>
-		</md-card-content>
-	</md-card>
-            
-<div layout="column" layout-gt-sm="row" flex>
-	<md-card flex>
-		<md-card-title>
 			<span class="md-headline">Network Hashrate History</span>
 		</md-card-title>
 		<md-card-content layout="column">
@@ -47,9 +35,18 @@
 		</md-card-content>
 	</md-card>
     </div>
-    
-
+<div layout="column" layout-gt-sm="row" flex>
 	<md-card flex>
+		<md-card-title>
+			<span class="md-headline">Pool Hashrate History</span>
+            </md-card-title>
+            <md-card-content layout="column">
+			<div class="chartcontainer-pool" flex>
+				<linechart data="poolHashrateChart.datasets" options="poolHashrateChart.options"></linechart>
+			</div>
+		</md-card-content>
+	</md-card>
+    <md-card flex>
 		<md-card-title>
 			<span class="md-headline">Block Effort (last 25 blocks) | Round Effort {{(100 * poolStats.global.roundHashes / network.difficulty).toFixed(1) | number}} %</span>
 		</md-card-title>
