@@ -184,25 +184,7 @@
 </form>
 
 <div layout-md="column" layout-sm="column" layout-xs="column" layout="row" flex ng-repeat="(addr,miner) in addrStats">
- <div layout="row" layout-xs="column" flex>
-                    <md-card-title-text layout-align="center center">
-                        <span class="md-headline">{{miner.pplnsShares | number}}</span>
-                        <span class="md-subhead">PPLNS Shares</span>
-                        <md-tooltip md-direction="bottom">How many shares are yours in the current PPLNS depth</md-tooltip>
-                    </md-card-title-text>
-                    <md-card-title-text layout-align="center center">
-                        <span class="md-headline">{{network.difficulty * config.pplns_multiplier | number}}</span>
-                        <span class="md-subhead">Current Block PPLNS Depth</span>
-                        <md-tooltip md-direction="bottom">The amount of recent shares submit across all miners that will earn rewards ({{config.pplns_multiplier}} * CurrentBlockDifficulty)</md-tooltip>
-                    </md-card-title-text>
-                     </div>
-                     <div flex-xs="33" flex>
-                    <md-card-title-text layout-align="center center">
-                        <span class="md-headline nowrap">{{(miner.pplnsShares / (network.difficulty * config.pplns_multiplier) * network.value)  * ((100 - config.pplns_fee) / 100) | toXMR | number:8}} ITNS ({{(miner.pplnsShares / (network.difficulty * config.pplns_multiplier)) * 100 | number:2}}%)</span>
-                        <span class="md-subhead">Estimated Block Reward</span>
-                        <md-tooltip md-direction="bottom">If the current block is mined by the pool, you are estimated to receive this reward</md-tooltip>
-                    </md-card-title-text>
-                     </div>
+
 	<md-card flex>
 		<md-toolbar class="md-accent">
 			<div class="md-toolbar-tools">
@@ -239,22 +221,30 @@
                         </md-card>
                         <md-card class="metric">
 					</div>
-                     <div flex>
+                      <div flex>
                 <md-card class="metric">
 						<h4> Total Hashes<br /><br />{{miner.totalHashes | number}}</h4>
                         </md-card>
 					</div>
+                     <div flex>
+                <md-card class="metric">
+						<h4> PPLNS Shares (PPLNS Block Depth)<br /><br />{{miner.pplnsShares | number}} ({{network.difficulty * config.pplns_multiplier | number}})</h4>
+                        </md-card>
+					</div>
+                     <div flex>
+                <md-card class="metric">
+						<h4>Estimated Block Reward<br /><br />{{(miner.pplnsShares / (network.difficulty * config.pplns_multiplier) * network.value)  * ((100 - config.pplns_fee) / 100) | toXMR | number:8}} MSR ({{(miner.pplnsShares / (network.difficulty * config.pplns_multiplier)) * 100 | number:2}}%)</h4>
+                        </md-card>
+					</div>
+                  
+                    
                     <div flex>
+                    
                     <md-card class="metric">
 						<h4 title="Amount due increases as blocks mature"> Total Due<br /><br />{{miner.amtDue | toXMR | number:10}} MSR</h4>
                         </md-card>
 					</div>
-                    <div flex>
-                    <md-card class="metric">
-						<h4> Total Paid (24 Hour)<br /><br />
-						{{miner.amtPaid | toXMR | number:5}} MSR ({{miner.daypay | toXMR | number:1}})</h4>
-                    </md-card>    
-					</div>
+                 
                     </div></div>
                     <div flex layout="column" layout-md="row" layout-gt-md="row" class="text-center">
 				<div flex layout="column" layout-gt-xs="row">
@@ -277,6 +267,12 @@
                     <md-card class="metric">
 						<h4 title="Earnings are calculated based on your current hashrate.  24 Hour is calculated based on your 24 hour average hashrate.  Calculation is done based on current difficulty and is only an estimate."> GBP Earnings (24 Hour)<br /><br />£{{(((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*miner.hash)/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995* 1) * msrgbp).toFixed(2)}} (£{{(((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*minerStats[addr].dataset['global'].avghstfhour )/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995*24) * msrgbp).toFixed(2)}})</h4>
                         </md-card>
+					</div>
+                       <div flex>
+                    <md-card class="metric">
+						<h4> Total Paid (24 Hour)<br /><br />
+						{{miner.amtPaid | toXMR | number:5}} MSR ({{miner.daypay | toXMR | number:1}})</h4>
+                    </md-card>    
 					</div>
 					
 				</div>
