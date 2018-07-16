@@ -46,6 +46,17 @@
 			</div>
 		</md-card-content>
 	</md-card>
+     <md-card flex>
+		<md-card-title>
+			<span class="md-headline">Fee Slew Amount</span>
+		</md-card-title>
+		<md-card-content layout="column">
+			<div class="chartcontainer-pool" flex>
+				<linechart data="feeSlewChart.datasets" options="feeSlewChart.options"></linechart>
+			</div>
+		</md-card-content>
+	</md-card>
+    
     <md-card flex>
 		<md-card-title>
 			<span class="md-headline">Block Effort (last 25 blocks) | Round Effort {{(100 * poolStats.global.roundHashes / network.difficulty).toFixed(1) | number}} %</span>

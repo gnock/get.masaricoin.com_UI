@@ -138,7 +138,7 @@
 
     <md-card flex>
         <md-toolbar class="md-table-toolbar md-default">
-            <a href="https://stocks.exchange/trade/MSR/BTC" target="_blank" rel="nofollow" alt="stocks.exchange">
+            <a href="https://app.stocks.exchange/en/basic-trade/pair/BTC/MSR/1D" target="_blank" rel="nofollow" alt="stocks.exchange">
                 <div class="md-toolbar-tools" style="background-image:url(assets/STX_Back.fw.png)"></div>
             </a>
 

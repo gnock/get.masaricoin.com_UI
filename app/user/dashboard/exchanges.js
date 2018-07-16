@@ -53,7 +53,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             $scope.CREXBid = (data[0].bid * 1).toFixed(8);
             $scope.CREXAsk = (data[0].ask * 1).toFixed(8);
             $scope.CREXVar = (data[0].percentChange * 1).toFixed(2);
-            $scope.CREXVol = (data[0].volumeInBtc * 1).toFixed(4);
+            $scope.CREXVol = (data[0].volumeInBtc * 1).toFixed(8);
             $scope.CREXHigh = (data[0].high * 1).toFixed(8);
             $scope.CREXLow = (data[0].low * 1).toFixed(8);
         });
@@ -63,7 +63,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             $scope.SEBid = (data["Bid"] * 1).toFixed(8);
             $scope.SEAsk = (data["Ask"] * 1).toFixed(8);
             $scope.SEVar = (data["Variation24Hr"] * 1).toFixed(2);
-            $scope.SEVol = (data["Volume24Hr"] * 1).toFixed(4);
+            $scope.SEVol = (data["Volume24Hr"] * 1).toFixed(8);
         });
 
         $.getJSON("https://maplechange.com//api/v2/tickers/msrbtc.json", function(data) {
@@ -71,7 +71,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             $scope.MPBid = (data["ticker"].buy * 1).toFixed(8);
             $scope.MPAsk = (data["ticker"].sell * 1).toFixed(8);
             $scope.MPVar = (data["ticker"].change * 1).toFixed(2);
-            $scope.MPVol = (data["ticker"].volbtc * 1).toFixed(4);
+            $scope.MPVol = (data["ticker"].volbtc * 1).toFixed(8);
             $scope.MPHigh = (data["ticker"].high * 1).toFixed(8);
             $scope.MPLow = (data["ticker"].low * 1).toFixed(8);
         });
@@ -85,7 +85,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
                     $scope.STEBid = parseFloat(data[stedata].bid).toFixed(8);
                     $scope.STEAsk = parseFloat(data[stedata].ask).toFixed(8);
                     $scope.STEPrev = parseFloat(data[stedata].lastDayAgo).toFixed(8);
-                    $scope.STEVol = parseFloat(data[stedata].vol).toFixed(4);
+                    $scope.STEVol = parseFloat(data[stedata].vol).toFixed(8);
                 }
             }
         }, 'json');
@@ -105,7 +105,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             $scope.TOPrev = (data["initialprice"] * 1).toFixed(8);
             $scope.TOHigh = (data["high"] * 1).toFixed(8);
             $scope.TOLow = (data["low"] * 1).toFixed(8);
-            $scope.TOVol = (data["volume"] * 1).toFixed(4);
+            $scope.TOVol = (data["volume"] * 1).toFixed(8);
             $scope.TOBid = (data["bid"] * 1).toFixed(8);
             $scope.TOAsk = (data["ask"] * 1).toFixed(8);
 
