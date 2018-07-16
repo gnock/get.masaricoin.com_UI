@@ -233,7 +233,7 @@
 					</div>
                      <div flex>
                 <md-card class="metric">
-						<h4>Estimated Block Reward<br /><br />{{(miner.pplnsShares / (network.difficulty * config.pplns_multiplier) * network.value)  * ((100 - config.pplns_fee) / 100) | toXMR | number:8}} MSR ({{(miner.pplnsShares / (network.difficulty * config.pplns_multiplier)) * 100 | number:2}}%)</h4>
+						<h4 title="If the current block is mined by the pool, you are estimated to receive this">Estimated Block Reward<br /><br />{{(miner.pplnsShares / (network.difficulty * config.pplns_multiplier) * network.value)  * ((100 - config.pplns_fee) / 100) | toXMR | number:8}} MSR ({{(miner.pplnsShares / (network.difficulty * config.pplns_multiplier)) * 100 | number:2}}%)</h4>
                         </md-card>
 					</div>
                   
