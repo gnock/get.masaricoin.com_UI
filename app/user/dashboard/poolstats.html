@@ -88,12 +88,12 @@
 						</div>						
 					</md-card-title-text>
 					<md-card-title-text>
-						<span class="md-headline">{{msrbtcse}}</span>
-						<span class="md-subhead">SouthXchange</span>
-						<md-divider md-inset></md-divider>
-                        <span class="md-subhead">MSR to USD: ${{msrusd}}</span>
-                        
-						<span class="md-subhead"></span>
+						<span class="md-headline" ng-if="(network.avgDiffPastDay * config.pplns_multiplier / poolStats.global.hashRateAvg) < (60 * 60 * 24)" ng-cloak>{{(network.difficulty * config.pplns_multiplier / poolStats.global.hashRateAvg) * 1000 | date : 'HH:mm' : 'UTC'}}</span>
+						<span class="md-headline" ng-if="(network.avgDiffPastDay * config.pplns_multiplier / poolStats.global.hashRateAvg) > (60 * 60 * 24)">&gt; 1 Day</span>
+						<span class="md-subhead">PPLNS Window (Est)</span>
+						<md-tooltip md-direction="bottom">
+					    	Estimated mining time before your full PPLNS potential is realized
+						</md-tooltip>
 					</md-card-title-text>
 				</md-card-title>
 			</md-card>
