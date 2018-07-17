@@ -113,10 +113,6 @@ app.controller('HomeCtrl', function ($scope, $route, dataService, timerService) 
 						"id": "global",
 						"dataset": "global",
 						"label": "Total Network Hashrate",
-						"interpolation": {
-								mode: "bundle",
-								tension: 1
-							},
 						"key": "hs",
 						"color": "green",
 						"type": ["line", "area"]
