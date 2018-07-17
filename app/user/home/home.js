@@ -38,7 +38,7 @@ app.controller('HomeCtrl', function ($scope, $route, dataService, timerService) 
 
 		var end_amount = 20;
 		var start_amount = 1;
-		var payout_fee = 0.1;
+		var payout_fee = 0.011;
 		var slewData = [];
 		var amount_interval = (end_amount - start_amount) / 50;
 		var y_ticks = [payout_fee / 2, payout_fee];
