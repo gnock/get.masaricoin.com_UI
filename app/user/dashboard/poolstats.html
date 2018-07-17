@@ -5,7 +5,7 @@
 				<md-card-title>
 					<md-card-title-media>
 						<div class="md-media-sm card-media" layout="row" layout-align="center center" >
-							<md-icon class="material-icons" style="height:30px; width:30px; position:relative; top:5px; "><img src="assets/newart/masarifav.png" /></md-icon> 
+							<md-icon class="material-icons" style="height:30px; width:30px; position:relative; top:5px; "><img src="assets/newart/masarifav.png" /></md-icon>
 						</div>
 					</md-card-title-media>
 					<md-card-title-text>
@@ -28,11 +28,12 @@
 						<div class="md-subhead">
 							<span>Blocks Found</span>
 							<md-divider md-inset></md-divider>
-						        <a href="#!/blocks"><span am-time-ago="poolStats.global.lastBlockFoundTime*1000"></span>
-							<md-tooltip md-direction="bottom">
-						    	{{poolStats.global.lastBlockFoundTime*1000 | date:'HH:mm:ss dd/MM/yy'}}
-						        </md-tooltip>
-						        </a>
+							<a href="#!/blocks">
+								<span am-time-ago="poolStats.global.lastBlockFoundTime*1000"></span>
+								<md-tooltip md-direction="bottom">
+									{{poolStats.global.lastBlockFoundTime*1000 | date:'HH:mm:ss dd/MM/yy'}}
+								</md-tooltip>
+							</a>
 						</div>
 					</md-card-title-text>
 					<md-card-title-text>
@@ -64,7 +65,13 @@
 					</md-card-title-text>
 					<md-card-title-text>
 						<span class="md-headline">{{poolStats.global.totalMinersPaid}}</span>
-						<span class="md-subhead">Miners Paid <a href="#!/payments"><md-divider md-inset></md-divider>{{poolStats.global.totalPayments}} Payments</a></span>
+						<span class="md-subhead">
+							Miners Paid 
+							<a href="#!/payments">
+								<md-divider md-inset></md-divider>
+								{{poolStats.global.totalPayments}} Payments
+							</a>
+						</span>
 					</md-card-title-text>
 				</md-card-title>
 			</md-card>
@@ -83,26 +90,21 @@
 							<span>CoinMarketCap</span>
 							<md-divider md-inset></md-divider>
 							<span class="md-subhead">MSR to EUR: €{{msreur}}</span>
-<!--                            <span class="md-subhead"><a href="#!/home">Average effort {{overallEffort | number:2 }} %</a></span> -->
-                            
-						</div>						
+							<!--                            <span class="md-subhead"><a href="#!/home">Average effort {{overallEffort | number:2 }} %</a></span> -->
+						</div>
 					</md-card-title-text>
 					<md-card-title-text>
 						<span class="md-headline" ng-if="(network.avgDiffPastDay * config.pplns_multiplier / poolStats.global.hashRateAvg) < (60 * 60 * 24)" ng-cloak>{{(network.difficulty * config.pplns_multiplier / poolStats.global.hashRateAvg) * 1000 | date : 'HH:mm' : 'UTC'}}</span>
 						<span class="md-headline" ng-if="(network.avgDiffPastDay * config.pplns_multiplier / poolStats.global.hashRateAvg) > (60 * 60 * 24)">&gt; 1 Day</span>
 						<span class="md-subhead">PPLNS Window (Est)</span>
 						<md-tooltip md-direction="bottom">
-					    	Estimated mining time before your full PPLNS potential is realized
+							Estimated mining time before your full PPLNS potential is realized
 						</md-tooltip>
-                        <md-divider md-inset></md-divider>
-							<span class="md-subhead">MSR to USD: ${{msrusd}}</span>
+						<md-divider md-inset></md-divider>
+						<span class="md-subhead">MSR to USD: ${{msrusd}}</span>
 					</md-card-title-text>
 				</md-card-title>
 			</md-card>
 		</div>
-        
 	</div>
 </div>
-<script>
-
-</script>
