@@ -3,6 +3,31 @@
 app.controller('HomeCtrl', function ($scope, $route, dataService, timerService) {
 
 	function ticker() {
+		dataService.getData("/pool/chart/miners", function(data){
+
+            data = _.forEach(data, function(element) {
+                element.ts = new Date(element.ts);
+            });
+ 
+            $scope.poolMinersChart = {
+                datasets: { global: data },
+                options: {
+                    series: [
+                        {"axis":"y","id":"global","dataset":"global","label":"Total Pool Miners","key":"cn","color":"green","type":["bar","area"]}
+                    ],
+                    allSeries: [],
+                    axes: {
+                        x: {
+                            key: "ts",
+                            type: "date"
+                        }
+                    }
+                }
+            }
+        });
+    
+		
+		
 		dataService.getData("/pool/chart/hashrate/pplns", function (data) {
 			data = _.forEach(data, function (element) {
 				element.ts = new Date(element.ts);
