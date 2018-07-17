@@ -13,7 +13,7 @@ app.controller('HomeCtrl', function ($scope, $route, dataService, timerService) 
                 datasets: { global: data },
                 options: {
                     series: [
-                        {"axis":"y","id":"global","dataset":"global","label":"Total Pool Miners","key":"cn","color":"green","type":["bar","area"]}
+                        {"axis":"y","id":"global","dataset":"global","label":"Total Pool Miners","key":"cn","color":"green","type":["line", "area"]}
                     ],
                     allSeries: [],
                     axes: {
