@@ -125,7 +125,7 @@ app.controller('HomeCtrl', function ($scope, $route, dataService, timerService) 
 				element.ts = element.ts * 1000;
 				element.ts = new Date(element.ts);
 				var holder = element.difficulty / 120;
-				element.hs = holder / 1000;
+				element.hs = (holder / 1000).toFixed(3);
 			});
 
 			$scope.NetworkHashrateChart = {
