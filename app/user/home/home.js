@@ -63,7 +63,7 @@ app.controller('HomeCtrl', function ($scope, $route, dataService, timerService) 
 
 		var end_amount = 20;
 		var start_amount = 1;
-		var payout_fee = 0.015;
+		var payout_fee = 0.011;
 		var slewData = [];
 		var amount_interval = (end_amount - start_amount) / 50;
 		var y_ticks = [payout_fee / 2, payout_fee];
@@ -121,10 +121,11 @@ app.controller('HomeCtrl', function ($scope, $route, dataService, timerService) 
 
 		dataService.getData("/pool/chart/networkHashrate", function (data) {
 			data = _.forEach(data, function (element) {
+				
 				element.ts = element.ts * 1000;
 				element.ts = new Date(element.ts);
-				element.hs = element.difficulty / 120;
-				element.hs = element.difficulty / 1000;
+				var holder = element.difficulty / 120;
+				element.hs = holder / 1000;
 			});
 
 			$scope.NetworkHashrateChart = {
