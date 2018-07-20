@@ -110,7 +110,7 @@ var app = angular.module('poolui', [
 		$scope.lastBlock = {};
 		
 		// for miner tracking
-		$scope.yourTotalHashRate = 0;
+		$scope.yourTotalHashRate = 0.00;
 
 		// Hashrate Alarm
 		$scope.globalSiren = false;
