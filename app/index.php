@@ -114,7 +114,7 @@ body {
              
               <md-list-item>
               <md-button href="#!/exchanges" ng-class="isActivePage('exchanges')">
-                <md-icon md-font-set="material-icons" class="menu-item">attach_money</md-icon> 
+                <md-icon md-font-set="material-icons" class="menu-item">timeline</md-icon> 
                 Exchanges
               </md-button>
             </md-list-item>
@@ -165,6 +165,11 @@ body {
 		<md-button href="#!/help/config_generator" ng-class="isActivePage('help/config_generator')">
                 <md-icon md-font-set="material-icons" class="menu-item">brush</md-icon>
                 Config generator
+              </md-button>
+            </md-list-item>
+            <md-button href="https://www.masariwallet.com" target="blank">
+                <md-icon md-font-set="material-icons" class="menu-item">attach_money</md-icon>
+                Web Wallet
               </md-button>
             </md-list-item>
             
