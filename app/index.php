@@ -84,8 +84,13 @@ body {
 	background-image: url();
 	background-repeat: no-repeat;
 }
+#RemUserPerc {
+	display: none;
+	}
 @media only screen and (max-width: 700px) {
-	
+	#RemUserPerc {
+	display: none;
+	}
 	#RemPhone {
 	display: none;
 	}
@@ -257,7 +262,7 @@ ist-item>-->
               <span class="flex text-center wrap">Pool: <b class="nowrap">{{poolStats.global.hashRate | toHashRate}}</b></a></span>
               <span id="RemPhone" class="flex text-center wrap">Network Percent: <b class="nowrap">{{(((poolStats.global.hashRate) / (network.difficulty | difficultyToHashRate)) * 100).toFixed(2)}}%</b></a></span>
               <span class="flex text-center wrap" style="color:#FFE67E;"><a href="#!/dashboard">You: <b class="nowrap">{{yourTotalHashRate | toHashRate}}</b></a></span>
-              <span id="RemPhone" class="flex text-center wrap" style="color:#FFE67E;"><a href="#!/dashboard">Pool Percent: <b class="nowrap">{{((yourTotalHashRate) / (poolStats.global.hashRate) * 100).toFixed(2)}}%</b></a></span>
+              <span id="RemUserPerc" class="flex text-center wrap" style="color:#FFE67E;"><a href="#!/dashboard">Pool Percent: <b class="nowrap">{{(((yourTotalHashRate) / (poolStats.global.hashRate)) * 100).toFixed(2)}}%</b></a></span>
               <div>
                 <md-button class="md-raised md-accent" aria-label="Miner Login" ng-click="minerLogin($event)" ng-if="!isLoggedIn()">
                   <md-icon class="login">settings</md-icon>

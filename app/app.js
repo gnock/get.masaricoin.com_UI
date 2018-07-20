@@ -110,7 +110,7 @@ var app = angular.module('poolui', [
 		$scope.lastBlock = {};
 		
 		// for miner tracking
-		$scope.yourTotalHashRate = 0.00;
+		$scope.yourTotalHashRate = 0;
 
 		// Hashrate Alarm
 		$scope.globalSiren = false;
@@ -129,7 +129,11 @@ var app = angular.module('poolui', [
 			});
 
 			$scope.globalSiren=siren;
+			if(totalHashRate > 0) {
+				document.getElementById("RemUserPerc").style.display = "inline";
+			}
 			$scope.yourTotalHashRate = totalHashRate;
+			
 		}
 
 		var playSiren = function (){
@@ -218,9 +222,7 @@ var app = angular.module('poolui', [
 			dataService.getData("/network/stats", function(data){
 				$scope.network = data;
 			});
-			dataService.getData("/network/stats", function(data){
-				$scope.network = data;
-			});
+			
 			dataService.getData("/pool/blocks/pplns?limit=1", function(data){
 				$scope.LastBlockData = data[0].value; 
 				$scope.LastBlockShares = data[0].shares;
