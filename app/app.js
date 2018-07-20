@@ -134,6 +134,10 @@ var app = angular.module('poolui', [
 			} else {
 				document.getElementById("RemUserPerc").style.display = "none";
 			}
+			
+			if ($(window).width() < 700) {
+   document.getElementById("RemUserPerc").style.display = "none";
+}
 			$scope.yourTotalHashRate = totalHashRate;
 			
 		}
