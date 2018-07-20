@@ -131,6 +131,8 @@ var app = angular.module('poolui', [
 			$scope.globalSiren=siren;
 			if(totalHashRate > 0) {
 				document.getElementById("RemUserPerc").style.display = "inline";
+			} else {
+				document.getElementById("RemUserPerc").style.display = "none";
 			}
 			$scope.yourTotalHashRate = totalHashRate;
 			
