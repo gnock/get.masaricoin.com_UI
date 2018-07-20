@@ -225,16 +225,20 @@
 				<div flex>
 					<md-card class="metric">
 						<h4> PPLNS Shares (Block Depth)<br /><br />{{miner.pplnsShares | number}} ({{network.difficulty * config.pplns_multiplier | number}})</h4>
+                        <md-tooltip>PPLNS Shares = Number of shares this miner has submitted to PPLNS.  Block Depth = Total shares submitted by all miners for current block  </md-tooltip>
+					</md-card>
 					</md-card>
 				</div>
 				<div flex>
 					<md-card class="metric">
-						<h4 title="If the current block is mined by the pool, you are estimated to receive this">Estimated Block Reward<br /><br />{{(miner.pplnsShares / (network.difficulty * config.pplns_multiplier) * network.value)  * ((100 - config.pplns_fee) / 100) | toXMR | number:8}} MSR ({{(miner.pplnsShares / (network.difficulty * config.pplns_multiplier)) * 100 | number:2}}%)</h4>
+						<h4>Estimated Block Reward<br /><br />{{(miner.pplnsShares / (network.difficulty * config.pplns_multiplier) * network.value)  * ((100 - config.pplns_fee) / 100) | toXMR | number:8}} MSR ({{(miner.pplnsShares / (network.difficulty * config.pplns_multiplier)) * 100 | number:2}}%)</h4>
+                        <md-tooltip>If the current block is mined by the pool, you are estimated to receive this</md-tooltip>
 					</md-card>
 				</div>
 				<div flex>
 					<md-card class="metric">
-						<h4 title="Amount due increases as blocks mature"> Total Due<br /><br />{{miner.amtDue | toXMR | number:10}} MSR</h4>
+						<h4> Total Due<br /><br />{{miner.amtDue | toXMR | number:10}} MSR</h4>
+                         <md-tooltip>Amount due increases as blocks mature</md-tooltip>
 					</md-card>
 				</div>
 			</div>
@@ -243,22 +247,26 @@
 			<div flex layout="column" layout-gt-xs="row">
 				<div flex>
 					<md-card class="metric">
-						<h4 title="Earnings are calculated based on your current hashrate.  24 Hour is calculated based on your 24 hour average hashrate.  Calculation is done based on current difficulty and is only an estimate."> MSR Earnings (24 Hour)<br /><br />{{((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*miner.hash)/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995* 1).toFixed(2)}} ({{((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*minerStats[addr].dataset['global'].avghstfhour )/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995*24).toFixed(2)}})</h4>
+						<h4> MSR Earnings (24 Hour)<br /><br />{{((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*miner.hash)/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995* 1).toFixed(2)}} ({{((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*minerStats[addr].dataset['global'].avghstfhour )/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995*24).toFixed(2)}})</h4>
+                        <md-tooltip>Earnings are calculated based on your current hashrate.  24 Hour is calculated based on your 24 hour average hashrate.  Calculation is done based on current difficulty and is only an estimate.</md-tooltip>
 					</md-card>
 				</div>
 				<div flex>
 					<md-card class="metric">
-						<h4 title="Earnings are calculated based on your current hashrate.  24 Hour is calculated based on your 24 hour average hashrate.  Calculation is done based on current difficulty and is only an estimate."> USD Earnings (24 Hour)<br /><br /> ${{(((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*miner.hash)/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995* 1) * msrusd).toFixed(2)}} (${{(((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*minerStats[addr].dataset['global'].avghstfhour )/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995*24) * msrusd).toFixed(2)}})</h4>
+						<h4> USD Earnings (24 Hour)<br /><br /> ${{(((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*miner.hash)/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995* 1) * msrusd).toFixed(2)}} (${{(((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*minerStats[addr].dataset['global'].avghstfhour )/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995*24) * msrusd).toFixed(2)}})</h4>
+                        <md-tooltip>Earnings are calculated based on your current hashrate.  24 Hour is calculated based on your 24 hour average hashrate.  Calculation is done based on current difficulty and is only an estimate.</md-tooltip>
 					</md-card>
 				</div>
 				<div flex>
 					<md-card class="metric">
-						<h4 title="Earnings are calculated based on your current hashrate.  24 Hour is calculated based on your 24 hour average hashrate.  Calculation is done based on current difficulty and is only an estimate."> Euro Earnings (24 Hour)<br /><br />€{{(((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*miner.hash)/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995* 1) * msreur).toFixed(2)}} (€{{(((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*minerStats[addr].dataset['global'].avghstfhour )/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995*24) * msreur).toFixed(2)}})</h4>
+						<h4> Euro Earnings (24 Hour)<br /><br />€{{(((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*miner.hash)/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995* 1) * msreur).toFixed(2)}} (€{{(((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*minerStats[addr].dataset['global'].avghstfhour )/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995*24) * msreur).toFixed(2)}})</h4>
+                        <md-tooltip>Earnings are calculated based on your current hashrate.  24 Hour is calculated based on your 24 hour average hashrate.  Calculation is done based on current difficulty and is only an estimate.</md-tooltip>
 					</md-card>
 				</div>
 				<div flex>
 					<md-card class="metric">
-						<h4 title="Earnings are calculated based on your current hashrate.  24 Hour is calculated based on your 24 hour average hashrate.  Calculation is done based on current difficulty and is only an estimate."> GBP Earnings (24 Hour)<br /><br />£{{(((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*miner.hash)/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995* 1) * msrgbp).toFixed(2)}} (£{{(((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*minerStats[addr].dataset['global'].avghstfhour )/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995*24) * msrgbp).toFixed(2)}})</h4>
+						<h4> GBP Earnings (24 Hour)<br /><br />£{{(((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*miner.hash)/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995* 1) * msrgbp).toFixed(2)}} (£{{(((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*minerStats[addr].dataset['global'].avghstfhour )/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995*24) * msrgbp).toFixed(2)}})</h4>
+                        <md-tooltip>Earnings are calculated based on your current hashrate.  24 Hour is calculated based on your 24 hour average hashrate.  Calculation is done based on current difficulty and is only an estimate.</md-tooltip>
 					</md-card>
 				</div>
 				<div flex>
