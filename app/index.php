@@ -258,11 +258,12 @@ ist-item>-->
               <md-button class="md-icon-button" type="button" ng-click="toggleSidenav()">
                 <md-icon md-font-set="material-icons" style="color:#fff;">menu</md-icon>
               </md-button>
-              <span class="flex text-center wrap">Network: <b class="nowrap">{{network.difficulty | difficultyToHashRate | toHashRate}}</b></a></span>
-              <span class="flex text-center wrap">Pool: <b class="nowrap">{{poolStats.global.hashRate | toHashRate}}</b></a></span>
-              <span id="RemPhone" class="flex text-center wrap">Network Percent: <b class="nowrap">{{(((poolStats.global.hashRate) / (network.difficulty | difficultyToHashRate)) * 100).toFixed(2)}}%</b></a></span>
-              <span class="flex text-center wrap" style="color:#FFE67E;"><a href="#!/dashboard">You: <b class="nowrap">{{yourTotalHashRate | toHashRate}}</b></a></span>
-              <span id="RemUserPerc" class="flex text-center wrap" style="color:#FFE67E;"><a href="#!/dashboard">Pool Percent: <b class="nowrap">{{(((yourTotalHashRate) / (poolStats.global.hashRate)) * 100).toFixed(2)}}%</b></a></span>
+               <span class="flex text-center wrap" style="color:#AFD5AF;">Network: <b class="nowrap">{{network.difficulty | difficultyToHashRate | toHashRate}}</b></a></span>
+             
+              <span id="RemPhone" class="flex text-center wrap" style="color:#AFD5AF;">Network Percent: <b class="nowrap">{{(((poolStats.global.hashRate) / (network.difficulty | difficultyToHashRate)) * 100).toFixed(2)}}%</b></a></span>
+               <span class="flex text-center wrap">Pool: <b class="nowrap">{{poolStats.global.hashRate | toHashRate}}</b></a></span>
+              <span class="flex text-center wrap" style="color:#7FDBFF;"><a href="#!/dashboard">You: <b class="nowrap">{{yourTotalHashRate | toHashRate}}</b></a></span>
+              <span id="RemUserPerc" class="flex text-center wrap" style="color:#7FDBFF;"><a href="#!/dashboard">Pool Percent: <b class="nowrap">{{(((yourTotalHashRate) / (poolStats.global.hashRate)) * 100).toFixed(2)}}%</b></a></span>
               <div>
                 <md-button class="md-raised md-accent" aria-label="Miner Login" ng-click="minerLogin($event)" ng-if="!isLoggedIn()">
                   <md-icon class="login">settings</md-icon>
