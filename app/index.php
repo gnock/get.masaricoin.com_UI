@@ -84,11 +84,9 @@ body {
 	background-image: url();
 	background-repeat: no-repeat;
 }
-#RemUserPerc {
-	display: none;
-	}
+
 @media only screen and (max-width: 700px) {
-	#RemUserPerc {
+	#NetworkPercent {
 	display: none;
 	}
 	#RemPhone {
@@ -260,7 +258,7 @@ ist-item>-->
               </md-button>
                <span class="flex text-center wrap" style="color:#AFD5AF;">Network: <b class="nowrap">{{network.difficulty | difficultyToHashRate | toHashRate}}</b></a></span>
              
-              <span id="RemPhone" class="flex text-center wrap" style="color:#AFD5AF;">Network Percent: <b class="nowrap">{{(((poolStats.global.hashRate) / (network.difficulty | difficultyToHashRate)) * 100).toFixed(2)}}%</b></a></span>
+              <span id="NetworkPercent" class="flex text-center wrap" style="color:#AFD5AF;">Network Percent: <b class="nowrap">{{(((poolStats.global.hashRate) / (network.difficulty | difficultyToHashRate)) * 100).toFixed(2)}}%</b></span>
                <span class="flex text-center wrap">Pool: <b class="nowrap">{{poolStats.global.hashRate | toHashRate}}</b></a></span>
               <span class="flex text-center wrap" style="color:#7FDBFF;"><a href="#!/dashboard">You: <b class="nowrap">{{yourTotalHashRate | toHashRate}}</b></a></span>
               <span id="RemUserPerc" class="flex text-center wrap" style="color:#7FDBFF;"><a href="#!/dashboard">Pool Percent: <b class="nowrap">{{(((yourTotalHashRate) / (poolStats.global.hashRate)) * 100).toFixed(2)}}%</b></a></span>
@@ -283,6 +281,7 @@ ist-item>-->
       </div>
       <span id="blockreward" style="display:none;">Block Reward: <b>{{LastBlockData | toXMR | number:10}} MSR</b> <br />Block Height: <b>{{poolStats.global.lastBlockFound}}</b> -- Block Effort: <b>{{((LastBlockShares / LastBlockDiff)*100).toFixed(0) | number}}%</b></span>
       <span id="blockheight" style="display:none;">{{poolStats.global.lastBlockFound}}</span>
+      <span id="NetworkPercentHidden" style="display:none;">{{(((poolStats.global.hashRate) / (network.difficulty | difficultyToHashRate)) * 100).toFixed(2)}}</span>
       <!-- Scripts -->
       <script src="vendor/jquery/dist/jquery.js"></script>
       <script src="vendor/moment/moment.js"></script>
@@ -373,13 +372,64 @@ $.notify({
 	'</div>'
 });
 }
+function NetworkTooHigh(notice) {
+	
+$.notify({
+	
+	icon: 'assets/notifylogo.fw.png',
+	title: 'Pool Exceeds 50%!',
+	message: notice,
+	
+	
+},{
+	type: 'minimalist',
+	
+	animate: {
+		enter: 'animated zoomInDown',
+		exit: 'animated zoomOutUp'
+	},
+	placement: {
+        from: "top",
+       
+      },
+	
+	delay: 30000,
+	icon_type: 'image',
+	template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert" style="text-align:center;">' +
+		'<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
+		'<img data-notify="icon" style="text-align:center;"><br /><br />' +
+		'<span data-notify="title" style="text-align:center;">{1}</span>' +
+		'<span data-notify="message">{2}</span>' +
+		
+	'</div>'
+});
+}
 var a = document.getElementById("blockheight").innerHTML;
+
 setInterval(function(){
-	if (a < document.getElementById("blockheight").innerHTML) {
-	 var reward = document.getElementById("blockreward").innerHTML
+var reward = document.getElementById("blockreward").innerHTML
+if (a < document.getElementById("blockheight").innerHTML) {
 	alerting(reward)}
 	a = document.getElementById("blockheight").innerHTML;
 	}, 
-	10000)
+10000);
+
+
+	
+	var NetworkTimer = setInterval(CheckNetwork, 10000)
+	function CheckNetwork() {
+	var NetworkPercent = document.getElementById("NetworkPercentHidden").innerHTML;
+	if (NetworkPercent > 50) {
+		document.getElementById("NetworkPercent").style.color = "#ffcc66";
+		var notice = "The pools hashrate exceeds 50%.  Please visit https://masaripools.org to find a smaller pool.  Decentralizaion is vital to the health of Masari! ";
+		NetworkTooHigh(notice)
+		clearInterval(NetworkTimer);
+		
+	}
+	}
+
+	
+
+
 
 </script>
