@@ -38,11 +38,12 @@
 					</md-card-title-text>
 					<md-card-title-text>
 						<div class="md-headline">{{((24 * 60) * (network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)).toFixed(2)}}</div>
-                        <md-tooltip md-direction="bottom">
-									Duration in minutes to find a block at 100% effort at current difficulty
-								</md-tooltip>
+                        
 						<div class="md-subhead">
-							<span>Block Time (Minutes)</span>
+							<span>Block Time (Minutes)
+                            <md-tooltip md-direction="bottom">
+									Duration in minutes to find a block at 100% effort at current difficulty
+								</md-tooltip></span>
                             
 							<md-divider md-inset></md-divider>
 							<span class="md-subhead"><a href="#!/home">Current effort {{((poolStats.global.roundHashes / network.difficulty)*100).toFixed(1) | number}} %</a></span>
