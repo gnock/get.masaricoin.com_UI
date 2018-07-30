@@ -326,7 +326,7 @@ ist-item>-->
       <script src="user/help/faq.js"></script>
       <script src="notify/bootstrap-notify.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-      <!--
+     
 <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async>
  var crate = new Crate({
     server: '411195170642460672',
@@ -334,7 +334,7 @@ ist-item>-->
   });
 
   crate.notify('Hey there! Come Chat with us');
- -->
+ 
  </script>
       
      
