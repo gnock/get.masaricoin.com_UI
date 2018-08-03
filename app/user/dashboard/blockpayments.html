@@ -30,7 +30,7 @@
 			</thead>
 			<tbody md-body>
 			  <tr md-row ng-repeat="Blockpayment in Blockpayments">
-				<td md-cell><p class="md-body-2">{{Blockpayment.height}}</p></td>
+				<td md-cell><p class="md-body-2">{{Blockpayment.height | number}}</p></td>
                 <td md-cell>
                 
 					<h3 class="md-body-2" am-time-ago="Blockpayment.ts*1000"></h3>
