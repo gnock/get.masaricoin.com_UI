@@ -383,7 +383,7 @@
 			</div>
 		</form>
 		<span flex></span>
-		<md-button class="md-raised md-primary" ng-click="viewPayments($event, miner, addr)">View Payments</md-button>
+		<md-button class="md-raised md-primary" ng-click="viewBlockPayments($event, miner, addr)">View Block Rewards</md-button><md-button class="md-raised md-primary" ng-click="viewPayments($event, miner, addr)">View Payments</md-button>
 	</md-card-actions>
 </div>
 <span id="OneHash" style="display:none;"> {{((((60*60/((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)))*(network.value | toXMR)*1)/(network.difficulty / ((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate))))*.995)}}  </span>

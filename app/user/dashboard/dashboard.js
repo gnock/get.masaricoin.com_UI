@@ -101,6 +101,27 @@ app.controller('DashboardCtrl', function ($scope, $route, $mdDialog, $pageVisibi
 				$scope.status = 'You cancelled the dialog.';
 			});
 	}
+	
+	$scope.viewBlockPayments = function (ev, miner, addr) {
+
+		$mdDialog.show({
+				locals: {
+					miner: miner,
+					addr: addr
+				},
+				controller: "BlockPaymentsCtrl",
+				templateUrl: 'user/dashboard/blockpayments.html',
+				parent: angular.element(document.body),
+				targetEvent: ev,
+				clickOutsideToClose: true,
+				fullscreen: !$scope.menuOpen
+			})
+			.then(function (answer) {
+				$scope.status = 'You said the information was "' + answer + '".';
+			}, function () {
+				$scope.status = 'You cancelled the dialog.';
+			});
+	}
 
 
 	// Recurring API calls and timer
