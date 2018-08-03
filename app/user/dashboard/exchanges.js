@@ -494,7 +494,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 
         for (var iPoint in points) {
             data.push((parseFloat(points[iPoint].price).toFixed(8)));
-            console.log(points[iPoint].price);
+            
             SEType.push(points[iPoint].side.toUpperCase());
             SEqty.push(points[iPoint].volume);
             var tempdate = new Date(points[iPoint].time);
