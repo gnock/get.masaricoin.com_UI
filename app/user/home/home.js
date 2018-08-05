@@ -120,20 +120,22 @@ app.controller('HomeCtrl', function ($scope, $route, dataService, timerService) 
 
 
 		dataService.getData("/pool/chart/networkHashrate", function (data) {
+			
+			
 			data = _.forEach(data, function (element) {
 				
 				element.ts = element.ts * 1000;
 				element.ts = new Date(element.ts);
-				var holder = element.difficulty / 120;
-				element.hs = (holder / 1000).toFixed(3);
+				var holder = Math.round(element.difficulty / 120);
+				element.hs = (holder / 1000);
 			});
 
 			$scope.NetworkHashrateChart = {
 				datasets: {
 					global: data
 				},
+				
 				options: {
-
 					series: [{
 						"axis": "y",
 						"id": "global",
@@ -141,7 +143,9 @@ app.controller('HomeCtrl', function ($scope, $route, dataService, timerService) 
 						"label": "Total Network Hashrate",
 						"key": "hs",
 						"color": "green",
-						"type": ["line", "area"]
+						 
+						"type": ["line", "area"],
+					
 					}],
 					allSeries: [],
 					axes: {
