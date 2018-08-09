@@ -16,6 +16,7 @@ app.controller('DashboardCtrl', function ($scope, $route, $mdDialog, $pageVisibi
 		var msrtousd = document.getElementById("msrusd").innerHTML
 		var msrtoeur = document.getElementById("msreur").innerHTML
 		var msrtogbp = document.getElementById("msrgbp").innerHTML
+		var msrtocad = document.getElementById("msrcad").innerHTML
 
 		var msrhour = OneHash * attr['hashrate'] * attr['hashes'];
 		var msrday = OneHash * attr['hashrate'] * attr['hashes'] * 24;
@@ -25,6 +26,8 @@ app.controller('DashboardCtrl', function ($scope, $route, $mdDialog, $pageVisibi
 		var eurday = OneHash * attr['hashrate'] * attr['hashes'] * 24 * msrtoeur;
 		var gbphour = OneHash * attr['hashrate'] * attr['hashes'] * msrtogbp;
 		var gbpday = OneHash * attr['hashrate'] * attr['hashes'] * 24 * msrtogbp;
+		var cadhour = OneHash * attr['hashrate'] * attr['hashes'] * msrtocad;
+		var cadday = OneHash * attr['hashrate'] * attr['hashes'] * 24 * msrtocad;
 
 
 		document.getElementById("msrhour").innerHTML = msrhour.toFixed(6);
@@ -35,6 +38,8 @@ app.controller('DashboardCtrl', function ($scope, $route, $mdDialog, $pageVisibi
 		document.getElementById("eurday").innerHTML = " (" + eurday.toFixed(2) + ")";
 		document.getElementById("gbphour").innerHTML = gbphour.toFixed(2);
 		document.getElementById("gbpday").innerHTML = " (" + gbpday.toFixed(2) + ")";
+		document.getElementById("cadhour").innerHTML = cadhour.toFixed(2);
+		document.getElementById("cadday").innerHTML = " (" + cadday.toFixed(2) + ")";
 	}
 
 	$scope.minerStats = {};

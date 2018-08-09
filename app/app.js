@@ -264,6 +264,9 @@ var app = angular.module('poolui', [
 				$.getJSON("https://api.coinmarketcap.com/v1/ticker/masari/?convert=GBP", function(data) {
 				$scope.msrgbp = (data[0].price_gbp * 1).toFixed(4);
 				});
+				$.getJSON("https://api.coinmarketcap.com/v1/ticker/masari/?convert=CAD", function(data) {
+				$scope.msrcad = (data[0].price_cad * 1).toFixed(4);
+				});
 				$.getJSON("https://tradeogre.com/api/v1/ticker/BTC-MSR", function(data) {
 				$scope.msrbtcto = (data["price"] * 1).toFixed(8);
 				});
@@ -336,6 +339,9 @@ var app = angular.module('poolui', [
 				});
 				$.getJSON("https://www.southxchange.com/api/price/msr/btc", function(data) {
 				$scope.msrbtcse = (data["Last"] * 1).toFixed(8);
+				});
+				$.getJSON("https://api.coinmarketcap.com/v1/ticker/masari/?convert=CAD", function(data) {
+				$scope.msrcad = (data[0].price_cad * 1).toFixed(4);
 				});
 				
 
