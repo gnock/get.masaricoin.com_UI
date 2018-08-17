@@ -335,12 +335,13 @@ ist-item>-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
      
 <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async>
- var crate = new Crate({
+ const button = new Crate({
     server: '411195170642460672',
-    channel: '411195170642460674'
+    channel: '411195170642460674',
+    shard: 'https://cl3.widgetbot.io'
   });
 
-  crate.notify('Hey there! Come Chat with us');
+  button.notify('Hey there! Come Chat with us');
  
  </script>
       
