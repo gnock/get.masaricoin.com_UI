@@ -338,7 +338,7 @@ ist-item>-->
  const button = new Crate({
     server: '411195170642460672',
     channel: '411195170642460674',
-    shard: 'https://cl3.widgetbot.io'
+    shard: 'https://cl5.widgetbot.io'
   });
 
   button.notify('Hey there! Come Chat with us');
