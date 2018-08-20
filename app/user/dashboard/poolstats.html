@@ -3,6 +3,100 @@
 		<div layout="column" flex>
 			<md-card class="metric">
 				<md-card-title>
+					<md-card-title-media style="position:relative; left:5%;">
+						
+							<md-icon class="material-icons">฿</md-icon>
+						
+					</md-card-title-media>
+					<md-card-title-text>
+                    <div style="text-align:center;">
+						<span class="md-headline">Bitcoin:&nbsp; <span id="changeBTCspan">&#8674; {{msrbtc}}</span></span>
+						</div>
+                      
+					</md-card-title-text>
+				</md-card-title>
+			</md-card>
+		</div>
+<div layout="column" flex>
+			<md-card class="metric">
+				<md-card-title>
+					<md-card-title-media style="position:relative; left:5%;">
+						
+							<md-icon class="material-icons">$</md-icon>
+						
+					</md-card-title-media>
+					<md-card-title-text>
+						 <div style="text-align:center;">
+						<span class="md-headline">US Dollar:&nbsp; <span id="changeUSDspan">&#8674; {{msrusd}}</span></span>
+						</div>
+                       
+						
+					</md-card-title-text>
+				</md-card-title>
+			</md-card>
+		</div>
+        <div layout="column" flex>
+			<md-card class="metric">
+				<md-card-title>
+					<md-card-title-media style="position:relative; left:5%;">
+						
+							<md-icon class="material-icons">€</md-icon>
+						
+					</md-card-title-media>
+					<md-card-title-text>
+						 <div style="text-align:center;">
+						<span class="md-headline">EU Euro:&nbsp; <span id="changeEURspan">&#8674; {{msreur}}</span></span>
+						</div>
+                        
+						
+					</md-card-title-text>
+				</md-card-title>
+			</md-card>
+		</div>  
+        <div layout="column" flex>
+			<md-card class="metric">
+				<md-card-title>
+					<md-card-title-media style="position:relative; left:5%;">
+						
+							<md-icon class="material-icons">£</md-icon>
+						
+					</md-card-title-media>
+					<md-card-title-text>
+						 <div style="text-align:center;">
+						<span class="md-headline">GB Pound:&nbsp; <span id="changeGBPspan">&#8674; {{msrgbp}}</span></span>
+						</div>
+                        
+						
+					</md-card-title-text>
+				</md-card-title>
+			</md-card>
+		</div>
+        <div layout="column" flex>
+			<md-card class="metric">
+				<md-card-title>
+					<md-card-title-media style="position:relative; left:5%;">
+						
+							<md-icon class="material-icons">$</md-icon>
+						
+					</md-card-title-media>
+					<md-card-title-text>
+						 <div style="text-align:center;">
+						<span class="md-headline">CAD Dollar:&nbsp; <span id="changeCADspan">&#8674; {{msrcad}}</span></span>
+						</div>
+                        
+						
+					</md-card-title-text>
+				</md-card-title>
+			</md-card>
+		</div>      
+</div>
+</div>
+
+<div layout-gt-lg="row" layout="column" class="statsbar" flex>
+	<div layout="column" layout-gt-sm="row" flex>
+		<div layout="column" flex>
+			<md-card class="metric">
+				<md-card-title>
 					<md-card-title-media>
 						<div class="md-media-sm card-media" layout="row" layout-align="center center" >
 							<md-icon class="material-icons" style="height:30px; width:30px; position:relative; top:5px; "><img src="assets/newart/masarifav.png" /></md-icon>
@@ -90,32 +184,29 @@
 						</div>
 					</md-card-title-media>
 					<md-card-title-text>
-						<span class="md-headline">{{msrbtc}}</span>
-                        <md-tooltip md-direction="bottom">
-							<span>USD:&nbsp;  $ {{msrusd}}</span><br />
-                            <span>EUR:&nbsp;  € {{msreur}}</span><br />
-                            <span>GBP:&nbsp;  £ {{msrgbp}}</span><br />
-                            <span>CAD:&nbsp;  $ {{msrcad}}</span>
-						</md-tooltip>
+						<span class="md-headline">{{lastdayblocks}} Blocks</span>
+                        
 						<div class="md-subhead">
-							<span>CoinMarketCap</span>
+							<span>Found in 24 Hours</span>
 							<md-divider md-inset></md-divider>
-							<span class="md-subhead">MSR to EUR: €{{msreur}}</span>
+							<span class="md-subhead">Hashes Accepted:</span>
 							<!--                            <span class="md-subhead"><a href="#!/home">Average effort {{overallEffort | number:2 }} %</a></span> -->
 						</div>
 					</md-card-title-text>
 					<md-card-title-text>
-						<span class="md-headline" ng-if="(network.avgDiffPastDay * config.pplns_multiplier / poolStats.global.hashRateAvg) < (60 * 60 * 24)" ng-cloak>{{(network.difficulty * config.pplns_multiplier / poolStats.global.hashRateAvg) * 1000 | date : 'HH:mm' : 'UTC'}}</span>
+						<span class="md-headline" ng-if="(network.avgDiffPastDay * config.pplns_multiplier / poolStats.global.hashRateAvg) < (60 * 60 * 24)" ng-cloak>{{(network.difficulty * config.pplns_multiplier / poolStats.global.hashRateAvg) * 1000 | date : 'HH:mm' : 'UTC'}}<md-tooltip md-direction="bottom">
+							Estimated mining time before your full PPLNS potential is realized
+						</md-tooltip></span>
 						<span class="md-headline" ng-if="(network.avgDiffPastDay * config.pplns_multiplier / poolStats.global.hashRateAvg) > (60 * 60 * 24)">&gt; 1 Day</span>
 						<span class="md-subhead">PPLNS Window</span>
-						<md-tooltip md-direction="bottom">
-							Estimated mining time before your full PPLNS potential is realized
-						</md-tooltip>
+						
 						<md-divider md-inset></md-divider>
-						<span class="md-subhead">MSR to USD: ${{msrusd}}</span>
+						<span class="md-subhead"> {{poolStats.global.totalHashes | number}} </span>
 					</md-card-title-text>
 				</md-card-title>
 			</md-card>
 		</div>
 	</div>
 </div>
+
+

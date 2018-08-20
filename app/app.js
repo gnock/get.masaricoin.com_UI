@@ -219,6 +219,36 @@ var app = angular.module('poolui', [
 		}
 
 		// API Requests
+		
+		
+		
+		var UpdateValues = function(previous, updated, span) {
+		if(previous > updated) {
+					document.getElementById(span).style.color = '#cc0000';
+					document.getElementById(span).innerHTML =  "&#8675; " + updated;
+				} else if (previous < updated) {
+					document.getElementById(span).style.color = '#009966';
+					document.getElementById(span).innerHTML = "&#8673; " + updated;
+				} else {
+					document.getElementById(span).style.color = '';
+					document.getElementById(span).innerHTML = "&#8674; " + updated;
+				}
+			}
+		var UpdatePercents = function(percent,span) {
+			
+			if (percent > 0) {
+				document.getElementById(span).style.color = '#009966';
+				document.getElementById(span).innerHTML = "&#9652; " + percent + "%";	
+			} else  if (percent < 0) {
+				document.getElementById(span).style.color = '#cc0000';
+				document.getElementById(span).innerHTML = "&#9662; " + percent + "%";	
+			} else {
+				document.getElementById(span).innerHTML = "&#9662; " + percent + "%";
+			}
+		}
+		
+		
+		
 		var loadData = function () {
 			dataService.getData("/pool/stats", function(data){
 				$scope.poolList = data.pool_list;
@@ -237,13 +267,23 @@ var app = angular.module('poolui', [
 
 		
 			dataService.getData("/pool/blocks/pplns?limit=10000", function(data) {
+				var last24 = [];
+				var ts = Math.round(new Date().getTime()) /1000;
+    			var tsYesterday = Math.round(ts - (24 * 3600)) ;
+				
 				var blockCount = 0;
-                		var totalLuck = 0;
+                var totalLuck = 0;
            			$scope.pulledBlocks = data;
             			for (var i = 0; i < $scope.pulledBlocks.length; i++) {
             				totalLuck += $scope.pulledBlocks[i].shares / $scope.pulledBlocks[i].diff;
             				blockCount += 1;
+							var blocktime = Math.round($scope.pulledBlocks[i].ts / 1000);
+							if(blocktime >= tsYesterday)
+							{
+								last24.push(blocktime);
+							}
 				}
+				$scope.lastdayblocks = last24.length;//last24.length;
 				$scope.overallEffort = (totalLuck / blockCount)*100;
             		});
 				
@@ -251,28 +291,50 @@ var app = angular.module('poolui', [
 				$.getJSON("https://www.southxchange.com/api/price/msr/usd", function(data) {
 				$scope.aeonusd = (data["Last"] * 1).toFixed(4);
 				});
-				 $.getJSON("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=EUR", function(data) {
-				$scope.btceur = (data[0].price_eur * 1).toFixed(3);
-				$scope.btcusd = (data[0].price_usd * 1).toFixed(3);
-				});
 				
 				$.getJSON("https://api.coinmarketcap.com/v1/ticker/masari/?convert=EUR", function(data) {
-				$scope.msrusd = (data[0].price_usd * 1).toFixed(4);
+				$scope.btceur = (data[0].price_eur * 1).toFixed(3);
 				$scope.msreur = (data[0].price_eur * 1).toFixed(4);
-				$scope.msrbtc = (data[0].price_btc * 1).toFixed(8);
+				$scope.eurhour = data[0].percent_change_1h;
+				$scope.eurday = data[0].percent_change_24h;
+				$scope.eurweek = data[0].percent_change_7d;
+				});
+				$.getJSON("https://api.coinmarketcap.com/v1/ticker/masari/?convert=USD", function(data) {
+				$scope.msrusd = (data[0].price_usd * 1).toFixed(4);
+				$scope.btcusd = (data[0].price_usd * 1).toFixed(3);
+				$scope.usdhour = data[0].percent_change_1h;
+				$scope.usdday = data[0].percent_change_24h;
+				$scope.usdweek = data[0].percent_change_7d;
 				});
 				$.getJSON("https://api.coinmarketcap.com/v1/ticker/masari/?convert=GBP", function(data) {
 				$scope.msrgbp = (data[0].price_gbp * 1).toFixed(4);
+				$scope.gbphour = data[0].percent_change_1h;
+				$scope.gbpday = data[0].percent_change_24h;
+				$scope.gbpweek = data[0].percent_change_7d;
 				});
 				$.getJSON("https://api.coinmarketcap.com/v1/ticker/masari/?convert=CAD", function(data) {
 				$scope.msrcad = (data[0].price_cad * 1).toFixed(4);
+				$scope.cadhour = data[0].percent_change_1h;
+				$scope.cadday = data[0].percent_change_24h;
+				$scope.cadweek = data[0].percent_change_7d;
 				});
+				$.getJSON("https://api.coinmarketcap.com/v1/ticker/masari/", function(data) {
+				$scope.msrbtc = (data[0].price_btc * 1).toFixed(8);
+				$scope.btchour = data[0].percent_change_1h;
+				$scope.btcday = data[0].percent_change_24h;
+				$scope.btcweek = data[0].percent_change_7d;
+				
+				
+				});
+				
 				$.getJSON("https://tradeogre.com/api/v1/ticker/BTC-MSR", function(data) {
 				$scope.msrbtcto = (data["price"] * 1).toFixed(8);
 				});
 				$.getJSON("https://www.southxchange.com/api/price/msr/btc", function(data) {
 				$scope.msrbtcse = (data["Last"] * 1).toFixed(8);
 				});
+				
+				//
 				
 			
 					
@@ -284,6 +346,7 @@ var app = angular.module('poolui', [
 				//$scope.etnweekrev = (1000/$scope.network.difficulty)*86400*7*$scope.network.value*$scope.etnusd;
 			//});				
 		}
+		
 
 		var loadOnce = function () {
 			dataService.getData("/config", function(data){
@@ -297,6 +360,7 @@ var app = angular.module('poolui', [
 				$scope.WorkersTotal = total;
 		
 			});
+		
 		}
 
 		// For FAQ
@@ -315,35 +379,86 @@ var app = angular.module('poolui', [
 		timerService.register(loadData, 'global');
 		$interval(updateCache, GLOBALS.app_update_interval); // check for app updates every 5 mins
 		
+		
+		var changeBTCspan = "changeBTCspan";
+		var changeUSDspan = "changeUSDspan";
+		var changeEURspan = "changeEURspan";
+		var changeGBPspan = "changeGBPspan";
+		var changeCADspan = "changeCADspan";
+		
+		
+		
+		var changeBTC = $scope.msrbtc;
+		var changeUSD = $scope.msrusd;
+		var changeEUR = $scope.msreur;
+		var changeGBP = $scope.msrgbp;
+		var changeCAD = $scope.msrcad;
+		
+		
+
+		
 		$interval(function(){ // Start price timer 
 	            
 				
 				$.getJSON("https://www.southxchange.com/api/price/msr/usd", function(data) {
 				$scope.aeonusd = (data["Last"] * 1).toFixed(4);
 				});
-				 $.getJSON("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=EUR", function(data) {
-				$scope.btceur = (data[0].price_eur * 1).toFixed(3);
-				$scope.btcusd = (data[0].price_usd * 1).toFixed(3);
-				});
 				
 				$.getJSON("https://api.coinmarketcap.com/v1/ticker/masari/?convert=EUR", function(data) {
-				$scope.msrusd = (data[0].price_usd * 1).toFixed(4);
+				$scope.btceur = (data[0].price_eur * 1).toFixed(3);
 				$scope.msreur = (data[0].price_eur * 1).toFixed(4);
-				$scope.msrbtc = (data[0].price_btc * 1).toFixed(8);
+				$scope.eurhour = data[0].percent_change_1h;
+				$scope.eurday = data[0].percent_change_24h;
+				$scope.eurweek = data[0].percent_change_7d;
+				});
+				$.getJSON("https://api.coinmarketcap.com/v1/ticker/masari/?convert=USD", function(data) {
+				$scope.msrusd = (data[0].price_usd * 1).toFixed(4);
+				$scope.btcusd = (data[0].price_usd * 1).toFixed(3);
+				$scope.usdhour = data[0].percent_change_1h;
+				$scope.usdday = data[0].percent_change_24h;
+				$scope.usdweek = data[0].percent_change_7d;
 				});
 				$.getJSON("https://api.coinmarketcap.com/v1/ticker/masari/?convert=GBP", function(data) {
 				$scope.msrgbp = (data[0].price_gbp * 1).toFixed(4);
+				$scope.gbphour = data[0].percent_change_1h;
+				$scope.gbpday = data[0].percent_change_24h;
+				$scope.gbpweek = data[0].percent_change_7d;
 				});
+				$.getJSON("https://api.coinmarketcap.com/v1/ticker/masari/?convert=CAD", function(data) {
+				$scope.msrcad = (data[0].price_cad * 1).toFixed(4);
+				$scope.cadhour = data[0].percent_change_1h;
+				$scope.cadday = data[0].percent_change_24h;
+				$scope.cadweek = data[0].percent_change_7d;
+				});
+				$.getJSON("https://api.coinmarketcap.com/v1/ticker/masari/", function(data) {
+				$scope.msrbtc = (data[0].price_btc * 1).toFixed(8);
+				$scope.btchour = data[0].percent_change_1h;
+				$scope.btcday = data[0].percent_change_24h;
+				$scope.btcweek = data[0].percent_change_7d;
+				
+				});
+				
 				$.getJSON("https://tradeogre.com/api/v1/ticker/BTC-MSR", function(data) {
 				$scope.msrbtcto = (data["price"] * 1).toFixed(8);
 				});
 				$.getJSON("https://www.southxchange.com/api/price/msr/btc", function(data) {
 				$scope.msrbtcse = (data["Last"] * 1).toFixed(8);
 				});
-				$.getJSON("https://api.coinmarketcap.com/v1/ticker/masari/?convert=CAD", function(data) {
-				$scope.msrcad = (data[0].price_cad * 1).toFixed(4);
-				});
 				
+				
+				
+				UpdateValues(changeBTC,$scope.msrbtc,changeBTCspan);
+				UpdateValues(changeUSD,$scope.msrusd,changeUSDspan);
+				UpdateValues(changeEUR,$scope.msreur,changeEURspan);
+				UpdateValues(changeGBP,$scope.msrgbp,changeGBPspan);
+				UpdateValues(changeCAD,$scope.msrcad,changeCADspan);
+				
+				changeBTC = $scope.msrbtc;
+				changeUSD = $scope.msrusd;
+				changeEUR = $scope.msreur;
+				changeGBP = $scope.msrgbp;
+				changeCAD = $scope.msrcad;
+					
 
 			
 				
@@ -363,6 +478,7 @@ var app = angular.module('poolui', [
 
 		// Sponsor
 		$scope.sponsor_open = false
+		
 
 	});
 
