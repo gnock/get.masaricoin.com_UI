@@ -403,6 +403,7 @@ $.notify({
 	},
 	placement: {
         from: "top",
+		align: "center"
        
       },
 	
@@ -412,7 +413,7 @@ $.notify({
 		'<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
 		'<img data-notify="icon" style="text-align:center;"><br /><br />' +
 		'<span data-notify="title" style="text-align:center;">{1}</span>' +
-		'<span data-notify="message">{2}</span>' +
+		'<span data-notify="message" style="font-size:"18px;">{2}</span>' +
 		
 	'</div>'
 });
