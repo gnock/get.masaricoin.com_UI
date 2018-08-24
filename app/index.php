@@ -92,6 +92,9 @@ body {
 	#RemPhone {
 	display: none;
 	}
+	RemUserPerc {
+		display:none;
+	}
 	}
  </style>
 </head>
