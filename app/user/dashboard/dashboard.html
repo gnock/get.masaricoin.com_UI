@@ -125,11 +125,13 @@
 	<md-card flex>
 			<md-card-title>
 				<span class="md-headline">Profit Calculator </span><md-tooltip md-direction="bottom">
-									Calculations are made using the average difficulty over the past 24 hours to be more accurate
+									To be more accurate, calculations are made using the average difficulty over the past 24 hours ({{daydiffavg | number}})
 								</md-tooltip>
+                                 
 			</md-card-title>
+           
 			<md-divider md-inset></md-divider>
-			<md-card-content>
+			
 		<md-card-content>
 			<form layout="" layout-align="center" class="xx-payment-form ng-pristine ng-valid layout-align-center-stretch layout-row">
 				<div layout="row" flex="" style="flex-direction: row;" class="layout-row flex">
