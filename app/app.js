@@ -268,6 +268,7 @@ var app = angular.module('poolui', [
 		
 			dataService.getData("/pool/blocks/pplns?limit=10000", function(data) {
 				var last24 = [];
+				var difsum = 0;
 				var ts = Math.round(new Date().getTime()) /1000;
     			var tsYesterday = Math.round(ts - (24 * 3600)) ;
 				
@@ -281,8 +282,10 @@ var app = angular.module('poolui', [
 							if(blocktime >= tsYesterday)
 							{
 								last24.push(blocktime);
+								difsum += $scope.pulledBlocks[i].diff;
 							}
 				}
+				$scope.daydiffavg = Math.round(difsum / last24.length);
 				$scope.lastdayblocks = last24.length;//last24.length;
 				$scope.overallEffort = (totalLuck / blockCount)*100;
             		});
