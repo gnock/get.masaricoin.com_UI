@@ -29,14 +29,14 @@ app.controller('BlocksCtrl', function($scope, $route, dataService, timerService)
 
                                 // calculate luck
                                 luck = block.shares/block.diff*100;
-                                var mid = 100 ;
+                                var mid = 125 ;
                                 var $b = 0;
                                         if (luck <= mid){
 
-                                                var $r = Math.floor(80 * (luck / mid));
+                                            var $r = Math.floor(80 * (luck / mid));
                                             var $g = 128;
                                         }
-                                        else if (luck <= 200) {
+                                        else if (luck <= 250) {
 
                                                 $r = 255;
                                             $g = Math.floor(180 * ((mid - (luck-1) % mid) / mid));
