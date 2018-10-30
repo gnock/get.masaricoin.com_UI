@@ -36,7 +36,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
         var rawData = JSON.parse(data);
         var last25 = [];
         var i = 0;
-        for (i = rawData.length-1;i >= rawData.length-25;i--){
+        for (i = rawData.length-1;i >= rawData.length-50;i--){
             last25[i] = rawData[i];
         }
         tickerTO(last25);
