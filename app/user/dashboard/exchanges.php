@@ -46,7 +46,7 @@
 
         </md-toolbar>
         <md-card-content>
-            <canvas id="TradeOgre" width="400" height="65"></canvas>
+            <canvas id="TradeOgre" width="400" height="100"></canvas>
 
             <table style="width:90%; margin-left:auto; margin-right:auto;">
                 <tr style="text-align:center;">
@@ -69,6 +69,7 @@
 
         </md-card-content>
     </md-card>
+    
     <md-card flex>
         <md-toolbar class="md-table-toolbar md-default">
             <a href="https://www.southxchange.com/Market/Book/MSR/BTC" target="_blank" rel="nofollow" alt="SouthXchange">
@@ -77,7 +78,7 @@
 
         </md-toolbar>
         <md-card-content>
-            <canvas id="SouthEx" width="400" height="65"></canvas>
+            <canvas id="SouthEx" width="400" height="100"></canvas>
 
             <table style="width:90%; margin-left:auto; margin-right:auto;">
                 <tr style="text-align:center;">
@@ -113,7 +114,7 @@
 
         </md-toolbar>
         <md-card-content>
-            <canvas id="Crex" width="400" height="65"></canvas>
+            <canvas id="Crex" width="400" height="100"></canvas>
 
             <table style="width:90%; margin-left:auto; margin-right:auto;">
                 <tr style="text-align:center;">
@@ -144,7 +145,7 @@
 
         </md-toolbar>
         <md-card-content>
-            <canvas id="StocksEx" width="400" height="65"></canvas>
+            <canvas id="StocksEx" width="400" height="100"></canvas>
 
             <table style="width:90%; margin-left:auto; margin-right:auto;">
                 <tr style="text-align:center;">
@@ -166,68 +167,3 @@
     </md-card>
 </div>
 
-<div layout="column" layout-gt-sm="row" flex>
-
-    <!-- MapleChange and Altex -->
-
-    <md-card flex>
-        <md-toolbar class="md-table-toolbar md-default">
-            <a href="https://altex.exchange/markets&pair=BTC_MSR" target="_blank" rel="nofollow" alt="altex.exchange">
-                <div class="md-toolbar-tools" style="background-image:url(assets/ALT_Back.fw.png)"></div>
-            </a>
-
-        </md-toolbar>
-        <md-card-content>
-            <canvas id="Altex" width="400" height="65"></canvas>
-
-            <table style="width:90%; margin-left:auto; margin-right:auto;">
-                <tr style="text-align:center;">
-                    <th>Last Price</th>
-                    <th class="RemPhone">24 Hour Volume</th>
-                    <th class="RemPhone">High / Low</th>
-                    <th class="RemPhone">Change</th>
-                    <th>Current Bid</th>
-                    <th>Current Ask</th>
-                </tr>
-                <tr style="text-align:center;">
-                    <td>{{ALTPrice}}</td>
-                    <td class="RemPhone">{{ALTVol}} BTC</td>
-                    <td class="RemPhone">{{ALTHigh}} / {{ALTLow}}</td>
-                    <td class="RemPhone">{{ALTVar}}</td>
-                    <td>{{ALTBid}}</td>
-                    <td>{{ALTAsk}}</td>
-                </tr>
-            </table>
-        </md-card-content>
-    </md-card>
-
-    <md-card flex>
-        <md-toolbar class="md-table-toolbar md-default">
-            <a href="https://maplechange.com/markets/msrbtc?markets=all&column=name&order=asc&unit=volume&pinned=true" target="_blank" rel="nofollow" alt="maplechange">
-                <div class="md-toolbar-tools" style="background-image:url(assets/MAPLE_Back.fw.png)"></div>
-            </a>
-        </md-toolbar>
-        <md-card-content>
-            <canvas id="Maple" width="400" height="65"></canvas>
-
-            <table style="width:90%; margin-left:auto; margin-right:auto;">
-                <tr style="text-align:center;">
-                    <th>Last Price</th>
-                    <th class="RemPhone">24 Hour Volume</th>
-                    <th class="RemPhone">High / Low</th>
-                    <th class="RemPhone">Change</th>
-                    <th>Current Bid</th>
-                    <th>Current Ask</th>
-                </tr>
-                <tr style="text-align:center;">
-                    <td>{{MPPrice}}</td>
-                    <td class="RemPhone">{{MPVol}} BTC</td>
-                    <td class="RemPhone">{{MPHigh}} / {{MPLow}}</td>
-                    <td class="RemPhone">{{MPVar}}</td>
-                    <td>{{MPBid}}</td>
-                    <td>{{MPAsk}}</td>
-                </tr>
-            </table>
-        </md-card-content>
-    </md-card>
-</div>

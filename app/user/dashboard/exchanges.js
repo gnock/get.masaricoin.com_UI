@@ -10,19 +10,20 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
         }).done(function(data) {
             tickerSE(data);
         });
-
+/*
         $.ajax({
             url: 'https://api.altex.exchange/v1/marketHistory/market/BTC_MSR'
         }).done(function(data) {
             tickerALT(data["data"]);
         });
 
-        $.ajax({
+       
+	    $.ajax({
             url: 'https://maplechange.com:443//api/v2/trades.json?market=msrbtc&limit=25'
         }).done(function(data) {
             tickerMP(data);
         });
-
+	*/
         $.ajax({
             url: 'https://get.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://app.stocks.exchange/api2/trades?pair=MSR_BTC')
         }).done(function(data) {
@@ -65,7 +66,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             $scope.SEVar = (data["Variation24Hr"] * 1).toFixed(2);
             $scope.SEVol = (data["Volume24Hr"] * 1).toFixed(8);
         });
-
+/*
         $.getJSON("https://maplechange.com//api/v2/tickers/msrbtc.json", function(data) {
             $scope.MPPrice = (data["ticker"].last * 1).toFixed(8);
             $scope.MPBid = (data["ticker"].buy * 1).toFixed(8);
@@ -75,7 +76,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             $scope.MPHigh = (data["ticker"].high * 1).toFixed(8);
             $scope.MPLow = (data["ticker"].low * 1).toFixed(8);
         });
-
+*/
         $.getJSON('https://get.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://app.stocks.exchange/api2/ticker'), function(data) {
 
             for (var stedata in data) {
@@ -89,7 +90,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
                 }
             }
         }, 'json');
-
+/*
         $.getJSON("https://api.altex.exchange/v1/ticker", function(data) {
             $scope.ALTPrice = data["data"].BTC_MSR.last
             $scope.ALTBid = data["data"].BTC_MSR.bid;
@@ -99,7 +100,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             $scope.ALTVol = data["data"].BTC_MSR.volume
             $scope.ALTVar = data["data"].BTC_MSR.change;
         }, 'json');
-
+*/
         $.getJSON("https://tradeogre.com/api/v1/ticker/BTC-MSR", function(data) {
             $scope.TOPrice = (data["price"] * 1).toFixed(8);
             $scope.TOPrev = (data["initialprice"] * 1).toFixed(8);
@@ -186,7 +187,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             }
         });
     }
-
+/*
     function tickerALT(points) {
 
         var ctx = document.getElementById('Altex').getContext('2d');
@@ -261,7 +262,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             }
         });
     }
-
+*/
     function tickerSTE(points) {
 
         var ctx = document.getElementById('StocksEx').getContext('2d');
@@ -410,7 +411,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             }
         });
     }
-
+/*
     function tickerMP(points) {
 
         var ctx = document.getElementById('Maple').getContext('2d');
@@ -483,7 +484,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             }
         });
     }
-
+*/
     function tickerCREX(points) {
 
         var ctx = document.getElementById('Crex').getContext('2d');
@@ -570,11 +571,13 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
     tickerTO();
     timerService.register(tickerCREX, 'Crex');
     tickerCREX();
-    timerService.register(tickerMP, 'Maple');
+    /*
+	timerService.register(tickerMP, 'Maple');
     tickerMP();
-    timerService.register(tickerALT, 'Altex');
+    
+	timerService.register(tickerALT, 'Altex');
     tickerALT();
-
+*/
 
 
 
@@ -583,8 +586,8 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
         timerService.remove("StocksEx");
         timerService.remove("TradeOgre");
         timerService.remove("Crex");
-        timerService.remove("Maple");
-        timerService.remove("Altex");
+        //timerService.remove("Maple");
+        //timerService.remove("Altex");
 
     });
 
