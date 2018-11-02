@@ -332,7 +332,7 @@ ist-item>-->
       <script src="user/help/faq.js"></script>
       <script src="notify/bootstrap-notify.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-     
+<!--     
 <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async>
  const button = new Crate({
     server: '411195170642460672',
@@ -348,6 +348,7 @@ ist-item>-->
       <!--
       <script src="https://crate.widgetbot.io/v2" defer async data-cfasync="false">new Crate({"server":"411195170642460672","channel":"411195170642460674"})</script>
       <script id="cid0020000179101226609" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 220px;height: 300px;">{"handle":"otherguysmining","arch":"js","styles":{"a":"6686ba","b":100,"c":"000000","d":"000000","k":"6686ba","l":"6686ba","m":"6686ba","p":"10","q":"6686ba","r":100,"pos":"bl","cv":1,"cvbg":"6686ba","cvfg":"ffffff","cvw":220,"cvh":30,"ticker":1,"fwtickm":1}}</script>
+    -->
     </body>
     </html>
 -->
