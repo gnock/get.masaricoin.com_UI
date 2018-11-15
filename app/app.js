@@ -268,12 +268,13 @@ var app = angular.module('poolui', [
 		
 			dataService.getData("/pool/blocks/pplns?limit=10000", function(data) {
 				var last24 = [];
+				var vUnlocked = [];
 				var difsum = 0;
 				var ts = Math.round(new Date().getTime()) /1000;
     			var tsYesterday = Math.round(ts - (24 * 3600)) ;
-				
 				var blockCount = 0;
                 var totalLuck = 0;
+				var valid = 0;
            			$scope.pulledBlocks = data;
             			for (var i = 0; i < $scope.pulledBlocks.length; i++) {
             				totalLuck += $scope.pulledBlocks[i].shares / $scope.pulledBlocks[i].diff;
@@ -283,11 +284,18 @@ var app = angular.module('poolui', [
 							{
 								last24.push(blocktime);
 								difsum += $scope.pulledBlocks[i].diff;
+								
+							}
+							if($scope.pulledBlocks[i].unlocked == false && $scope.pulledBlocks[i].valid == true )
+							{
+								valid += 1;
+								
 							}
 				}
 				$scope.daydiffavg = Math.round(difsum / last24.length);
 				$scope.lastdayblocks = last24.length;//last24.length;
 				$scope.overallEffort = (totalLuck / blockCount)*100;
+				$scope.lockedBlocks = valid;
             		});
 				
 				
