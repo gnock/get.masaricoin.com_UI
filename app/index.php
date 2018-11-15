@@ -336,8 +336,7 @@ ist-item>-->
 <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async>
  const button = new Crate({
     server: '411195170642460672',
-    channel: '411195170642460674',
-    shard: 'https://cl1.widgetbot.io'
+    channel: '411195170642460674'
   });
 
   
