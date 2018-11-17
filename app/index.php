@@ -400,11 +400,7 @@ $.notify({
 		enter: 'animated zoomInDown',
 		exit: 'animated zoomOutUp'
 	},
-	placement: {
-        from: "top",
-		align: "center"
-       
-      },
+	
 	
 	delay: 30000,
 	icon_type: 'image',
@@ -434,7 +430,7 @@ if (a < document.getElementById("blockheight").innerHTML) {
 	var NetworkPercent = document.getElementById("NetworkPercentHidden").innerHTML;
 	if (NetworkPercent > 50) {
 		document.getElementById("NetworkPercent").style.color = "#ffcc66";
-		var notice = "The pools hashrate exceeds 50%.  Please visit https://masaripools.org to find a smaller pool.  Decentralizaion is vital to the health of Masari! ";
+		var notice = "Please visit <a href='https://www.masaripools.org' target='_blank'>https://www.masaripools.org</a> to find a smaller pool. <br /> Decentralizaion is vital to the health of Masari!<br /> ";
 		NetworkTooHigh(notice)
 		clearInterval(NetworkTimer);
 		
