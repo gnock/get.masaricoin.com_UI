@@ -184,7 +184,7 @@ th {
                     <td><span id="changeSEAskspan">&#8674; {{SEAsk}}</span></td>
                     <td class="RemPhone">{{SEType}}</td>
                     <td class="RemPhone">{{SEQuantity}}</td>
-                    <td class="RemPhone">{{SEVol}}</td>
+                    <td class="RemPhone">{{SEVol}} BTC</td>
                     <td class="RemPhone">{{SELastUpdate}}</td>
                 </tr>
                 </tbody>
@@ -227,7 +227,7 @@ th {
                     <td><span id="changeCREXAskspan">&#8674; {{CREXAsk}}</span></td>
                     <td class="RemPhone">{{CrexType}}</td>
                     <td class="RemPhone">{{CrexQuantity}}</td>
-                    <td class="RemPhone">{{CREXVol}}</td>
+                    <td class="RemPhone">{{CREXVol}} BTC</td>
                     <td class="RemPhone">{{CrexLastUpdate}}</td>
                 </tr>
                 </tbody>
@@ -264,7 +264,7 @@ th {
                     <td><span id="changeSTEAskspan">&#8674; {{STEAsk}}</span></td>
                     <td class="RemPhone">{{STEType}}</td>
                     <td class="RemPhone">{{STEQuantity}}</td>
-                    <td class="RemPhone">{{STEVol}}</td>
+                    <td class="RemPhone">{{STEVol}} MSR</td>
                     <td class="RemPhone">{{STELastUpdate}}</td>
                 </tr>
                 </tbody>
