@@ -179,9 +179,9 @@ th {
                     <th class="RemPhone" style="width:16%;">Last Update</th>
                 </tr>
                 <tr style="text-align:center;">
-                    <td>{{SEPrice}}</td>
-                    <td>{{SEBid}}</td>
-                    <td>{{SEAsk}}</td>
+                    <td><span id="changeSEspan">&#8674; {{SEPrice}}</span></td>
+                    <td><span id="changeSEBidspan">&#8674; {{SEBid}}</span></td>
+                    <td><span id="changeSEAskspan">&#8674; {{SEAsk}}</span></td>
                     <td class="RemPhone">{{SEType}}</td>
                     <td class="RemPhone">{{SEQuantity}}</td>
                     <td class="RemPhone">{{SEVol}}</td>
@@ -222,9 +222,9 @@ th {
                     <th class="RemPhone" style="width:16%;">Last Update</th>
                 </tr>
                 <tr style="text-align:center;">
-                    <td>{{CREXPrice}}</td>
-                    <td>{{CREXBid}}</td>
-                    <td>{{CREXAsk}}</td>
+                    <td><span id="changeCREXspan">&#8674; {{CREXPrice}}</span></td>
+                    <td><span id="changeCREXBidspan">&#8674; {{CREXBid}}</span></td>
+                    <td><span id="changeCREXAskspan">&#8674; {{CREXAsk}}</span></td>
                     <td class="RemPhone">{{CrexType}}</td>
                     <td class="RemPhone">{{CrexQuantity}}</td>
                     <td class="RemPhone">{{CREXVol}}</td>
@@ -259,9 +259,9 @@ th {
                     <th class="RemPhone" style="width:16%;">Last Update</th>
                 </tr>
                 <tr style="text-align:center;">
-                    <td>{{STEPrice}}</td>
-                    <td>{{STEBid}}</td>
-                    <td>{{STEAsk}}</td>
+                    <td><span id="changeSTEspan">&#8674; {{STEPrice}}</span></td>
+                    <td><span id="changeSTEBidspan">&#8674; {{STEBid}}</span></td>
+                    <td><span id="changeSTEAskspan">&#8674; {{STEAsk}}</span></td>
                     <td class="RemPhone">{{STEType}}</td>
                     <td class="RemPhone">{{STEQuantity}}</td>
                     <td class="RemPhone">{{STEVol}}</td>

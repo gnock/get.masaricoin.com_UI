@@ -18,9 +18,22 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 				var changeTO = '';
 				var changeTOAsk = '';
 				var changeTOBid = '';
+				
 				var changeCrypt = '';
 				var changeCryptAsk = '';
 				var changeCryptBid = '';
+				
+				var changeSTE = '';
+				var changeSTEAsk = '';
+				var changeSTEBid = '';
+				
+				var changeSE = '';
+				var changeSEAsk = '';
+				var changeSEBid = '';
+				
+				var changeCREX = '';
+				var changeCREXAsk = '';
+				var changeCREXBid = '';
 		
 		
     function calls() {
@@ -29,9 +42,22 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 		var changeTOspan = "changeTOspan";
 		var changeTOAskspan = "changeTOAskspan";
 		var changeTOBidspan = "changeTOBidspan";
+		
 		var changeCryptspan = "changeCryptspan";
 		var changeCryptAskspan = "changeCryptAskspan";
 		var changeCryptBidspan = "changeCryptBidspan";
+		
+		var changeCREXspan = "changeCREXspan";
+		var changeCREXAskspan = "changeCREXAskspan";
+		var changeCREXBidspan = "changeCREXBidspan";
+		
+		var changeSEspan = "changeSEspan";
+		var changeSEAskspan = "changeSEAskspan";
+		var changeSEBidspan = "changeSEBidspan";
+		
+		var changeSTEspan = "changeSTEspan";
+		var changeSTEAskspan = "changeSTEAskspan";
+		var changeSTEBidspan = "changeSTEBidspan";
 
         $.ajax({
             url: 'https://www.southxchange.com/api/trades/msr/btc'
@@ -105,8 +131,9 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             $scope.CrexQuantity = data[0].volume;
 			var CrexTypeside = data[0].side;
 			$scope.CrexType = CrexTypeside.toUpperCase();
-			var CrexLastTime = data[0].timestamp;
-			$scope.CrexLastUpdate = CrexLastTime.toLocaleString();
+			var CrexLastTime = new Date(data[0].timestamp);
+			var CrexMilli = CrestLastTime.getTime()
+			$scope.CrexLastUpdate = CrexMilli.toLocaleString();
         });
 		
 		$.getJSON('https://testnet.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://api.crex24.com/v2/public/tickers?instrument=MSR-BTC'), function(data) {
@@ -166,16 +193,42 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 				UpdatePrice(changeTO,$scope.TOPrice,changeTOspan);
 				UpdatePrice(changeTOAsk,$scope.TOAsk,changeTOAskspan);
 				UpdatePrice(changeTOBid,$scope.TOBid,changeTOBidspan);
+				
 				UpdatePrice(changeCrypt,$scope.CryptPrice,changeCryptspan);
 				UpdatePrice(changeCryptAsk,$scope.CryptAsk,changeCryptAskspan);
 				UpdatePrice(changeCryptBid,$scope.CryptBid,changeCryptBidspan);
 				
+				UpdatePrice(changeSE,$scope.SEPrice,changeSEspan);
+				UpdatePrice(changeSEAsk,$scope.SEAsk,changeSEAskspan);
+				UpdatePrice(changeSEBid,$scope.SEBid,changeSEBidspan);
+				
+				UpdatePrice(changeSTE,$scope.STEPrice,changeSTEspan);
+				UpdatePrice(changeSTEAsk,$scope.STEAsk,changeSTEAskspan);
+				UpdatePrice(changeSTEBid,$scope.STEBid,changeSTEBidspan);
+				
+				UpdatePrice(changeCREX,$scope.CREXPrice,changeCREXspan);
+				UpdatePrice(changeCREXAsk,$scope.CREXAsk,changeCREXAskspan);
+				UpdatePrice(changeCREXBid,$scope.CREXBid,changeCREXBidspan);
+				
 				changeTO = $scope.TOPrice;
 				changeTOAsk = $scope.TOAsk;
-				changeTOBid = $scope.TOBid;	
+				changeTOBid = $scope.TOBid;
+					
 				changeCrypt = $scope.CryptPrice;
 				changeCryptAsk = $scope.CryptAsk;
 				changeCryptBid = $scope.CryptBid;
+				
+				changeSE = $scope.SEPrice;
+				changeSEAsk = $scope.SEAsk;
+				changeSEBid = $scope.SEBid;
+				
+				changeSTE = $scope.STEPrice;
+				changeSTEAsk = $scope.STEAsk;
+				changeSTEBid = $scope.STEBid;
+				
+				changeCREX = $scope.CREXPrice;
+				changeCREXAsk = $scope.CREXAsk;
+				changeCREXBid = $scope.CREXBid;
     }
 
 
