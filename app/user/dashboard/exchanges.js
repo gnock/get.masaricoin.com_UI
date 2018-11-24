@@ -60,7 +60,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
         	for (i = rawData.length-1;i >= rawData.length-1;i--){
             
 			$scope.STEQuantity = rawData[i].quantity;
-			$scope.STEype = rawData[i].type;
+			$scope.STEType = rawData[i].type;
 			var STEDate = new Date(rawData[i].timestamp *1000);
 			$scope.STELastUpdate = STEDate.toLocaleString();
         }

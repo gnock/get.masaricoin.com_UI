@@ -68,7 +68,7 @@ th, td {
 }
 
 th {
-    background-image:url(table-shaded.png);
+	background-color:#eeeeee;
 }
 
 .rowtitle {
@@ -227,7 +227,7 @@ th {
                     <td>{{CREXAsk}}</td>
                     <td class="RemPhone">{{CrexType}}</td>
                     <td class="RemPhone">{{CrexQuantity}}</td>
-                    <td class="RemPhone">{{CrexVol}}</td>
+                    <td class="RemPhone">{{CREXVol}}</td>
                     <td class="RemPhone">{{CrexLastUpdate}}</td>
                 </tr>
                 </tbody>
