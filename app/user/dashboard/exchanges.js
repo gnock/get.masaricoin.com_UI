@@ -78,7 +78,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 		
 
      	$.ajax({
-            url: 'https://testnet.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://app.stocks.exchange/api2/trades?pair=MSR_BTC')
+            url: 'https://get.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://app.stocks.exchange/api2/trades?pair=MSR_BTC')
         }).done(function(data) {
             //tickerSTE(data["result"]);
 			var rawData = data['result'].reverse();
@@ -126,7 +126,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 		
 
         $.ajax({
-            url: 'https://testnet.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://api.crex24.com/v2/public/recentTrades?instrument=MSR-BTC&limit=1')
+            url: 'https://get.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://api.crex24.com/v2/public/recentTrades?instrument=MSR-BTC&limit=1')
         }).done(function(data) {
             $scope.CrexQuantity = data[0].volume;
 			var CrexTypeside = data[0].side;
@@ -137,7 +137,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 			$scope.CrexLastUpdate = CrexMilli.toLocaleString();
         });
 		
-		$.getJSON('https://testnet.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://api.crex24.com/v2/public/tickers?instrument=MSR-BTC'), function(data) {
+		$.getJSON('https://get.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://api.crex24.com/v2/public/tickers?instrument=MSR-BTC'), function(data) {
             $scope.CREXPrice = (data[0].last * 1).toFixed(8);
             $scope.CREXBid = (data[0].bid * 1).toFixed(8);
             $scope.CREXAsk = (data[0].ask * 1).toFixed(8);
@@ -155,7 +155,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             $scope.SEVol = (data["Volume24Hr"] * 1).toFixed(8);
         });
 
-        $.getJSON('https://testnet.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://app.stocks.exchange/api2/ticker'), function(data) {
+        $.getJSON('https://get.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://app.stocks.exchange/api2/ticker'), function(data) {
 
             for (var stedata in data) {
                 var name = data[stedata].market_name;
