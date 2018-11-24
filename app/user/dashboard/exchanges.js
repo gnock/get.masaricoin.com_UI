@@ -40,7 +40,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 			 var i = 0;
         for (i = rawData.length-1;i >= rawData.length-1;i--){
             
-			$scope.SEQuantity = (rawData[i].Amount).toFixed(4);
+			$scope.SEQuantity = (rawData[i].Amount).toFixed(8);
 			var SELastType = rawData[i].Type
 			$scope.SEType = SELastType.toUpperCase();
 			

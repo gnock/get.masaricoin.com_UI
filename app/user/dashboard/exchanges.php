@@ -93,13 +93,13 @@ th {
            <thead></thead>
             <tbody>
                 <tr style="text-align:center;">
-                    <th>Last Price</th>
-                    <th>Current Bid</th>
-                    <th>Current Ask</th>
-                    <th class="RemPhone">Last Type</th>
-                    <th class="RemPhone">Last Quantity</th>
-                    <th class="RemPhone">24 Hour Volume</th>
-                    <th class="RemPhone">Last Update</th>
+                    <th style="width:14%;">Last Price</th>
+                    <th style="width:14%;">Current Bid</th>
+                    <th style="width:14%;">Current Ask</th>
+                    <th class="RemPhone" style="width:14%;">Last Type</th>
+                    <th class="RemPhone" style="width:14%;">Last Quantity</th>
+                    <th class="RemPhone" style="width:14%;">24 Hour Volume</th>
+                    <th class="RemPhone" style="width:16%;">Last Update</th>
                 </tr>
                 <tr style="text-align:center;">
                     <td><span id="changeTOspan">&#8674; {{TOPrice}}</span></td>
@@ -132,13 +132,13 @@ th {
            <thead></thead>
             <tbody>
                 <tr style="text-align:center;">
-                    <th>Last Price</th>
-                    <th>Current Bid</th>
-                    <th>Current Ask</th>
-                    <th class="RemPhone">Last Type</th>
-                    <th class="RemPhone">Last Quantity</th>
-                    <th class="RemPhone">24 Hour Volume</th>
-                    <th class="RemPhone">Last Update</th>
+                    <th style="width:14%;">Last Price</th>
+                    <th style="width:14%;">Current Bid</th>
+                    <th style="width:14%;">Current Ask</th>
+                    <th class="RemPhone" style="width:14%;">Last Type</th>
+                    <th class="RemPhone" style="width:14%;">Last Quantity</th>
+                    <th class="RemPhone" style="width:14%;">24 Hour Volume</th>
+                    <th class="RemPhone" style="width:16%;">Last Update</th>
                 </tr>
                 <tr style="text-align:center;">
                     <td><span id="changeCryptspan">&#8674; {{CryptPrice}}</span></td>
@@ -170,13 +170,13 @@ th {
            <thead></thead>
             <tbody>
                 <tr style="text-align:center;">
-                     <th>Last Price</th>
-                    <th>Current Bid</th>
-                    <th>Current Ask</th>
-                    <th class="RemPhone">Last Type</th>
-                    <th class="RemPhone">Last Quantity</th>
-                    <th class="RemPhone">24 Hour Volume</th>
-                    <th class="RemPhone">Last Update</th>
+                     <th style="width:14%;">Last Price</th>
+                    <th style="width:14%;">Current Bid</th>
+                    <th style="width:14%;">Current Ask</th>
+                    <th class="RemPhone" style="width:14%;">Last Type</th>
+                    <th class="RemPhone" style="width:14%;">Last Quantity</th>
+                    <th class="RemPhone" style="width:14%;">24 Hour Volume</th>
+                    <th class="RemPhone" style="width:16%;">Last Update</th>
                 </tr>
                 <tr style="text-align:center;">
                     <td>{{SEPrice}}</td>
@@ -213,13 +213,13 @@ th {
            <thead></thead>
             <tbody>
                 <tr style="text-align:center;">
-                    <th>Last Price</th>
-                    <th>Current Bid</th>
-                    <th>Current Ask</th>
-                    <th class="RemPhone">Last Type</th>
-                    <th class="RemPhone">Last Quantity</th>
-                    <th class="RemPhone">24 Hour Volume</th>
-                    <th class="RemPhone">Last Update</th>
+                    <th style="width:14%;">Last Price</th>
+                    <th style="width:14%;">Current Bid</th>
+                    <th style="width:14%;">Current Ask</th>
+                    <th class="RemPhone" style="width:14%;">Last Type</th>
+                    <th class="RemPhone" style="width:14%;">Last Quantity</th>
+                    <th class="RemPhone" style="width:14%;">24 Hour Volume</th>
+                    <th class="RemPhone" style="width:16%;">Last Update</th>
                 </tr>
                 <tr style="text-align:center;">
                     <td>{{CREXPrice}}</td>
@@ -250,13 +250,13 @@ th {
            <thead></thead>
             <tbody>
                 <tr style="text-align:center;">
-                    <th>Last Price</th>
-                    <th>Current Bid</th>
-                    <th>Current Ask</th>
-                    <th class="RemPhone">Last Type</th>
-                    <th class="RemPhone">Last Quantity</th>
-                    <th class="RemPhone">24 Hour Volume</th>
-                    <th class="RemPhone">Last Update</th>
+                    <th style="width:14%;">Last Price</th>
+                    <th style="width:14%;">Current Bid</th>
+                    <th style="width:14%;">Current Ask</th>
+                    <th class="RemPhone" style="width:14%;">Last Type</th>
+                    <th class="RemPhone" style="width:14%;">Last Quantity</th>
+                    <th class="RemPhone" style="width:14%;">24 Hour Volume</th>
+                    <th class="RemPhone" style="width:16%;">Last Update</th>
                 </tr>
                 <tr style="text-align:center;">
                     <td>{{STEPrice}}</td>
