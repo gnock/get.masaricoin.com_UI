@@ -222,9 +222,9 @@ th {
                     <th class="RemPhone">Last Update</th>
                 </tr>
                 <tr style="text-align:center;">
-                    <td>{{CrexPrice}}</td>
-                    <td>{{CrexBid}}</td>
-                    <td>{{CrexAsk}}</td>
+                    <td>{{CREXPrice}}</td>
+                    <td>{{CREXBid}}</td>
+                    <td>{{CREXAsk}}</td>
                     <td class="RemPhone">{{CrexType}}</td>
                     <td class="RemPhone">{{CrexQuantity}}</td>
                     <td class="RemPhone">{{CrexVol}}</td>

@@ -10,7 +10,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 					document.getElementById(span).style.color = '#009966';
 					document.getElementById(span).innerHTML = "&#8673; " + updated;
 				} else {
-					document.getElementById(span).style.color = '';
+					document.getElementById(span).style.color = '#333333';
 					document.getElementById(span).innerHTML = "&#8674; " + updated;
 				}
 			}
