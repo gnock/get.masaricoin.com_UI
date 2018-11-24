@@ -132,8 +132,8 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 			var CrexTypeside = data[0].side;
 			$scope.CrexType = CrexTypeside.toUpperCase();
 			var CrexLastTime = new Date(data[0].timestamp);
-			var CrexMilli = (CrexLastTime.getTime()) / 1000;
-			console.log(CrexMilli);
+			var CrexMilli = new Date(CrexLastTime.getTime() / 1000);
+			//console.log(CrexMilli);
 			$scope.CrexLastUpdate = CrexMilli.toLocaleString();
         });
 		
@@ -189,7 +189,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
         });
 		
 					
-				console.log(changeTO);
+				//console.log(changeTO);
 				
 				UpdatePrice(changeTO,$scope.TOPrice,changeTOspan);
 				UpdatePrice(changeTOAsk,$scope.TOAsk,changeTOAskspan);
