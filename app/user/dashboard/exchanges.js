@@ -132,7 +132,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 			var CrexTypeside = data[0].side;
 			$scope.CrexType = CrexTypeside.toUpperCase();
 			var CrexLastTime = new Date(data[0].timestamp);
-			var CrexMilli = CrextLastTime.getTime();
+			var CrexMilli = CrexLastTime.getTime();
 			console.log(CrexMilli);
 			$scope.CrexLastUpdate = CrexMilli.toLocaleString();
         });

@@ -230,7 +230,7 @@ var app = angular.module('poolui', [
 					document.getElementById(span).style.color = '#009966';
 					document.getElementById(span).innerHTML = "&#8673; " + updated;
 				} else {
-					document.getElementById(span).style.color = '';
+					document.getElementById(span).style.color = '#333333';
 					document.getElementById(span).innerHTML = "&#8674; " + updated;
 				}
 			}
@@ -399,11 +399,13 @@ var app = angular.module('poolui', [
 		
 		
 		
+		
 		var changeBTC = $scope.msrbtc;
 		var changeUSD = $scope.msrusd;
 		var changeEUR = $scope.msreur;
 		var changeGBP = $scope.msrgbp;
 		var changeCAD = $scope.msrcad;
+		
 		
 		
 
@@ -464,11 +466,13 @@ var app = angular.module('poolui', [
 				UpdateValues(changeGBP,$scope.msrgbp,changeGBPspan);
 				UpdateValues(changeCAD,$scope.msrcad,changeCADspan);
 				
+				
 				changeBTC = $scope.msrbtc;
 				changeUSD = $scope.msrusd;
 				changeEUR = $scope.msreur;
 				changeGBP = $scope.msrgbp;
 				changeCAD = $scope.msrcad;
+				
 					
 
 			
