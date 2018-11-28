@@ -107,7 +107,7 @@ th {
                     <td><span id="changeTOAskspan">&#8674; {{TOAsk}}</span></td>
                     <td class="RemPhone">{{TOType}}</td>
                     <td class="RemPhone">{{TOQuantity}}</td>
-                    <td class="RemPhone">{{TOVol}} BTC</td>
+                    <td class="RemPhone"><span id="changeTOVolspan">&#8674; {{TOVol}}</span> BTC</td>
                     <td class="RemPhone">{{TOLastUpdate}}</td>
                 </tr>
                 </tbody>
@@ -146,7 +146,7 @@ th {
                     <td><span id="changeCryptAskspan">&#8674; {{CryptAsk}}</span></td>
                     <td class="RemPhone">{{CryptType}}</td>
                     <td class="RemPhone">{{CryptQuantity}}</td>
-                    <td class="RemPhone">{{CryptVol}} MSR</td>
+                    <td class="RemPhone"><span id="changeCryptVolspan">&#8674; {{CryptVol}}</span> MSR</td>
                     <td class="RemPhone">{{CryptLastUpdate}}</td>
                 </tr>
                 </tbody>
@@ -184,7 +184,7 @@ th {
                     <td><span id="changeSEAskspan">&#8674; {{SEAsk}}</span></td>
                     <td class="RemPhone">{{SEType}}</td>
                     <td class="RemPhone">{{SEQuantity}}</td>
-                    <td class="RemPhone">{{SEVol}} BTC</td>
+                    <td class="RemPhone"><span id="changeSEVolspan">&#8674; {{SEVol}}</span> MSR</td>
                     <td class="RemPhone">{{SELastUpdate}}</td>
                 </tr>
                 </tbody>
@@ -227,7 +227,7 @@ th {
                     <td><span id="changeCREXAskspan">&#8674; {{CREXAsk}}</span></td>
                     <td class="RemPhone">{{CrexType}}</td>
                     <td class="RemPhone">{{CrexQuantity}}</td>
-                    <td class="RemPhone">{{CREXVol}} BTC</td>
+                    <td class="RemPhone"><span id="changeCREXVolspan">&#8674; {{CREXVol}}</span> BTC</td>
                     <td class="RemPhone">{{CrexLastUpdate}}</td>
                 </tr>
                 </tbody>
@@ -264,7 +264,7 @@ th {
                     <td><span id="changeSTEAskspan">&#8674; {{STEAsk}}</span></td>
                     <td class="RemPhone">{{STEType}}</td>
                     <td class="RemPhone">{{STEQuantity}}</td>
-                    <td class="RemPhone">{{STEVol}} MSR</td>
+                    <td class="RemPhone"><span id="changeSTEVolspan">&#8674; {{STEVol}}</span> MSR</td>
                     <td class="RemPhone">{{STELastUpdate}}</td>
                 </tr>
                 </tbody>

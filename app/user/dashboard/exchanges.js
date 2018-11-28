@@ -1,150 +1,87 @@
 'use strict';
 
 app.controller('ExchangeCtrl', function($scope, $route, dataService, timerService) {
-	
-		var UpdatePrice = function(previous, updated, span) {
-		if(previous > updated) {
-					document.getElementById(span).style.color = '#cc0000';
-					document.getElementById(span).innerHTML =  "&#8675; " + updated;
-				} else if (previous < updated) {
-					document.getElementById(span).style.color = '#009966';
-					document.getElementById(span).innerHTML = "&#8673; " + updated;
-				} else {
-					document.getElementById(span).style.color = '#333333';
-					document.getElementById(span).innerHTML = "&#8674; " + updated;
-				}
-			}
-			
-				var changeTO = '';
-				var changeTOAsk = '';
-				var changeTOBid = '';
-				
-				var changeCrypt = '';
-				var changeCryptAsk = '';
-				var changeCryptBid = '';
-				
-				var changeSTE = '';
-				var changeSTEAsk = '';
-				var changeSTEBid = '';
-				
-				var changeSE = '';
-				var changeSEAsk = '';
-				var changeSEBid = '';
-				
-				var changeCREX = '';
-				var changeCREXAsk = '';
-				var changeCREXBid = '';
-		
-		
+
+    var UpdatePrice = function(previous, updated, span) {
+        if (previous > updated) {
+            document.getElementById(span).style.color = '#cc0000';
+            document.getElementById(span).innerHTML = "&#8675; " + updated;
+        } else if (previous < updated) {
+            document.getElementById(span).style.color = '#009966';
+            document.getElementById(span).innerHTML = "&#8673; " + updated;
+        } else {
+            document.getElementById(span).style.color = '#333333';
+            document.getElementById(span).innerHTML = "&#8674; " + updated;
+        }
+    }
+
+    var changeTO = '';
+    var changeTOAsk = '';
+    var changeTOBid = '';
+	var changeTOVol = '';
+
+    var changeCrypt = '';
+    var changeCryptAsk = '';
+    var changeCryptBid = '';
+	var changeCryptVol = '';
+
+    var changeSTE = '';
+    var changeSTEAsk = '';
+    var changeSTEBid = '';
+	var changeSTEVol = '';
+
+    var changeSE = '';
+    var changeSEAsk = '';
+    var changeSEBid = '';
+	var changeSEVol = '';
+
+    var changeCREX = '';
+    var changeCREXAsk = '';
+    var changeCREXBid = '';
+	var changeCREXVol = '';
+
     function calls() {
-		
-		
-		var changeTOspan = "changeTOspan";
-		var changeTOAskspan = "changeTOAskspan";
-		var changeTOBidspan = "changeTOBidspan";
-		
-		var changeCryptspan = "changeCryptspan";
-		var changeCryptAskspan = "changeCryptAskspan";
-		var changeCryptBidspan = "changeCryptBidspan";
-		
-		var changeCREXspan = "changeCREXspan";
-		var changeCREXAskspan = "changeCREXAskspan";
-		var changeCREXBidspan = "changeCREXBidspan";
-		
-		var changeSEspan = "changeSEspan";
-		var changeSEAskspan = "changeSEAskspan";
-		var changeSEBidspan = "changeSEBidspan";
-		
-		var changeSTEspan = "changeSTEspan";
-		var changeSTEAskspan = "changeSTEAskspan";
-		var changeSTEBidspan = "changeSTEBidspan";
+
+        var changeTOspan = "changeTOspan";
+        var changeTOAskspan = "changeTOAskspan";
+        var changeTOBidspan = "changeTOBidspan";
+        var changeTOVolspan = "changeTOVolspan";
+
+        var changeCryptspan = "changeCryptspan";
+        var changeCryptAskspan = "changeCryptAskspan";
+        var changeCryptBidspan = "changeCryptBidspan";
+        var changeCryptVolspan = "changeCryptVolspan";
+
+        var changeCREXspan = "changeCREXspan";
+        var changeCREXAskspan = "changeCREXAskspan";
+        var changeCREXBidspan = "changeCREXBidspan";
+        var changeCREXVolspan = "changeCREXVolspan";
+
+        var changeSEspan = "changeSEspan";
+        var changeSEAskspan = "changeSEAskspan";
+        var changeSEBidspan = "changeSEBidspan";
+        var changeSEVolspan = "changeSEVolspan";
+
+        var changeSTEspan = "changeSTEspan";
+        var changeSTEAskspan = "changeSTEAskspan";
+        var changeSTEBidspan = "changeSTEBidspan";
+        var changeSTEVolspan = "changeSTEVolspan";
 
         $.ajax({
             url: 'https://www.southxchange.com/api/trades/msr/btc'
         }).done(function(data) {
-			var rawData = data.reverse();
-			 var i = 0;
-        for (i = rawData.length-1;i >= rawData.length-1;i--){
-            
-			$scope.SEQuantity = (rawData[i].Amount).toFixed(8);
-			var SELastType = rawData[i].Type
-			$scope.SEType = SELastType.toUpperCase();
-			
-			var SEDate = new Date(rawData[i].At *1000);
-			$scope.SELastUpdate = SEDate.toLocaleString();
-        }
-           
-        });
-		
+            var rawData = data.reverse();
+            var i = 0;
+            for (i = rawData.length - 1; i >= rawData.length - 1; i--) {
 
-     	$.ajax({
-            url: 'https://get.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://app.stocks.exchange/api2/trades?pair=MSR_BTC')
-        }).done(function(data) {
-            //tickerSTE(data["result"]);
-			var rawData = data['result'].reverse();
-			var i = 0;
-        	for (i = rawData.length-1;i >= rawData.length-1;i--){
-            
-			$scope.STEQuantity = rawData[i].quantity;
-			$scope.STEType = rawData[i].type;
-			var STEDate = new Date(rawData[i].timestamp *1000);
-			$scope.STELastUpdate = STEDate.toLocaleString();
-        }
-        });
-        
-		
-		
+                $scope.SEQuantity = (rawData[i].Amount).toFixed(8);
+                var SELastType = rawData[i].Type
+                $scope.SEType = SELastType.toUpperCase();
 
-        $.ajax({
-        url:'https://tradeogre.com/api/v1/history/BTC-MSR'
-        }).done(function(data){
-        var rawData = JSON.parse(data);
-       
-        var i = 0;
-        for (i = rawData.length-1;i >= rawData.length-1;i--){
-            
-			$scope.TOQuantity = rawData[i].quantity;
-			$scope.TOType = rawData[i].type.toUpperCase();
-			var TODate = new Date(rawData[i].date *1000);
-			$scope.TOLastUpdate = TODate.toLocaleString();
-        }
-        });
-		
-		$.ajax({
-        url:'https://www.cryptopia.co.nz/api/GetMarketHistory/MSR_BTC'
-        }).done(function(data){
-        //console.log(data);
-        var i = 0;
-        for ( i = data['Data'].length-1;i >= 0;i--){
-            //console.log(data.Data[i].Amount);
-            $scope.CryptQuantity = data.Data[i].Amount;
-			$scope.CryptType = data.Data[i].Type.toUpperCase();
-			var CryptDate = new Date(data.Data[i].Timestamp * 1000);
-			$scope.CryptLastUpdate = CryptDate.toLocaleString();
-        }
-        });
-		
+                var SEDate = new Date(rawData[i].At * 1000);
+                $scope.SELastUpdate = SEDate.toLocaleString();
+            }
 
-        $.ajax({
-            url: 'https://get.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://api.crex24.com/v2/public/recentTrades?instrument=MSR-BTC&limit=1')
-        }).done(function(data) {
-            $scope.CrexQuantity = data[0].volume;
-			var CrexTypeside = data[0].side;
-			$scope.CrexType = CrexTypeside.toUpperCase();
-			var CrexLastTime = new Date(data[0].timestamp);
-			var CrexMilli = new Date(CrexLastTime.getTime());
-			//console.log(CrexMilli);
-			$scope.CrexLastUpdate = CrexMilli.toLocaleString();
-        });
-		
-		$.getJSON('https://get.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://api.crex24.com/v2/public/tickers?instrument=MSR-BTC'), function(data) {
-            $scope.CREXPrice = (data[0].last * 1).toFixed(8);
-            $scope.CREXBid = (data[0].bid * 1).toFixed(8);
-            $scope.CREXAsk = (data[0].ask * 1).toFixed(8);
-            $scope.CREXVar = (data[0].percentChange * 1).toFixed(2);
-            $scope.CREXVol = (data[0].volumeInBtc * 1).toFixed(8);
-            $scope.CREXHigh = (data[0].high * 1).toFixed(8);
-            $scope.CREXLow = (data[0].low * 1).toFixed(8);
         });
 
         $.getJSON("https://www.southxchange.com/api/price/msr/btc", function(data) {
@@ -153,6 +90,21 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             $scope.SEAsk = (data["Ask"] * 1).toFixed(8);
             $scope.SEVar = (data["Variation24Hr"] * 1).toFixed(2);
             $scope.SEVol = (data["Volume24Hr"] * 1).toFixed(8);
+        });
+
+        $.ajax({
+            url: 'https://get.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://app.stocks.exchange/api2/trades?pair=MSR_BTC')
+        }).done(function(data) {
+            //tickerSTE(data["result"]);
+            var rawData = data['result'].reverse();
+            var i = 0;
+            for (i = rawData.length - 1; i >= rawData.length - 1; i--) {
+
+                $scope.STEQuantity = rawData[i].quantity;
+                $scope.STEType = rawData[i].type;
+                var STEDate = new Date(rawData[i].timestamp * 1000);
+                $scope.STELastUpdate = STEDate.toLocaleString();
+            }
         });
 
         $.getJSON('https://get.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://app.stocks.exchange/api2/ticker'), function(data) {
@@ -169,6 +121,21 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             }
         }, 'json');
 
+        $.ajax({
+            url: 'https://tradeogre.com/api/v1/history/BTC-MSR'
+        }).done(function(data) {
+            var rawData = JSON.parse(data);
+
+            var i = 0;
+            for (i = rawData.length - 1; i >= rawData.length - 1; i--) {
+
+                $scope.TOQuantity = rawData[i].quantity;
+                $scope.TOType = rawData[i].type.toUpperCase();
+                var TODate = new Date(rawData[i].date * 1000);
+                $scope.TOLastUpdate = TODate.toLocaleString();
+            }
+        });
+
         $.getJSON("https://tradeogre.com/api/v1/ticker/BTC-MSR", function(data) {
             $scope.TOPrice = (data["price"] * 1).toFixed(8);
             $scope.TOPrev = (data["initialprice"] * 1).toFixed(8);
@@ -179,69 +146,106 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
             $scope.TOAsk = (data["ask"] * 1).toFixed(8);
 
         });
-		$.getJSON("https://www.cryptopia.co.nz/api/GetMarket/MSR_BTC/", function(data) {
+
+        $.ajax({
+            url: 'https://www.cryptopia.co.nz/api/GetMarketHistory/MSR_BTC'
+        }).done(function(data) {
+            //console.log(data);
+            var i = 0;
+            for (i = data['Data'].length - 1; i >= 0; i--) {
+                //console.log(data.Data[i].Amount);
+                $scope.CryptQuantity = data.Data[i].Amount;
+                $scope.CryptType = data.Data[i].Type.toUpperCase();
+                var CryptDate = new Date(data.Data[i].Timestamp * 1000);
+                $scope.CryptLastUpdate = CryptDate.toLocaleString();
+            }
+        });
+        $.getJSON("https://www.cryptopia.co.nz/api/GetMarket/MSR_BTC/", function(data) {
             $scope.CryptPrice = (data["Data"].LastPrice * 1).toFixed(8);
-            
+
             $scope.CryptVol = (data["Data"].Volume * 1).toFixed(4);
             $scope.CryptBid = (data["Data"].BidPrice * 1).toFixed(8);
             $scope.CryptAsk = (data["Data"].AskPrice * 1).toFixed(8);
 
         });
-		
-					
-				//console.log(changeTO);
-				
-				UpdatePrice(changeTO,$scope.TOPrice,changeTOspan);
-				UpdatePrice(changeTOAsk,$scope.TOAsk,changeTOAskspan);
-				UpdatePrice(changeTOBid,$scope.TOBid,changeTOBidspan);
-				
-				UpdatePrice(changeCrypt,$scope.CryptPrice,changeCryptspan);
-				UpdatePrice(changeCryptAsk,$scope.CryptAsk,changeCryptAskspan);
-				UpdatePrice(changeCryptBid,$scope.CryptBid,changeCryptBidspan);
-				
-				UpdatePrice(changeSE,$scope.SEPrice,changeSEspan);
-				UpdatePrice(changeSEAsk,$scope.SEAsk,changeSEAskspan);
-				UpdatePrice(changeSEBid,$scope.SEBid,changeSEBidspan);
-				
-				UpdatePrice(changeSTE,$scope.STEPrice,changeSTEspan);
-				UpdatePrice(changeSTEAsk,$scope.STEAsk,changeSTEAskspan);
-				UpdatePrice(changeSTEBid,$scope.STEBid,changeSTEBidspan);
-				
-				UpdatePrice(changeCREX,$scope.CREXPrice,changeCREXspan);
-				UpdatePrice(changeCREXAsk,$scope.CREXAsk,changeCREXAskspan);
-				UpdatePrice(changeCREXBid,$scope.CREXBid,changeCREXBidspan);
-				
-				changeTO = $scope.TOPrice;
-				changeTOAsk = $scope.TOAsk;
-				changeTOBid = $scope.TOBid;
-					
-				changeCrypt = $scope.CryptPrice;
-				changeCryptAsk = $scope.CryptAsk;
-				changeCryptBid = $scope.CryptBid;
-				
-				changeSE = $scope.SEPrice;
-				changeSEAsk = $scope.SEAsk;
-				changeSEBid = $scope.SEBid;
-				
-				changeSTE = $scope.STEPrice;
-				changeSTEAsk = $scope.STEAsk;
-				changeSTEBid = $scope.STEBid;
-				
-				changeCREX = $scope.CREXPrice;
-				changeCREXAsk = $scope.CREXAsk;
-				changeCREXBid = $scope.CREXBid;
+
+        $.ajax({
+            url: 'https://get.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://api.crex24.com/v2/public/recentTrades?instrument=MSR-BTC&limit=1')
+        }).done(function(data) {
+            $scope.CrexQuantity = data[0].volume;
+            var CrexTypeside = data[0].side;
+            $scope.CrexType = CrexTypeside.toUpperCase();
+            var CrexLastTime = new Date(data[0].timestamp);
+            var CrexMilli = new Date(CrexLastTime.getTime());
+            //console.log(CrexMilli);
+            $scope.CrexLastUpdate = CrexMilli.toLocaleString();
+        });
+
+        $.getJSON('https://get.masaricoin.com/proxy.php?url=' + encodeURIComponent('https://api.crex24.com/v2/public/tickers?instrument=MSR-BTC'), function(data) {
+            $scope.CREXPrice = (data[0].last * 1).toFixed(8);
+            $scope.CREXBid = (data[0].bid * 1).toFixed(8);
+            $scope.CREXAsk = (data[0].ask * 1).toFixed(8);
+            $scope.CREXVar = (data[0].percentChange * 1).toFixed(2);
+            $scope.CREXVol = (data[0].volumeInBtc * 1).toFixed(8);
+            $scope.CREXHigh = (data[0].high * 1).toFixed(8);
+            $scope.CREXLow = (data[0].low * 1).toFixed(8);
+        });
+
+        //console.log(changeTO);
+
+        UpdatePrice(changeTO, $scope.TOPrice, changeTOspan);
+        UpdatePrice(changeTOAsk, $scope.TOAsk, changeTOAskspan);
+        UpdatePrice(changeTOBid, $scope.TOBid, changeTOBidspan);
+        UpdatePrice(changeTOVol, $scope.TOVol, changeTOVolspan);
+
+        UpdatePrice(changeCrypt, $scope.CryptPrice, changeCryptspan);
+        UpdatePrice(changeCryptAsk, $scope.CryptAsk, changeCryptAskspan);
+        UpdatePrice(changeCryptBid, $scope.CryptBid, changeCryptBidspan);
+        UpdatePrice(changeCryptVol, $scope.CryptVol, changeCryptVolspan);
+
+        UpdatePrice(changeSE, $scope.SEPrice, changeSEspan);
+        UpdatePrice(changeSEAsk, $scope.SEAsk, changeSEAskspan);
+        UpdatePrice(changeSEBid, $scope.SEBid, changeSEBidspan);
+        UpdatePrice(changeSEVol, $scope.SEVol, changeSEVolspan);
+
+        UpdatePrice(changeSTE, $scope.STEPrice, changeSTEspan);
+        UpdatePrice(changeSTEAsk, $scope.STEAsk, changeSTEAskspan);
+        UpdatePrice(changeSTEBid, $scope.STEBid, changeSTEBidspan);
+        UpdatePrice(changeSTEVol, $scope.STEVol, changeSTEVolspan);
+
+        UpdatePrice(changeCREX, $scope.CREXPrice, changeCREXspan);
+        UpdatePrice(changeCREXAsk, $scope.CREXAsk, changeCREXAskspan);
+        UpdatePrice(changeCREXBid, $scope.CREXBid, changeCREXBidspan);
+        UpdatePrice(changeCREXVol, $scope.CREXVol, changeCREXVolspan);
+
+        changeTO = $scope.TOPrice;
+        changeTOAsk = $scope.TOAsk;
+        changeTOBid = $scope.TOBid;
+        changeTOVol = $scope.TOVol;
+
+        changeCrypt = $scope.CryptPrice;
+        changeCryptAsk = $scope.CryptAsk;
+        changeCryptBid = $scope.CryptBid;
+        changeCryptVol = $scope.CryptVol;
+
+        changeSE = $scope.SEPrice;
+        changeSEAsk = $scope.SEAsk;
+        changeSEBid = $scope.SEBid;
+        changeSEVol = $scope.SEVol;
+
+        changeSTE = $scope.STEPrice;
+        changeSTEAsk = $scope.STEAsk;
+        changeSTEBid = $scope.STEBid;
+        changeSTEVol = $scope.STEVol;
+
+        changeCREX = $scope.CREXPrice;
+        changeCREXAsk = $scope.CREXAsk;
+        changeCREXBid = $scope.CREXBid;
+        changeCREXVol = $scope.CREXVol;
     }
-
-
-
-		
 
     timerService.register(calls);
     calls();
- 
-
-
-
 
     $scope.$on("$routeChangeStart", function() {
         //timerService.remove("SouthEx");
