@@ -54,7 +54,7 @@ window.onload = colourize;
     border-collapse:collapse;
     width:100%;
     
-    min-width:400px;
+    min-width:300px;
     text-align:center;
 }
 
@@ -97,7 +97,7 @@ th {
         <md-card-content>
            <!-- <canvas id="TradeOgre" width="400" height="100"></canvas> -->
 
-           <table style="width:100%" class="PhoneTable">
+           <table style="width:100%">
            <thead></thead>
             <tbody>
             	<tr style="text-align:center;" class="AddPhone">
