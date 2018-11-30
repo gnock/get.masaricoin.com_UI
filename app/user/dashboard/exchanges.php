@@ -27,6 +27,9 @@ window.onload = colourize;
         width: 400px;
         margin: auto;
     }
+	.AddPhone {
+            display: none;
+        }
     
     @media only screen and (max-width: 700px) {
         .rwd-break {
@@ -40,6 +43,9 @@ window.onload = colourize;
         }
         .Chart {
             display: none;
+        }
+		.AddPhone {
+            display: block;
         }
     }
 	table {
@@ -93,18 +99,22 @@ th {
            <thead></thead>
             <tbody>
                 <tr style="text-align:center;">
-                    <th style="width:14%;">Last Price</th>
-                    <th style="width:14%;">Current Bid</th>
-                    <th style="width:14%;">Current Ask</th>
+                	<th class="AddPhone" style="width:50%;">Last Price</th>
+                    <th class="AddPhone" style="width:50%;">Bid/Ask</th>
+                    <th class="RemPhone" style="width:14%;">Last Price</th>
+                    <th class="RemPhone" style="width:14%;">Current Bid</th>
+                    <th class="RemPhone" style="width:14%;">Current Ask</th>
                     <th class="RemPhone" style="width:14%;">Last Type</th>
                     <th class="RemPhone" style="width:14%;">Last Quantity</th>
                     <th class="RemPhone" style="width:14%;">24 Hour Volume</th>
                     <th class="RemPhone" style="width:16%;">Last Update</th>
                 </tr>
                 <tr style="text-align:center;">
-                    <td><span id="changeTOspan">&#8674; {{TOPrice}}</span></td>
-                    <td><span id="changeTOBidspan">&#8674; {{TOBid}}</span></td>
-                    <td><span id="changeTOAskspan">&#8674; {{TOAsk}}</span></td>
+                 	<td class="AddPhone"><span id="changeTOspan">&#8674; {{TOPrice}}</span></td>
+                    <td class="AddPhone"><span id="changeTOBidspan">&#8674; {{TOBid}}</span> / <span id="changeTOAskspan">&#8674; {{TOAsk}}</span></td>
+                    <td class="RemPhone"><span id="changeTOspan">&#8674; {{TOPrice}}</span></td>
+                    <td class="RemPhone"><span id="changeTOBidspan">&#8674; {{TOBid}}</span></td>
+                    <td class="RemPhone"><span id="changeTOAskspan">&#8674; {{TOAsk}}</span></td>
                     <td class="RemPhone">{{TOType}}</td>
                     <td class="RemPhone">{{TOQuantity}}</td>
                     <td class="RemPhone"><span id="changeTOVolspan">&#8674; {{TOVol}}</span> BTC</td>
