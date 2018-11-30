@@ -48,7 +48,7 @@ window.onload = colourize;
             display: table-row;
         }
 		.PhoneTable {
-			width:auto;
+			width:80%;
     }
 	table {
     border-collapse:collapse;
