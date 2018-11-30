@@ -148,23 +148,31 @@ th {
                   <table style="width:100%">
            <thead></thead>
             <tbody>
-                <tr style="text-align:center;">
+            <tr style="text-align:center;" class="AddPhone">
+                	<th>Last Price</th>
+                    <th>Bid/Ask</th>
+                </tr>
+                 <tr style="text-align:center;" class="AddPhone">
+                 	<td><span id="changeCryptspan">&#8674; {{CryptPrice}}</span></td>
+                    <td><span id="changeCryptBidspan">&#8674; {{CryptBid}}</span> / <span id="changeCryptAskspan">&#8674; {{CryptAsk}}</span></td>
+                 </tr> 
+                <tr style="text-align:center;" class="RemPhone">
                     <th style="width:14%;">Last Price</th>
                     <th style="width:14%;">Current Bid</th>
                     <th style="width:14%;">Current Ask</th>
-                    <th class="RemPhone" style="width:14%;">Last Type</th>
-                    <th class="RemPhone" style="width:14%;">Last Quantity</th>
-                    <th class="RemPhone" style="width:14%;">24 Hour Volume</th>
-                    <th class="RemPhone" style="width:16%;">Last Update</th>
+                    <th style="width:14%;">Last Type</th>
+                    <th style="width:14%;">Last Quantity</th>
+                    <th style="width:14%;">24 Hour Volume</th>
+                    <th style="width:16%;">Last Update</th>
                 </tr>
-                <tr style="text-align:center;">
+                <tr style="text-align:center;" class="RemPhone">
                     <td><span id="changeCryptspan">&#8674; {{CryptPrice}}</span></td>
                     <td><span id="changeCryptBidspan">&#8674; {{CryptBid}}</span></td>
                     <td><span id="changeCryptAskspan">&#8674; {{CryptAsk}}</span></td>
-                    <td class="RemPhone">{{CryptType}}</td>
-                    <td class="RemPhone">{{CryptQuantity}}</td>
-                    <td class="RemPhone"><span id="changeCryptVolspan">&#8674; {{CryptVol}}</span> MSR</td>
-                    <td class="RemPhone">{{CryptLastUpdate}}</td>
+                    <td>{{CryptType}}</td>
+                    <td>{{CryptQuantity}}</td>
+                    <td><span id="changeCryptVolspan">&#8674; {{CryptVol}}</span> MSR</td>
+                    <td>{{CryptLastUpdate}}</td>
                 </tr>
                 </tbody>
             </table>
@@ -186,23 +194,31 @@ th {
                   <table style="width:100%">
            <thead></thead>
             <tbody>
-                <tr style="text-align:center;">
+            <tr style="text-align:center;" class="AddPhone">
+                	<th>Last Price</th>
+                    <th>Bid/Ask</th>
+                </tr>
+                 <tr style="text-align:center;" class="AddPhone">
+                 	<td><span id="changeSEspan">&#8674; {{SEPrice}}</span></td>
+                    <td><span id="changeSEBidspan">&#8674; {{SEBid}}</span> / <span id="changeSEAskspan">&#8674; {{SEAsk}}</span></td>
+                 </tr> 
+                <tr style="text-align:center;" class="RemPhone">
                      <th style="width:14%;">Last Price</th>
                     <th style="width:14%;">Current Bid</th>
                     <th style="width:14%;">Current Ask</th>
-                    <th class="RemPhone" style="width:14%;">Last Type</th>
-                    <th class="RemPhone" style="width:14%;">Last Quantity</th>
-                    <th class="RemPhone" style="width:14%;">24 Hour Volume</th>
-                    <th class="RemPhone" style="width:16%;">Last Update</th>
+                    <th style="width:14%;">Last Type</th>
+                    <th style="width:14%;">Last Quantity</th>
+                    <th style="width:14%;">24 Hour Volume</th>
+                    <th style="width:16%;">Last Update</th>
                 </tr>
-                <tr style="text-align:center;">
+                <tr style="text-align:center;" class="RemPhone">
                     <td><span id="changeSEspan">&#8674; {{SEPrice}}</span></td>
                     <td><span id="changeSEBidspan">&#8674; {{SEBid}}</span></td>
                     <td><span id="changeSEAskspan">&#8674; {{SEAsk}}</span></td>
-                    <td class="RemPhone">{{SEType}}</td>
-                    <td class="RemPhone">{{SEQuantity}}</td>
-                    <td class="RemPhone"><span id="changeSEVolspan">&#8674; {{SEVol}}</span> MSR</td>
-                    <td class="RemPhone">{{SELastUpdate}}</td>
+                    <td>{{SEType}}</td>
+                    <td>{{SEQuantity}}</td>
+                    <td><span id="changeSEVolspan">&#8674; {{SEVol}}</span> MSR</td>
+                    <td>{{SELastUpdate}}</td>
                 </tr>
                 </tbody>
             </table>
@@ -229,23 +245,31 @@ th {
                   <table style="width:100%">
            <thead></thead>
             <tbody>
-                <tr style="text-align:center;">
+             <tr style="text-align:center;" class="AddPhone">
+                	<th>Last Price</th>
+                    <th>Bid/Ask</th>
+                </tr>
+                 <tr style="text-align:center;" class="AddPhone">
+                 	<td><span id="changeCREXspan">&#8674; {{CREXPrice}}</span></td>
+                    <td><span id="changeCREXBidspan">&#8674; {{CREXBid}}</span> / <span id="changeCREXAskspan">&#8674; {{CREXAsk}}</span></td>
+                 </tr> 
+                <tr style="text-align:center;" class="RemPhone">
                     <th style="width:14%;">Last Price</th>
                     <th style="width:14%;">Current Bid</th>
                     <th style="width:14%;">Current Ask</th>
-                    <th class="RemPhone" style="width:14%;">Last Type</th>
-                    <th class="RemPhone" style="width:14%;">Last Quantity</th>
-                    <th class="RemPhone" style="width:14%;">24 Hour Volume</th>
-                    <th class="RemPhone" style="width:16%;">Last Update</th>
+                    <th style="width:14%;">Last Type</th>
+                    <th style="width:14%;">Last Quantity</th>
+                    <th style="width:14%;">24 Hour Volume</th>
+                    <th style="width:16%;">Last Update</th>
                 </tr>
-                <tr style="text-align:center;">
+                <tr style="text-align:center;" class="RemPhone">
                     <td><span id="changeCREXspan">&#8674; {{CREXPrice}}</span></td>
                     <td><span id="changeCREXBidspan">&#8674; {{CREXBid}}</span></td>
                     <td><span id="changeCREXAskspan">&#8674; {{CREXAsk}}</span></td>
-                    <td class="RemPhone">{{CrexType}}</td>
-                    <td class="RemPhone">{{CrexQuantity}}</td>
-                    <td class="RemPhone"><span id="changeCREXVolspan">&#8674; {{CREXVol}}</span> BTC</td>
-                    <td class="RemPhone">{{CrexLastUpdate}}</td>
+                    <td>{{CrexType}}</td>
+                    <td>{{CrexQuantity}}</td>
+                    <td><span id="changeCREXVolspan">&#8674; {{CREXVol}}</span> BTC</td>
+                    <td>{{CrexLastUpdate}}</td>
                 </tr>
                 </tbody>
             </table>
@@ -266,23 +290,31 @@ th {
                   <table style="width:100%">
            <thead></thead>
             <tbody>
-                <tr style="text-align:center;">
+            <tr style="text-align:center;" class="AddPhone">
+                	<th>Last Price</th>
+                    <th>Bid/Ask</th>
+                </tr>
+                 <tr style="text-align:center;" class="AddPhone">
+                 	<td><span id="changeSTEspan">&#8674; {{STEPrice}}</span></td>
+                    <td><span id="changeSTEBidspan">&#8674; {{STEBid}}</span> / <span id="changeSTEAskspan">&#8674; {{STEAsk}}</span></td>
+                 </tr> 
+                <tr style="text-align:center;" class="RemPhone">
                     <th style="width:14%;">Last Price</th>
                     <th style="width:14%;">Current Bid</th>
                     <th style="width:14%;">Current Ask</th>
-                    <th class="RemPhone" style="width:14%;">Last Type</th>
-                    <th class="RemPhone" style="width:14%;">Last Quantity</th>
-                    <th class="RemPhone" style="width:14%;">24 Hour Volume</th>
-                    <th class="RemPhone" style="width:16%;">Last Update</th>
+                    <th style="width:14%;">Last Type</th>
+                    <th style="width:14%;">Last Quantity</th>
+                    <th style="width:14%;">24 Hour Volume</th>
+                    <th style="width:16%;">Last Update</th>
                 </tr>
-                <tr style="text-align:center;">
+                <tr style="text-align:center;" class="RemPhone">
                     <td><span id="changeSTEspan">&#8674; {{STEPrice}}</span></td>
                     <td><span id="changeSTEBidspan">&#8674; {{STEBid}}</span></td>
                     <td><span id="changeSTEAskspan">&#8674; {{STEAsk}}</span></td>
-                    <td class="RemPhone">{{STEType}}</td>
-                    <td class="RemPhone">{{STEQuantity}}</td>
-                    <td class="RemPhone"><span id="changeSTEVolspan">&#8674; {{STEVol}}</span> MSR</td>
-                    <td class="RemPhone">{{STELastUpdate}}</td>
+                    <td>{{STEType}}</td>
+                    <td>{{STEQuantity}}</td>
+                    <td><span id="changeSTEVolspan">&#8674; {{STEVol}}</span> MSR</td>
+                    <td>{{STELastUpdate}}</td>
                 </tr>
                 </tbody>
             </table>
