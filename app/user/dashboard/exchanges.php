@@ -105,8 +105,8 @@ th {
                     <th>Bid/Ask</th>
                 </tr>
                  <tr style="text-align:center;" class="AddPhone">
-                 	<td><span id="changeTOspan">&#8674; {{TOPrice}}</span></td>
-                    <td><span id="changeTOBidspan">&#8674; {{TOBid}}</span> / <span id="changeTOAskspan">&#8674; {{TOAsk}}</span></td>
+                 	<td><span id="changeTOspanPhone">&#8674; {{TOPrice}}</span></td>
+                    <td><span id="changeTOBidspanPhone">&#8674; {{TOBid}}</span> / <span id="changeTOAskspanPhone">&#8674; {{TOAsk}}</span></td>
                  </tr>   
                 <tr style="text-align:center;" class="RemPhone">
                 	<th style="width:14%;">Last Price</th>
@@ -153,8 +153,8 @@ th {
                     <th>Bid/Ask</th>
                 </tr>
                  <tr style="text-align:center;" class="AddPhone">
-                 	<td><span id="changeCryptspan">&#8674; {{CryptPrice}}</span></td>
-                    <td><span id="changeCryptBidspan">&#8674; {{CryptBid}}</span> / <span id="changeCryptAskspan">&#8674; {{CryptAsk}}</span></td>
+                 	<td><span id="changeCryptspanPhone">&#8674; {{CryptPrice}}</span></td>
+                    <td><span id="changeCryptBidspanPhone">&#8674; {{CryptBid}}</span> / <span id="changeCryptAskspanPhone">&#8674; {{CryptAsk}}</span></td>
                  </tr> 
                 <tr style="text-align:center;" class="RemPhone">
                     <th style="width:14%;">Last Price</th>
@@ -199,8 +199,8 @@ th {
                     <th>Bid/Ask</th>
                 </tr>
                  <tr style="text-align:center;" class="AddPhone">
-                 	<td><span id="changeSEspan">&#8674; {{SEPrice}}</span></td>
-                    <td><span id="changeSEBidspan">&#8674; {{SEBid}}</span> / <span id="changeSEAskspan">&#8674; {{SEAsk}}</span></td>
+                 	<td><span id="changeSEspanPhone">&#8674; {{SEPrice}}</span></td>
+                    <td><span id="changeSEBidspanPhone">&#8674; {{SEBid}}</span> / <span id="changeSEAskspanPhone">&#8674; {{SEAsk}}</span></td>
                  </tr> 
                 <tr style="text-align:center;" class="RemPhone">
                      <th style="width:14%;">Last Price</th>
@@ -250,8 +250,8 @@ th {
                     <th>Bid/Ask</th>
                 </tr>
                  <tr style="text-align:center;" class="AddPhone">
-                 	<td><span id="changeCREXspan">&#8674; {{CREXPrice}}</span></td>
-                    <td><span id="changeCREXBidspan">&#8674; {{CREXBid}}</span> / <span id="changeCREXAskspan">&#8674; {{CREXAsk}}</span></td>
+                 	<td><span id="changeCREXspanPhone">&#8674; {{CREXPrice}}</span></td>
+                    <td><span id="changeCREXBidspanPhone">&#8674; {{CREXBid}}</span> / <span id="changeCREXAskspanPhone">&#8674; {{CREXAsk}}</span></td>
                  </tr> 
                 <tr style="text-align:center;" class="RemPhone">
                     <th style="width:14%;">Last Price</th>
@@ -295,8 +295,8 @@ th {
                     <th>Bid/Ask</th>
                 </tr>
                  <tr style="text-align:center;" class="AddPhone">
-                 	<td><span id="changeSTEspan">&#8674; {{STEPrice}}</span></td>
-                    <td><span id="changeSTEBidspan">&#8674; {{STEBid}}</span> / <span id="changeSTEAskspan">&#8674; {{STEAsk}}</span></td>
+                 	<td><span id="changeSTEspanPhone">&#8674; {{STEPrice}}</span></td>
+                    <td><span id="changeSTEBidspanPhone">&#8674; {{STEBid}}</span> / <span id="changeSTEAskspanPhone">&#8674; {{STEAsk}}</span></td>
                  </tr> 
                 <tr style="text-align:center;" class="RemPhone">
                     <th style="width:14%;">Last Price</th>

@@ -18,26 +18,41 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
     var changeTO = '';
     var changeTOAsk = '';
     var changeTOBid = '';
-	var changeTOVol = '';
+	var changeTOPhone = '';
+    var changeTOAskPhone = '';
+    var changeTOBidPhone = '';
+	var changeTOVolPhone = '';
 
     var changeCrypt = '';
     var changeCryptAsk = '';
     var changeCryptBid = '';
+	var changeCryptPhone = '';
+    var changeCryptAskPhone = '';
+    var changeCryptBidPhone = '';
 	var changeCryptVol = '';
 
     var changeSTE = '';
     var changeSTEAsk = '';
     var changeSTEBid = '';
+	var changeSTEPhone = '';
+    var changeSTEAskPhone = '';
+    var changeSTEBidPhone = '';
 	var changeSTEVol = '';
 
     var changeSE = '';
     var changeSEAsk = '';
     var changeSEBid = '';
+	var changeSEPhone = '';
+    var changeSEAskPhone = '';
+    var changeSEBidPhone = '';
 	var changeSEVol = '';
 
     var changeCREX = '';
     var changeCREXAsk = '';
     var changeCREXBid = '';
+	var changeCREXPhone = '';
+    var changeCREXAskPhone = '';
+    var changeCREXBidPhone = '';
 	var changeCREXVol = '';
 
     function calls() {
@@ -45,26 +60,41 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
         var changeTOspan = "changeTOspan";
         var changeTOAskspan = "changeTOAskspan";
         var changeTOBidspan = "changeTOBidspan";
+		var changeTOspanPhone = "changeTOspanPhone";
+        var changeTOAskspanPhone = "changeTOAskspanPhone";
+        var changeTOBidspanPhone = "changeTOBidspanPhone";
         var changeTOVolspan = "changeTOVolspan";
 
         var changeCryptspan = "changeCryptspan";
         var changeCryptAskspan = "changeCryptAskspan";
         var changeCryptBidspan = "changeCryptBidspan";
+		var changeCryptspanPhone = "changeCryptspanPhone";
+        var changeCryptAskspanPhone = "changeCryptAskspanPhone";
+        var changeCryptBidspanPhone = "changeCryptBidspanPhone";
         var changeCryptVolspan = "changeCryptVolspan";
 
         var changeCREXspan = "changeCREXspan";
         var changeCREXAskspan = "changeCREXAskspan";
         var changeCREXBidspan = "changeCREXBidspan";
+		var changeCREXspanPhone = "changeCREXspanPhone";
+        var changeCREXAskspanPhone = "changeCREXAskspanPhone";
+        var changeCREXBidspanPhone = "changeCREXBidspanPhone";
         var changeCREXVolspan = "changeCREXVolspan";
 
         var changeSEspan = "changeSEspan";
         var changeSEAskspan = "changeSEAskspan";
         var changeSEBidspan = "changeSEBidspan";
+		var changeSEspanPhone = "changeSEspanPhone";
+        var changeSEAskspanPhone = "changeSEAskspanPhone";
+        var changeSEBidspanPhone = "changeSEBidspanPhone";
         var changeSEVolspan = "changeSEVolspan";
 
         var changeSTEspan = "changeSTEspan";
         var changeSTEAskspan = "changeSTEAskspan";
         var changeSTEBidspan = "changeSTEBidspan";
+		var changeSTEspanPhone = "changeSTEspanPhone";
+        var changeSTEAskspanPhone = "changeSTEAskspanPhone";
+        var changeSTEBidspanPhone = "changeSTEBidspanPhone";
         var changeSTEVolspan = "changeSTEVolspan";
 
         $.ajax({
@@ -196,51 +226,81 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
         UpdatePrice(changeTO, $scope.TOPrice, changeTOspan);
         UpdatePrice(changeTOAsk, $scope.TOAsk, changeTOAskspan);
         UpdatePrice(changeTOBid, $scope.TOBid, changeTOBidspan);
+		UpdatePrice(changeTOPhone, $scope.TOPrice, changeTOspanPhone);
+        UpdatePrice(changeTOAskPhone, $scope.TOAsk, changeTOAskspanPhone);
+        UpdatePrice(changeTOBidPhone, $scope.TOBid, changeTOBidspanPhone);
         UpdatePrice(changeTOVol, $scope.TOVol, changeTOVolspan);
 
         UpdatePrice(changeCrypt, $scope.CryptPrice, changeCryptspan);
         UpdatePrice(changeCryptAsk, $scope.CryptAsk, changeCryptAskspan);
         UpdatePrice(changeCryptBid, $scope.CryptBid, changeCryptBidspan);
+		UpdatePrice(changeCryptPhone, $scope.CryptPrice, changeCryptspanPhone);
+        UpdatePrice(changeCryptAskPhone, $scope.CryptAsk, changeCryptAskspanPhone);
+        UpdatePrice(changeCryptBidPhone, $scope.CryptBid, changeCryptBidspanPhone);
         UpdatePrice(changeCryptVol, $scope.CryptVol, changeCryptVolspan);
 
         UpdatePrice(changeSE, $scope.SEPrice, changeSEspan);
         UpdatePrice(changeSEAsk, $scope.SEAsk, changeSEAskspan);
         UpdatePrice(changeSEBid, $scope.SEBid, changeSEBidspan);
+		UpdatePrice(changeSEPhone, $scope.SEPrice, changeSEspanPhone);
+        UpdatePrice(changeSEAskPhone, $scope.SEAsk, changeSEAskspanPhone);
+        UpdatePrice(changeSEBidPhone, $scope.SEBid, changeSEBidspanPhone);
         UpdatePrice(changeSEVol, $scope.SEVol, changeSEVolspan);
 
         UpdatePrice(changeSTE, $scope.STEPrice, changeSTEspan);
         UpdatePrice(changeSTEAsk, $scope.STEAsk, changeSTEAskspan);
         UpdatePrice(changeSTEBid, $scope.STEBid, changeSTEBidspan);
+		UpdatePrice(changeSTEPhone, $scope.STEPrice, changeSTEspanPhone);
+        UpdatePrice(changeSTEAskPhone, $scope.STEAsk, changeSTEAskspanPhone);
+        UpdatePrice(changeSTEBidPhone, $scope.STEBid, changeSTEBidspanPhone);
         UpdatePrice(changeSTEVol, $scope.STEVol, changeSTEVolspan);
 
         UpdatePrice(changeCREX, $scope.CREXPrice, changeCREXspan);
         UpdatePrice(changeCREXAsk, $scope.CREXAsk, changeCREXAskspan);
         UpdatePrice(changeCREXBid, $scope.CREXBid, changeCREXBidspan);
+		UpdatePrice(changeCREXPhone, $scope.CREXPrice, changeCREXspanPhone);
+        UpdatePrice(changeCREXAskPhone, $scope.CREXAsk, changeCREXAskspanPhone);
+        UpdatePrice(changeCREXBidPhone, $scope.CREXBid, changeCREXBidspanPhone);
         UpdatePrice(changeCREXVol, $scope.CREXVol, changeCREXVolspan);
 
         changeTO = $scope.TOPrice;
         changeTOAsk = $scope.TOAsk;
         changeTOBid = $scope.TOBid;
+		changeTOPhone = $scope.TOPrice;
+        changeTOAskPhone = $scope.TOAsk;
+        changeTOBidPhone = $scope.TOBid;
         changeTOVol = $scope.TOVol;
 
         changeCrypt = $scope.CryptPrice;
         changeCryptAsk = $scope.CryptAsk;
         changeCryptBid = $scope.CryptBid;
+		changeCryptPhone = $scope.CryptPrice;
+        changeCryptAskPhone = $scope.CryptAsk;
+        changeCryptBidPhone = $scope.CryptBid;
         changeCryptVol = $scope.CryptVol;
 
         changeSE = $scope.SEPrice;
         changeSEAsk = $scope.SEAsk;
         changeSEBid = $scope.SEBid;
+		changeSEPhone = $scope.SEPrice;
+        changeSEAskPhone = $scope.SEAsk;
+        changeSEBidPhone = $scope.SEBid;
         changeSEVol = $scope.SEVol;
 
         changeSTE = $scope.STEPrice;
         changeSTEAsk = $scope.STEAsk;
         changeSTEBid = $scope.STEBid;
+		changeSTEPhone = $scope.STEPrice;
+        changeSTEAskPhone = $scope.STEAsk;
+        changeSTEBidPhone = $scope.STEBid;
         changeSTEVol = $scope.STEVol;
 
         changeCREX = $scope.CREXPrice;
         changeCREXAsk = $scope.CREXAsk;
         changeCREXBid = $scope.CREXBid;
+		changeCREXPhone = $scope.CREXPrice;
+        changeCREXAskPhone = $scope.CREXAsk;
+        changeCREXBidPhone = $scope.CREXBid;
         changeCREXVol = $scope.CREXVol;
     }
 
