@@ -45,7 +45,7 @@ window.onload = colourize;
             display: none;
         }
 		.AddPhone {
-            display: block;
+            display: table-row;
         }
     }
 	table {
@@ -106,7 +106,7 @@ th {
                  	<td class="AddPhone"><span id="changeTOspan">&#8674; {{TOPrice}}</span></td>
                     <td class="AddPhone"><span id="changeTOBidspan">&#8674; {{TOBid}}</span> / <span id="changeTOAskspan">&#8674; {{TOAsk}}</span></td>
                  </tr>   
-                <tr style="text-align:center;">
+                <tr style="text-align:center;" class="RemPhone">
                 	<th style="width:14%;">Last Price</th>
                     <th style="width:14%;">Current Bid</th>
                     <th style="width:14%;">Current Ask</th>
