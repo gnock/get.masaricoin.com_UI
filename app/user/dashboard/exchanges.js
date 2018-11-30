@@ -21,7 +21,7 @@ app.controller('ExchangeCtrl', function($scope, $route, dataService, timerServic
 	var changeTOPhone = '';
     var changeTOAskPhone = '';
     var changeTOBidPhone = '';
-	var changeTOVolPhone = '';
+	var changeTOVol = '';
 
     var changeCrypt = '';
     var changeCryptAsk = '';
