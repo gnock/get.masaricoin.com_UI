@@ -100,11 +100,11 @@ th {
             <tbody>
             	<tr style="text-align:center;" class="AddPhone">
                 	<th>Last Price</th>
-                    <th class="AddPhone">Bid/Ask</th>
+                    <th>Bid/Ask</th>
                 </tr>
                  <tr style="text-align:center;" class="AddPhone">
-                 	<td class="AddPhone"><span id="changeTOspan">&#8674; {{TOPrice}}</span></td>
-                    <td class="AddPhone"><span id="changeTOBidspan">&#8674; {{TOBid}}</span> / <span id="changeTOAskspan">&#8674; {{TOAsk}}</span></td>
+                 	<td><span id="changeTOspan">&#8674; {{TOPrice}}</span></td>
+                    <td><span id="changeTOBidspan">&#8674; {{TOBid}}</span> / <span id="changeTOAskspan">&#8674; {{TOAsk}}</span></td>
                  </tr>   
                 <tr style="text-align:center;" class="RemPhone">
                 	<th style="width:14%;">Last Price</th>
