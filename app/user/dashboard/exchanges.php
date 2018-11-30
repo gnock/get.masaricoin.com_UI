@@ -47,6 +47,8 @@ window.onload = colourize;
 		.AddPhone {
             display: table-row;
         }
+		.PhoneTable {
+			width:auto;
     }
 	table {
     border-collapse:collapse;
@@ -95,7 +97,7 @@ th {
         <md-card-content>
            <!-- <canvas id="TradeOgre" width="400" height="100"></canvas> -->
 
-            <table style="width:100%">
+           <table style="width:100%" class="PhoneTable">
            <thead></thead>
             <tbody>
             	<tr style="text-align:center;" class="AddPhone">
