@@ -45,7 +45,7 @@ window.onload = colourize;
             display: none;
         }
 		.AddPhone {
-            display: inline;
+            display: block;
         }
     }
 	table {
@@ -98,27 +98,32 @@ th {
             <table style="width:100%">
            <thead></thead>
             <tbody>
-                <tr style="text-align:center;">
-                	<th class="AddPhone">Last Price</th>
+            	<tr style="text-align:center;" class="AddPhone">
+                	<th>Last Price</th>
                     <th class="AddPhone">Bid/Ask</th>
-                    <th class="RemPhone" style="width:14%;">Last Price</th>
-                    <th class="RemPhone" style="width:14%;">Current Bid</th>
-                    <th class="RemPhone" style="width:14%;">Current Ask</th>
-                    <th class="RemPhone" style="width:14%;">Last Type</th>
-                    <th class="RemPhone" style="width:14%;">Last Quantity</th>
-                    <th class="RemPhone" style="width:14%;">24 Hour Volume</th>
-                    <th class="RemPhone" style="width:16%;">Last Update</th>
                 </tr>
-                <tr style="text-align:center;">
+                 <tr style="text-align:center;" class="AddPhone">
                  	<td class="AddPhone"><span id="changeTOspan">&#8674; {{TOPrice}}</span></td>
                     <td class="AddPhone"><span id="changeTOBidspan">&#8674; {{TOBid}}</span> / <span id="changeTOAskspan">&#8674; {{TOAsk}}</span></td>
-                    <td class="RemPhone"><span id="changeTOspan">&#8674; {{TOPrice}}</span></td>
-                    <td class="RemPhone"><span id="changeTOBidspan">&#8674; {{TOBid}}</span></td>
-                    <td class="RemPhone"><span id="changeTOAskspan">&#8674; {{TOAsk}}</span></td>
-                    <td class="RemPhone">{{TOType}}</td>
-                    <td class="RemPhone">{{TOQuantity}}</td>
-                    <td class="RemPhone"><span id="changeTOVolspan">&#8674; {{TOVol}}</span> BTC</td>
-                    <td class="RemPhone">{{TOLastUpdate}}</td>
+                 </tr>   
+                <tr style="text-align:center;">
+                	<th style="width:14%;">Last Price</th>
+                    <th style="width:14%;">Current Bid</th>
+                    <th style="width:14%;">Current Ask</th>
+                    <th style="width:14%;">Last Type</th>
+                    <th style="width:14%;">Last Quantity</th>
+                    <th style="width:14%;">24 Hour Volume</th>
+                    <th style="width:16%;">Last Update</th>
+                </tr>
+                <tr style="text-align:center;" class="RemPhone">
+                 	
+                    <td><span id="changeTOspan">&#8674; {{TOPrice}}</span></td>
+                    <td><span id="changeTOBidspan">&#8674; {{TOBid}}</span></td>
+                    <td><span id="changeTOAskspan">&#8674; {{TOAsk}}</span></td>
+                    <td>{{TOType}}</td>
+                    <td>{{TOQuantity}}</td>
+                    <td><span id="changeTOVolspan">&#8674; {{TOVol}}</span> BTC</td>
+                    <td>{{TOLastUpdate}}</td>
                 </tr>
                 </tbody>
             </table>
