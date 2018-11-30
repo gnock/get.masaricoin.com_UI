@@ -50,6 +50,7 @@ window.onload = colourize;
 		.PhoneTable {
 			width:80%;
     }
+	}
 	table {
     border-collapse:collapse;
     width:100%;
