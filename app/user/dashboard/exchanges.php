@@ -99,8 +99,8 @@ th {
            <thead></thead>
             <tbody>
                 <tr style="text-align:center;">
-                	<th class="AddPhone" style="width:50%;">Last Price</th>
-                    <th class="AddPhone" style="width:50%;">Bid/Ask</th>
+                	<th class="AddPhone">Last Price</th>
+                    <th class="AddPhone">Bid/Ask</th>
                     <th class="RemPhone" style="width:14%;">Last Price</th>
                     <th class="RemPhone" style="width:14%;">Current Bid</th>
                     <th class="RemPhone" style="width:14%;">Current Ask</th>
