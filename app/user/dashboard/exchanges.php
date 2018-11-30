@@ -45,7 +45,7 @@ window.onload = colourize;
             display: none;
         }
 		.AddPhone {
-            display: block;
+            display: inline;
         }
     }
 	table {
