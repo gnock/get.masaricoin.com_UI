@@ -84,6 +84,9 @@ body {
 	background-image: url();
 	background-repeat: no-repeat;
 }
+#AddPhone {
+	display: none;
+	}
 
 @media only screen and (max-width: 700px) {
 	#NetworkPercent {
@@ -91,6 +94,9 @@ body {
 	}
 	#RemPhone {
 	display: none;
+	}
+	#AddPhone {
+	display: inline;
 	}
 	
 	}
@@ -132,7 +138,7 @@ body {
             <md-list-item>
               <md-button href="#!/blocks" ng-class="isActivePage('blocks')">
                 <md-icon md-font-set="material-icons" class="menu-item">reorder</md-icon>
-                Blocks<span id="RemPhone">&nbsp; - &nbsp;<span style="color:#7FDBFF;">{{lockedBlocks}} New!</span></span>
+                Blocks<span id="RemPhone">&nbsp; - &nbsp;<span style="color:#7FDBFF;">{{lockedBlocks}} New!</span></span><span id="AddPhone">&nbsp; - &nbsp;(+<span style="color:#7FDBFF;">{{lockedBlocks}})</span></span>
               </md-button>
             </md-list-item>
             <md-list-item>
